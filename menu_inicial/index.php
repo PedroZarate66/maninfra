@@ -1,179 +1,134 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <title>Mantenimiento e Inspeccion diaria - Menu inicial</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css_estilos/menu_inicial.css">
-    <!-- <link rel="stylesheet" href="../css_estilos/pantalla.css"> -->
-  </head>
-    <!--Estos pertenece a el banner del menu inicial. se agregan los logos y titulos 
-    correspondientes-->
-  <div class="p-3 text-center text-white" id="banner">
-    <div class="row">
-      <div class="col d-flex justify-content-start lns-logo">
-        <img src="../LNS.png">
-      </div>
-      <div class="col txt-title">
-        <h1>Menu inicial</h1>
-      </div>
-      <div class="col d-flex justify-content-end minerva">
-        <img src="../buap-negativo.png">
-      </div>
-    </div>
-  </div>
+#banner {
+    background-color: rgb(0, 59, 92);
+    font-family: 'Courier New', Courier, monospace;
+    height: 130px;
+}
 
-  <body>
-    <main class="content">
-    <!--Se llaman las funciones de inicio de sesion-->
-    <?php
-    require '../funciones_php/Configuracion_sesion.php';
-    ?>
-    <!--Muestra un pequeño banner donde se muestra el cierre de sesion y la
-    informacion del usuario que esta activo en el sistema-->
-  <nav class="navbar bg-body-tertiary border-bottom border-body">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="../funciones_php/Logout.php">Cerrar sesion</a>
-    <a class="navbar-brand"><?php echo "Usuario: ". $_SESSION['id'].", ".$_SESSION['usuario'].", ".$_SESSION['tipo']; ?></a>
-    </div>
-  </nav>
 
-    <!--Esto corresponde a los botones que se muestran en en menu de inicio-->
-    <div class="container text-center">
-      <!--Esto es para alinearlos horizontalmente-->
-      <div class="row justify-content-center align-items-center g-2">
-            <!-- El codigo siguiente pertenece al primer boton-->
+.minerva{
+    width: 80px;
+    height: 80px;
+    position:absolute;
+    right: 1%;
+    top: 3%;
+}
 
-            <div class="col align-self-start">
-              <div class="col d-flex justify-content-center align-self-start"><a
-                  name="inspeccion"
-                  id="botones"
-                  class="btn btn-lg"
-                  href=""
-                  role="button"
-              >Inspeccion diaria</a>
-              </div> 
+.lns-logo{
+    width: 170px;
+    height: 60px;
+    position:absolute;
+    left: 1%;
+    top: 3.5%;
+}
 
-              
-              <div class="row d-flex justify-content-center align-self-start"><a
-                  name="EntradaNueva"
-                  id="botones_desp"
-                  class="btn btn-lg"
-                  href="../inspecciones/Verificacion_sistemas"
-                  role="button"
-              >Entrada nueva</a>
-              </div>
 
-            
-              <div class="row d-flex justify-content-center align-self-start"><a
-                  name="Historial"
-                  id="botones_desp"
-                  class="btn btn-lg"
-                  href="../inspecciones/Historial_inspecciones"
-                  role="button"
-              >Historial</a>
-              </div> 
-      
-            <!--Aqui tiene que ir la linea de division entre columnas-->
-             <hr class="hr1">
-            <!-- *************************************************** -->
-            </div>
-            
-            <!--El codigo siguiente pertenece al segundo boton-->
-            <div class="col align-self-start">
-              <div class="col d-flex justify-content-center align-self-start"><a
-                    name="Mantenimiento"
-                    id="botones"
-                    class="btn btn-lg"
-                    href=""
-                    role="button"
-                >Mantenimiento</a>
-              </div>
 
-            
-              <div class="row d-flex justify-content-center align-self-start"><a
-                    name="Calendario"
-                    id="botones_desp"
-                    class="btn btn-lg"
-                    href="../mantenimientos/Calendario"
-                    role="button"
-                >Calendario de mantenimiento</a>
-              </div>
+@media only screen and (max-width: 700px){
+    #lns-logo{
+        width:140px;
+        height: 60;
+    }
+}
 
-              <div class="row d-flex justify-content-center align-self-start"><a
-                    name="EntradaCalendario"
-                    id="botones_desp"
-                    class="btn btn-lg"
-                    href="../mantenimientos/Entrada_nueva"
-                    role="button"
-                >Entrada nueva</a>
-              </div>
+#botones{
+    background-color: rgb(0, 181, 226);
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    line-height: 20px;
+    width: 200px;   
+    margin-top: 20px;
+}
 
-              <div class="row d-flex justify-content-center align-self-start"><a
-                    name="EntradaInfraestructura"
-                    id="botones_desp"
-                    class="btn btn-lg"
-                    href="../mantenimientos/Entrada_infraestructura"
-                    role="button"
-                >Preservacion de infraestructura</a>
-              </div>
-              <hr class="hr2">
-            </div>
-          <!--El codigo siguiente pertenece al tercer boton, donde primero verifica que tipo de 
-          usuario es, al verificar el tipo, despliega el boton de usuarios solo si es administrador-->
-          <?php
-            if($_SESSION['tipo'] == "Administrador"){
-              echo'
-              <div class="col align-self-start">
-                <div class="col d-flex justify-content-center align-self-start"><a
-                      name="Usuario"
-                      id="botones"
-                      class="btn btn-lg"
-                      href=""
-                      role="button"
-                  >Usuario</a>
-                </div>
+#botones_desp{
+    background-color: rgb(68, 160, 221);
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    line-height: 20px;
+    width: 200px;   
+    margin-top: 20px;
+}
 
-              
-                <div class="row d-flex justify-content-center align-self-start"><a
-                      name="RegistrarUsuario"
-                      id="botones_desp"
-                      class="btn btn-lg"
-                      href="../Registrar_usuario"
-                      role="button"
-                  >Registrar usuario</a>
-                </div>
+.contenedoruno{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-                <div class="row d-flex justify-content-center align-self-start"><a
-                      name="ListaUsuarios"
-                      id="botones_desp"
-                      class="btn btn-lg"
-                      href="../mantenimientos/Lista_usuarios"
-                      role="button"
-                  >Lista de usuarios</a>
-                </div>
+.contenedordos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-              </div>';
-            }
-          ?>
-      </div>
-    </div>
-  </main>
-  <footer class="bg-body-tertiary text-center">
-        <!-- Grid container -->
-        
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-          Benemerita Universidad Autonoma de Puebla:
-          <a class="text-body">Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
-</html>
+.grupo-boton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-  
+.txt-title{
+    text-align: center;
+    padding: 0.75em 0;
+    letter-spacing: 0.075rem;
+    line-height: 1.25;
+    text-shadow: #333 2px 2px 2px;
+    color: rgb(0, 59, 92);
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 600;
+    font-style:normal;
+    font-size: clamp(1rem, -0.875rem + 8.333vw, 2.5rem);
+    
+}
+
+.sub-title{
+    text-align: center;
+    padding: 0.75em 0;
+    letter-spacing: 0.075rem;
+    line-height: 1.25;
+    /* text-shadow: #333 2px 2px 2px; */
+    color: rgb(0, 59, 92);
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 600;
+    font-style:normal;
+    font-size: clamp(1rem, -0.875rem + 8.333vw, 1.7rem);
+    
+}
+
+.hr1{
+    border-left: thick solid rgba(0, 0, 0,0.05);
+    height:75.1vh;
+    left: 38%;
+    width: 0.5vh;
+    position: absolute;
+    top: 32.3%;
+    transform: translateY(-20%);
+   }
+
+.hr2{
+    border-left: thick solid rgba(0, 0, 0, 0.05);
+    height:75.1vh;
+    right: 38%;
+    width: 0.5vh;
+    position: absolute;
+    top: 32.3%;
+    transform: translateY(-20%);
+}
+
+
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
