@@ -1,3 +1,29 @@
+
+
+.txt-title{
+    text-align    : center;
+    padding       : 1.75em 0;
+    letter-spacing: 0.075rem;
+    line-height   : 1.25;
+    color         : rgb(0, 59, 92);
+    font-family   : "Roboto Condensed", sans-serif;
+    font-weight   : 600;
+    font-size     : clamp(1rem, -0.875rem + 8.333vw, 1.7rem);  
+}
+
+
+.sub-title{
+    text-align    : center;
+    padding       : 0.75em 0;
+    letter-spacing: 0.075rem;
+    line-height   : 1.25;
+    color         : #616161;
+    font-family   : "Roboto ligth", sans-serif;
+    font-weight   : 600;
+    font-size     : clamp(1rem, -0.875rem + 8.333vw, 1.1rem);
+    
+}
+
 #banner {
     background-color: rgb(0, 59, 92);
     height          : 15%;
@@ -43,6 +69,7 @@
     width           : 200px;   
     margin-top      : 20px;
     margin-bottom   : 20px;
+    font-size       : clamp(1rem, -0.875rem + 8.333vw, 1.1rem); ;
 }
 
 .contenedoruno{
@@ -66,31 +93,7 @@
     justify-content: center;
 }
 
-.txt-title{
-    text-align    : center;
-    padding       : 0.75em 0;
-    letter-spacing: 0.075rem;
-    line-height   : 1.25;
-    color         : rgb(0, 59, 92);
-    font-family   : "Roboto Condensed", sans-serif;
-    font-weight   : 600;
-    font-style    : normal;
-    font-size     : clamp(1rem, -0.875rem + 8.333vw, 2.5rem);
-    
-}
 
-.sub-title{
-    text-align    : center;
-    padding       : 0.75em 0;
-    letter-spacing: 0.075rem;
-    line-height   : 1.25;
-    color         : rgb(0, 59, 92);
-    font-family   : "Roboto Condensed", sans-serif;
-    font-weight   : 600;
-    font-style    : normal;
-    font-size     : clamp(1rem, -0.875rem + 8.333vw, 1.7rem);
-    
-}
 
 .hr1{
     border-left: thick solid rgba(0, 0, 0,0.05);
@@ -112,17 +115,29 @@
     transform  : translateY(-20%);
 }
 
-/*  Esto es para mover el boton de cerrar sesion */
-.cerrar-sesion{
-    width: 100px;
+/*Estilos del boton de cerrar sesion */
+.cerrar-sesion {
+    width: 140px;
     height: 40px;
     position: absolute;
-    background-color: rgb(68, 160, 221);
+    background-color: #616161; 
     color: rgb(255, 255, 255);
-    right: 1em;             
-
+    border: 2px solid white; 
+    text-align: center;
+    line-height: 18px;
+    text-decoration: none; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, border-color 0.3s ease; /*Aplicamos transiciones suaves*/
+    margin: 0.7em;
 }
- /*Esto es para editar el contenido del boton de cerrar sesion*/
+
+/* Estilos del botón cuando está en estado activo (clickeado) */
+.cerrar-sesion:hover {
+    background-color: #242424; 
+    border-color: white;
+}
+
 
 body {
     display         : flex;
@@ -141,56 +156,32 @@ body {
 
 }
 
-@media only screen and (max-width: 1200px){
+
+
+
+
+
+/*Evadiendo estilos de Bootstrap sobrepuestos*/
+@media (max-width: 1350px) {
+
     #lns-logo{
         width :140px;
         height: 60;
     }
 
-}
-
-@media only screen and (max-width: 600px){
-    
-    .lns-logo{
-        width   : 160px;
-        height  : 50px;
-        position:absolute;
-        left    : 1%;
-        top     : 20%;
-    }
-
-
-    #banner {
-        background-color: rgb(0, 59, 92);
-        height          : 12%;
-        width           : 100%;
-        position        : absolute;
-        box-shadow      : 5px 5px 20px rgba(53, 71, 82, 0.381);
-        z-index: 1;
-    }
-
-    .content {
-        flex: 1 0 auto;
-        z-index: 3;
-        margin-top: 25%;
-    }
-}
-
-
-/*Evadiendo estilos de Bootstrap sobrepuestos*/
-@media (max-width: 1350px) {
     .container, .container-sm {
     max-width: none !important; 
     }
 
     body{
-        background-color: aqua;
+        background-color: #E6E6E6;
     }
 
     html, body {
         height: 100% !important;
     }
     
+     
 }
 
 @media (max-width: 580px) {

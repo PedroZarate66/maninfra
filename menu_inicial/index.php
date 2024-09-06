@@ -16,11 +16,7 @@
         <img src="../LNS.png">
       </div>
 
-        <!--Aqui va en titulo de la pagina-->
-        <div class="txt-title">
-          <h1>Menu inicial</h1>
-        </div>
-     <!--******************************-->
+        
 
       <div class="col minerva d-flex justify-content-end">
         <img src="../buap-negativo.png">
@@ -48,7 +44,7 @@
 
               <div class="col align-self-start">
                 <div class="col sub-title d-flex justify-content-center align-self-start">
-                  Inspeccion diaria
+                  Inspección diaria
                 </div> 
 
                 
@@ -57,8 +53,8 @@
                     id="botones_desp"
                     class="btn btn-lg"
                     href="../inspecciones/Verificacion_sistemas"
-                    role="button"
-                >Entrada nueva</a>
+                    role="button">
+                    Nueva Entrada</a>
                 </div>
 
               
@@ -89,7 +85,7 @@
                       class="btn btn-lg"
                       href="../mantenimientos/Calendario"
                       role="button"
-                  >Calendario de mantenimiento</a>
+                  >Calendario</a>
                 </div>
 
                 <div class="row d-flex justify-content-center align-self-start"><a
@@ -98,7 +94,7 @@
                       class="btn btn-lg"
                       href="../mantenimientos/Entrada_calendario"
                       role="button"
-                  >Entrada nueva</a>
+                  >Entrada Nueva</a>
                 </div>
 
                 <div class="row d-flex justify-content-center align-self-start"><a
@@ -107,7 +103,7 @@
                       class="btn btn-lg"
                       href="../mantenimientos/Entrada_infraestructura"
                       role="button"
-                  >Preservacion de infraestructura</a>
+                  >Preservacion Inf</a>
                 </div>
                 <hr class="hr2">
               </div>
@@ -118,7 +114,7 @@
                 echo'
                 <div class="col align-self-start">
                   <div class="col sub-title d-flex justify-content-center align-self-start">
-                    Usuario
+                    Usuarios
                   </div>
 
                 
@@ -128,7 +124,7 @@
                         class="btn btn-lg"
                         href="../Registrar_usuario"
                         role="button"
-                    >Registrar usuario</a>
+                    >Registrar</a>
                   </div>
 
                   <div class="row d-flex justify-content-center align-self-start"><a
@@ -137,7 +133,7 @@
                         class="btn btn-lg"
                         href="../Lista_usuarios"
                         role="button"
-                    >Lista de usuarios</a>
+                    >Lista</a>
                   </div>
 
                 </div>';
