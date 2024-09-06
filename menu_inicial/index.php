@@ -150,13 +150,9 @@
     <!--Muestra un pequeño banner donde se muestra el cierre de sesion y la
       informacion del usuario que esta activo en el sistema-->
     <div class="banner2 bg-body-tertiary">
-      <div class="container d-flex justify-content-end cerrar-sesion">
-        <a class="btn btn-lg" id="cerrar-sesion" href="../funciones_php/Logout.php">Cerrar sesion</a>
-      </div>
-      <!-- <div class="container-fluid d-flex justify-content-start">
-        <a class="navbar-brand"><?php //echo $_SESSION['usuario'].", ".$_SESSION['tipo']; ?></a>
-      </div> -->
+        <a class="btn btn-lg cerrar-sesion" href="../funciones_php/Logout.php">Cerrar sesion</a>
     </div>
+
   <footer class="bg-body-tertiary text-center">
         <!-- Grid container -->
         
