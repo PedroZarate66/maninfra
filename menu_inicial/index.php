@@ -15,9 +15,7 @@
       <div class="col lns-logo d-flex justify-content-start">
         <img src="../LNS.png">
       </div>
-      <div class="col d-flex justify-content-center txt-title">
-        <h1></h1>
-      </div>
+
       <div class="col minerva d-flex justify-content-end">
         <img src="../buap-negativo.png">
       </div>
@@ -25,140 +23,142 @@
   </div>
 
   <body>
-    <main class="content">
-    <!--Se llaman las funciones de inicio de sesion-->
-    <?php
-    require '../funciones_php/Configuracion_sesion.php';
-    ?>
-    <!--Muestra un pequeño banner donde se muestra el cierre de sesion y la
-    informacion del usuario que esta activo en el sistema-->
-  <nav class="navbar bg-body-tertiary border-bottom border-body">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="../funciones_php/Logout.php">Cerrar sesion</a>
-    <a class="navbar-brand"><?php echo "Usuario: ". $_SESSION['id'].", ".$_SESSION['usuario'].", ".$_SESSION['tipo']; ?></a>
-    </div>
-  </nav>
-
-    <!--Aqui va en titulo de la pagina-->
-        <div class="txt-title">
-          <h1>Menu inicial</h1>
-        </div>
-    <!--******************************-->
-    <!--Esto corresponde a los botones que se muestran en en menu de inicio-->
-    <div class="container text-center">
-      <!--Esto es para alinearlos horizontalmente-->
-      <div class="row justify-content-center align-items-center g-2">
-            <!-- El codigo siguiente pertenece al primer boton-->
-
-            <div class="col align-self-start">
-              <div class="col sub-title d-flex justify-content-center align-self-start">
-                Inspeccion diaria
-              </div> 
-
-              
-              <div class="row d-flex justify-content-center align-self-start"><a
-                  name="EntradaNueva"
-                  id="botones_desp"
-                  class="btn btn-lg"
-                  href="../inspecciones/Verificacion_sistemas"
-                  role="button"
-              >Entrada nueva</a>
-              </div>
-
-            
-              <div class="row d-flex justify-content-center align-self-start"><a
-                  name="Historial"
-                  id="botones_desp"
-                  class="btn btn-lg"
-                  href="../inspecciones/Historial_Inspecciones"
-                  role="button"
-              >Historial</a>
-              </div> 
+  <main class="content">
+      <!--Se llaman las funciones de inicio de sesion-->
+      <?php
+      require_once '../funciones_php/Configuracion_sesion.php';
+      ?>
       
-            <!--Aqui tiene que ir la linea de division entre columnas-->
-             <hr class="hr1">
-            <!-- *************************************************** -->
-            </div>
-            
-            <!--El codigo siguiente pertenece al segundo boton-->
-            <div class="col align-self-start">
-              <div class="col sub-title d-flex justify-content-center align-self-start">
-                Mantenimiento
-              </div>
+      <!--Aqui va en titulo de la pagina-->
+          <div class="txt-title">
+            <h1>Menu inicial</h1>
+          </div>
+      <!--******************************-->
+      <!--Esto corresponde a los botones que se muestran en en menu de inicio-->
+      <div class="container text-center">
+        <!--Esto es para alinearlos horizontalmente-->
+        <div class="row justify-content-center align-items-center g-2">
+              <!-- El codigo siguiente pertenece al primer boton-->
 
-            
-              <div class="row d-flex justify-content-center align-self-start"><a
-                    name="Calendario"
-                    id="botones_desp"
-                    class="btn btn-lg"
-                    href="../mantenimientos/Calendario"
-                    role="button"
-                >Calendario de mantenimiento</a>
-              </div>
-
-              <div class="row d-flex justify-content-center align-self-start"><a
-                    name="EntradaCalendario"
-                    id="botones_desp"
-                    class="btn btn-lg"
-                    href="../mantenimientos/Entrada_calendario"
-                    role="button"
-                >Entrada nueva</a>
-              </div>
-
-              <div class="row d-flex justify-content-center align-self-start"><a
-                    name="EntradaInfraestructura"
-                    id="botones_desp"
-                    class="btn btn-lg"
-                    href="../mantenimientos/Entrada_infraestructura"
-                    role="button"
-                >Preservacion de infraestructura</a>
-              </div>
-              <hr class="hr2">
-            </div>
-          <!--El codigo siguiente pertenece al tercer boton, donde primero verifica que tipo de 
-          usuario es, al verificar el tipo, despliega el boton de usuarios solo si es administrador-->
-          <?php
-            if($_SESSION['tipo'] == "Administrador"){
-              echo'
               <div class="col align-self-start">
                 <div class="col sub-title d-flex justify-content-center align-self-start">
-                  Usuario
+                  Inspeccion diaria
+                </div> 
+
+                
+                <div class="row d-flex justify-content-center align-self-start"><a
+                    name="EntradaNueva"
+                    id="botones_desp"
+                    class="btn btn-lg"
+                    href="../inspecciones/Verificacion_sistemas"
+                    role="button"
+                >Entrada nueva</a>
                 </div>
 
               
                 <div class="row d-flex justify-content-center align-self-start"><a
-                      name="RegistrarUsuario"
+                    name="Historial"
+                    id="botones_desp"
+                    class="btn btn-lg"
+                    href="../inspecciones/Historial_Inspecciones"
+                    role="button"
+                >Historial</a>
+                </div> 
+        
+              <!--Aqui tiene que ir la linea de division entre columnas-->
+              <hr class="hr1">
+              <!-- *************************************************** -->
+              </div>
+              
+              <!--El codigo siguiente pertenece al segundo boton-->
+              <div class="col align-self-start">
+                <div class="col sub-title d-flex justify-content-center align-self-start">
+                  Mantenimiento
+                </div>
+
+              
+                <div class="row d-flex justify-content-center align-self-start"><a
+                      name="Calendario"
                       id="botones_desp"
                       class="btn btn-lg"
-                      href="../Registrar_usuario"
+                      href="../mantenimientos/Calendario"
                       role="button"
-                  >Registrar usuario</a>
+                  >Calendario de mantenimiento</a>
                 </div>
 
                 <div class="row d-flex justify-content-center align-self-start"><a
-                      name="ListaUsuarios"
+                      name="EntradaCalendario"
                       id="botones_desp"
                       class="btn btn-lg"
-                      href="../Lista_usuarios"
+                      href="../mantenimientos/Entrada_calendario"
                       role="button"
-                  >Lista de usuarios</a>
+                  >Entrada nueva</a>
                 </div>
 
-              </div>';
-            }
-          ?>
+                <div class="row d-flex justify-content-center align-self-start"><a
+                      name="EntradaInfraestructura"
+                      id="botones_desp"
+                      class="btn btn-lg"
+                      href="../mantenimientos/Entrada_infraestructura"
+                      role="button"
+                  >Preservacion de infraestructura</a>
+                </div>
+                <hr class="hr2">
+              </div>
+            <!--El codigo siguiente pertenece al tercer boton, donde primero verifica que tipo de 
+            usuario es, al verificar el tipo, despliega el boton de usuarios solo si es administrador-->
+            <?php
+              if($_SESSION['tipo'] == "Administrador"){
+                echo'
+                <div class="col align-self-start">
+                  <div class="col sub-title d-flex justify-content-center align-self-start">
+                    Usuario
+                  </div>
+
+                
+                  <div class="row d-flex justify-content-center align-self-start"><a
+                        name="RegistrarUsuario"
+                        id="botones_desp"
+                        class="btn btn-lg"
+                        href="../Registrar_usuario"
+                        role="button"
+                    >Registrar usuario</a>
+                  </div>
+
+                  <div class="row d-flex justify-content-center align-self-start"><a
+                        name="ListaUsuarios"
+                        id="botones_desp"
+                        class="btn btn-lg"
+                        href="../Lista_usuarios"
+                        role="button"
+                    >Lista de usuarios</a>
+                  </div>
+
+                </div>';
+              }
+            ?>
+        </div>
       </div>
+    </main>
+
+    <!--Muestra un pequeño banner donde se muestra el cierre de sesion y la
+      informacion del usuario que esta activo en el sistema-->
+    <div class="banner2 bg-body-tertiary">
+      <div class="container d-flex justify-content-end">
+        <a class="btn btn-lg" id="cerrar-sesion" href="../funciones_php/Logout.php">Cerrar sesion</a>
+      </div>
+      <!-- <div class="container-fluid d-flex justify-content-start">
+        <a class="navbar-brand"><?php //echo $_SESSION['usuario'].", ".$_SESSION['tipo']; ?></a>
+      </div> -->
     </div>
-  </main>
   <footer class="bg-body-tertiary text-center">
         <!-- Grid container -->
         
         <!-- Grid container -->
       
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-          Benemerita Universidad Autonoma de Puebla:
-          <a class="text-body">Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
+        <div class="text-center p-3 footer">
+          Benemerita Universidad Autonoma de Puebla: Laboratorio Nacional de Supercomputo del Sureste de Mexico
         </div>
         <!-- Copyright -->
     </footer>

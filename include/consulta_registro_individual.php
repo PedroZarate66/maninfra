@@ -18,7 +18,7 @@ class Consulta_Reg_Individual{
         `HidraManometroUnoCpd`, `HidraManometroDosCpd`, `HidraManometroObservaciones`, 
         `IncendioCilindroCpd`, `IncendioCilindroCe`, `IncendioObservaciones`, 
         `AlertaUpsUno`, `AlertaUpsDos`, `KwRedConsumo`, `KVaTotal`, `AlertaUpsObservaciones`, 
-        `FugaElectrogenoGenA`, `FugaElectrogenoGenB`, `RuidoElectrogenoGenA`, `RuidoElectrogenoGenB`, `FugaRuidoElectrogenoObservaciones`
+        `FugaElectrogenoGenA`, `FugaElectrogenoGenB`, `FugaElectrogenoGenC`,`FugaElectrogenoGenD`, `RuidoElectrogenoGenA`, `RuidoElectrogenoGenB`, `RuidoElectrogenoGenC`, `RuidoElectrogenoGenD`, `FugaRuidoElectrogenoObservaciones`
         FROM `registrosdiarios` WHERE IdRegistro =".$idconsulta." ;";
         $resultado = $conexion->conexionBD->query($sql);
         $fila = $resultado->fetch_assoc();

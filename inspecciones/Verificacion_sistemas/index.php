@@ -15,22 +15,16 @@
                 <div class="col d-flex justify-content-start">
                 <img src="../../LNS.png" height="64" width="170">
             </div>
-            <div class="col">
-                <h2>Inspeccíones</h2>
-                <h4>Entrada Nueva</h4>
-            </div>
+            
             <div class="col d-flex justify-content-end">
                 <img src="../../buap-negativo.png" height="64" width="64">
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand navbar-light bg-light">
+    <nav class="banner2 navbar-expand">
         <div class="nav navbar-nav">
-            <a class="btn text-dark nav-item nav-link" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step" onclick="saveForm()">
+            <a class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step" onclick="saveForm()">
                 Regresar 
-            </a>
-            <a class="btn text-dark nav-item nav-link" data-bs-toggle="modal" data-bs-target="#menu_inicial" aria-current="step" onclick="saveForm()">
-                Inicio
             </a>
         </div>
     </nav>
@@ -76,9 +70,14 @@
     $idactual++;
     
     ?>
+
+            <div class="txt-title">
+                <h2>Inspeccíones</h2>
+            </div>
+
     <form class="needs-validation" action="../../include/guardar_registro_inspeccion.php" method="post" novalidate>
             <div class="container-fluid mt-3">
-                <h5 class="text-center">Formulario de datos</h5>
+                <h5 class="text-center">Formulario de entrada</h5>
                 <br>
                 <div class="form-check">
                     <input class="btn-check" type="radio" name="entrada_salida" id="Entrada" value="Entrada" required>
@@ -1623,16 +1622,17 @@
         </main> 
         <footer class="bg-body-tertiary text-center">
             <!-- Grid container -->
-            <div class="container-fluid bg-white d-flex justify-content-end">
-                <button type="button" class="btn btn-lg" id="botones" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
+            <div class="container d-flex justify-content-end">
+                <button type="button" class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
             </div>
             <div class="container p-4 bg-light"></div>
             <!-- Grid container -->
         
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            <a class="text-body">
             Benemerita Universidad Autonoma de Puebla:
-            <a class="text-body">Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
+            Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
             </div>
             <!-- Copyright -->
         </footer>
