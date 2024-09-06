@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Historial de registros nuevo</title>
+        <title>Historial de registros</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -15,13 +15,24 @@
                 <div class="col d-flex justify-content-start">
                     <img src="../../LNS.png" height="64" width="170">
                 </div>
-                
+                <div class="col">
+                    <h1>Historial de registros diarios</h1>
+                </div>
                 <div class="col d-flex justify-content-end">
                     <img src="../../buap-negativo.png" height="64" width="64">
                 </div>
             </div>
         </div>
-        
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <div class="nav navbar-nav">
+                <a class="btn text-dark nav-item nav-link" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step">
+                    Regresar 
+                </a>
+                <a class="btn text-dark nav-item nav-link" data-bs-toggle="modal" data-bs-target="#menu_inicial" aria-current="step">
+                    Inicio
+                </a>
+            </div>
+        </nav>
         <div class="modal" id="regreso">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -56,12 +67,7 @@
             </div>
         </div>
         <br>
-        
         <main class="content">
-
-        <div class="txt-title">
-            <h1>Historial de registros diarios</h1>
-        </div>
         <?php
         include_once '../../include/obtener_historial_registro.php';
         $obj_obt_his_reg = new Obtener_Hist_Registro;
@@ -92,15 +98,6 @@
             </form>
         </div>
         </main>
-
-        <nav class="banner2 navbar-expand">
-            <div class="nav container navbar-nav d-flex justify-content-end">
-                <a class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step">
-                    Regresar 
-                </a>
-
-            </div>
-        </nav>
     <footer class="bg-body-tertiary text-center">
         <!-- Grid container -->
          
@@ -108,9 +105,8 @@
       
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-        <a class="text-body">  
-        Benemerita Universidad Autonoma de Puebla:
-          Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
+          Benemerita Universidad Autonoma de Puebla:
+          <a class="text-body">Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
         </div>
         <!-- Copyright -->
     </footer>
