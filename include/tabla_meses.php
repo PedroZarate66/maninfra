@@ -1,6 +1,6 @@
 <?php
 include_once 'fachada_calendario.php';
-abstract class tablameses implements fachada_calendario{
+class tablameses{
     protected $mes;
     public function __construct(fachada_calendario $meses)
     {

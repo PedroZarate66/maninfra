@@ -1,8 +1,8 @@
 <?php
-require 'Meses.php';
-abstract class Mayo extends Meses
+require_once 'Meses.php';
+class Mayo extends Meses
 {
-    public final function visualizar()
+    public function visualizar()
     {
         echo "<td></td>
                     <td></td>

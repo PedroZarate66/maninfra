@@ -24,6 +24,7 @@
         $obj_eli_reg_cal = new Eliminar_Reg_Calendario;
 
         ?>
+        <!--***************BANNER QUE CONTIENE LOS LOGOS************************-->
         <div class="p-3 text-center text-white" id="banner">
             <div class="row">
                     <div class="col d-flex justify-content-start">
@@ -35,13 +36,18 @@
                 </div>
             </div>
         </div>
-        <nav class="banner2 navbar-expand">
-            <div class="nav navbar-nav">
+        <!--*******************************************************************-->
+
+        <!--************BANNER DOS CON BOTON DE REGRESAR***********************-->
+        <nav class="banner2">
+            <div class="nav">
                 <a class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step"
                     >Regresar</a>
             </div>
         </nav>
+        <!--*******************************************************************-->
         
+        <!--********MENSAJE DE ALERTA QUE PREGUNTA SI QUIERE SALIR*************-->
         <div class="modal" id="regreso">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -58,8 +64,9 @@
                 </div>
             </div>
         </div>
+        <!--********************************************************************-->
     
-        <div class="modal" id="menu_inicial">
+        <!-- <div class="modal" id="menu_inicial">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header bg-warning">
@@ -74,8 +81,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
         <br>
+        <!--******COMIENZA EL CONTENIDO PRINCIPAL*********-->
         <main class="content">
         <div class="txt-title">
             <h1>Calendario de Mantenimiento</h1>
@@ -173,7 +182,6 @@
                                 <th class="vertical-text" scope="col">Abr</th>
                                 <th class="vertical-text" scope="col">May</th>
                                 <th class="vertical-text" scope="col">Jun</th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody id="CalendarioAnual"></tbody>

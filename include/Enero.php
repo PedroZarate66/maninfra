@@ -1,10 +1,10 @@
 <?php
 require_once 'Meses.php';
-abstract class Enero extends Meses
+class Enero extends Meses
 {
     public function visualizar()
     {
-        echo "<td></td>
+        echo "      <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

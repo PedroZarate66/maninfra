@@ -1,5 +1,5 @@
 <?php
-require 'Meses.php';
+require_once 'Meses.php';
 class Abril extends Meses
 {
     public final function visualizar()

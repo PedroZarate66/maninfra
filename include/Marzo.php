@@ -1,6 +1,6 @@
 <?php
-require 'Meses.php';
-abstract class Marzo extends Meses
+require_once 'Meses.php';
+class Marzo extends Meses
 {
     public final function visualizar()
     {

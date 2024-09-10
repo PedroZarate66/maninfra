@@ -33,6 +33,23 @@ function mostrarcalendario(qstr)
     xhttp.send();
 }
 
+function eliminarcalendario(qstr)
+{
+    var xhttp;
+    if (qstr == "") {
+        document.getElementById("CalendarioAnual").innerHTML = "";
+        return;
+    }
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("CalendarioAnual").innerHTML = this.responseText;
+    }
+    };
+    xhttp.open("GET", "../../include/eliminar_calendarizacion.php?q="+qstr, true);
+    xhttp.send();
+}
+
 function cambiarEstatus(qId, qstr)
 {
     var xhttp;

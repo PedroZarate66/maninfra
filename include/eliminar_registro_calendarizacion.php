@@ -13,8 +13,8 @@ include_once 'Septiembre.php';
 include_once 'Octubre.php';
 include_once 'Noviembre.php';
 include_once 'Diciembre.php';
-class Desplegar_Calendario{
-    public function desplegar_cal()
+class Eliminar_Registro_Calendarizacion{
+    public function eliminar_reg_cal()
         {
             $conexion = new Crear_Conexion;
             $Meses = array("Año", new Enero, new Febrero, new Marzo, new Abril, new Mayo, new Junio, new Julio, new Agosto, new Septiembre, new Octubre, new Noviembre, new Diciembre);
@@ -39,10 +39,19 @@ class Desplegar_Calendario{
                         <td>" .$fila[7]. "</td>
                         <td>" .$fila[8]. "</td>
                         <td><a class='btn' role='button' data-bs-toggle='modal' data-bs-target='#visualizar' onclick='mostrarmejora(\"".$fila[9]."\")'>".$fila[9]."</a></td>
-                        <td>".$fila[12]."</td>";
+                        <td>
+                            <select class='form-select' name='estatus_actual' onchange='cambiarEstatus(\"".$fila[0]."\",this.value)'>
+                                <option selected disabled value=''>".$fila[12]."</option>
+                                <option value='Realizado'>Realizado</option>
+                                <option value='Por realizar'>Por realizar</option>
+                                <option value='En adjudicacion'>En Adjudicacion</option>
+                                <option value='Reprogramado'>Reprogramar</option>
+                                <option value='Pendiente'>Pendiente</option>
+                            </select>
+                        </td>";
                         $calendario->imprimircalendario();
-                        echo "</tr>";
-                        
+                        echo "<td><button type='button' class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#eliminar' onclick='mostrarregistro(\"".$fila[0]."\")'>Eliminar</button></td>
+                        </tr>";
             }
             $stmt->Close();
             $conexion->cerrar_conxion();
