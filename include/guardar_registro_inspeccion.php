@@ -25,10 +25,9 @@
         
         <nav class="navbar navbar-expand navbar-light bg-light">
             <div class="nav navbar-nav">
-                <a class="nav-item nav-link active" href="../inspecciones/Verificacion_sistemas/" aria-current="page"
-                    >Regresar</a>
-                    <a class="nav-item nav-link active" href="../menu_inicial/" aria-current="page"
-                    >Inicio</a>
+                <a class="nav-item nav-link active" href="../inspecciones/Verificacion_sistemas/" aria-current="page">
+                    Regresar
+                </a>
             </div>
         </nav>
         <?php

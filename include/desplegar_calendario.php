@@ -1,15 +1,15 @@
 <?php
-include_once 'Admin_sql.php';
+include_once 'conexion.php';
 include_once 'tabla_meses.php';
-
-abstract class desplegar_calendario extends Admin_sql{
-    public final function desplegar_calendario()
+class Desplegar_Calendario{
+    public function desplegar_cal()
         {
+            $conexion = new Crear_Conexion;
             $Meses = array("Año", new Enero, new Febrero, new Marzo, new Abril, new Mayo, new Junio, new Julio, new Agosto, new Septiembre, new Octubre, new Noviembre, new Diciembre);
             $fila = array();
-            $this->crear_conexion();
+            $conexion->crear_conection();
             $sql = "SELECT * FROM `calendarios` WHERE FechaAnno = ? ORDER BY FechaMes ASC;";
-            $stmt = $this->conexionBD->prepare($sql);
+            $stmt = $conexion->conexionBD->prepare($sql);
             $stmt->bind_param("s", $_GET['q']);
             $stmt->execute();
             $stmt->store_result();
@@ -42,7 +42,7 @@ abstract class desplegar_calendario extends Admin_sql{
                         </tr>";
             }
             $stmt->Close();
-            $this->cerrar_conxion();
+            $conexion->cerrar_conxion();
         }
     }
 ?>

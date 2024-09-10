@@ -1,13 +1,12 @@
 <?php
 include_once 'fachada_calendario.php';
-class tablameses
-{
+abstract class tablameses implements fachada_calendario{
     protected $mes;
-    public final function __construct(fachada_calendario $meses)
+    public function __construct(fachada_calendario $meses)
     {
         $this->mes = $meses;
     }
-    public final function imprimircalendario()
+    public function imprimircalendario()
     {
         $this->mes->visualizar();
     }

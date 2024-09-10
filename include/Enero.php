@@ -2,7 +2,7 @@
 require_once 'Meses.php';
 abstract class Enero extends Meses
 {
-    public final function visualizar()
+    public function visualizar()
     {
         echo "<td></td>
                     <td></td>

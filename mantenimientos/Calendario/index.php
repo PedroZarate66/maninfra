@@ -29,20 +29,16 @@
                     <div class="col d-flex justify-content-start">
                     <img src="../../LNS.png" height="64" width="170">
                 </div>
-                <div class="col">
-                    <h1>Calendario de Mantenimiento</h1>
-                </div>
+                
                 <div class="col d-flex justify-content-end">
                     <img src="../../buap-negativo.png" height="64" width="64">
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-expand navbar-light bg-light">
+        <nav class="banner2 navbar-expand">
             <div class="nav navbar-nav">
-                <a class="btn text-dark nav-item nav-link" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step"
-                    >Regresar</a
-                >
-                <a class="btn text-dark nav-item nav-link" data-bs-toggle="modal" data-bs-target="#menu_inicial" aria-current="step">Menu inicial</a>
+                <a class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step"
+                    >Regresar</a>
             </div>
         </nav>
         
@@ -81,6 +77,9 @@
         </div>
         <br>
         <main class="content">
+        <div class="txt-title">
+            <h1>Calendario de Mantenimiento</h1>
+        </div>
         <div class="container-fluid d-flex justify-content-start">
             <input type="date" id="fecha" name="fecha" disabled>
         </div>
@@ -146,9 +145,9 @@
             }
         ?>
         <br>
-        <form action="">
+     
             <div class="container-fluid text-center">
-                <div class="table-responsive-xxl text-center">
+                <div class="table-responsive-xs text-center">
                     <table class="table table-light table-bordered table-hover">
                         <thead>
                             <tr>
@@ -159,21 +158,21 @@
                                 <th scope="col">No. de Serie</th>
                                 <th scope="col">Descripcion de la ubicacion</th>
                                 <th scope="col">Proveedor</th>
-                                <th scope="col">Tipo de mantenimiento</th>
+                                <th scope="col">Tipo</th>
                                 <th scope="col">Origen</th>
                                 <th scope="col">Estatus</th>
-                                <th class="vertical-text" scope="col">Julio</th>
-                                <th class="vertical-text" scope="col">Agosto</th>
-                                <th class="vertical-text" scope="col">Septiembre</th>
-                                <th class="vertical-text" scope="col">Octubre</th>
-                                <th class="vertical-text" scope="col">Noviembre</th>
-                                <th class="vertical-text" scope="col">Diciembre</th>
-                                <th class="vertical-text" scope="col">Enero</th>
-                                <th class="vertical-text" scope="col">Febrero</th>
-                                <th class="vertical-text" scope="col">Marzo</th>
-                                <th class="vertical-text" scope="col">Abril</th>
-                                <th class="vertical-text" scope="col">Mayo</th>
-                                <th class="vertical-text" scope="col">Junio</th>
+                                <th class="vertical-text" scope="col">Jul</th>
+                                <th class="vertical-text" scope="col">Ago</th>
+                                <th class="vertical-text" scope="col">Sep</th>
+                                <th class="vertical-text" scope="col">Oct</th>
+                                <th class="vertical-text" scope="col">Nov</th>
+                                <th class="vertical-text" scope="col">Dic</th>
+                                <th class="vertical-text" scope="col">Ene</th>
+                                <th class="vertical-text" scope="col">Feb</th>
+                                <th class="vertical-text" scope="col">Mar</th>
+                                <th class="vertical-text" scope="col">Abr</th>
+                                <th class="vertical-text" scope="col">May</th>
+                                <th class="vertical-text" scope="col">Jun</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -181,8 +180,10 @@
                     </table>
                 </div>
             </div>
-        </form></main>
-        <footer class="bg-body-tertiary text-center">
+      
+    </main>
+     
+    <footer class="bg-body-tertiary text-center">
         <!-- Grid container -->
         
         <!-- Grid container -->

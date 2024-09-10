@@ -10,26 +10,25 @@
     </head>
     <body>
         <?php
-        require '../funciones_php/Subsistemas.php';
-        require '../funciones_php/Configuracion_sesion.php';
-        $ayudante = new Cliente();
+        include_once "../include/generar_tabla_usuarios.php";
+        include_once '../funciones_php/Configuracion_sesion.php';
+        
+        $obj_gen_tab_usu = new Generar_Tabla_Usu;
         ?>
         <div class="p-3 text-center text-white" id="banner">
             <div class="row">
                     <div class="col d-flex justify-content-start">
                     <img src="../LNS.png" height="64" width="170">
                 </div>
-                <div class="col">
-                    <h1>Lista de usuarios</h1>
-                </div>
+                
                 <div class="col d-flex justify-content-end">
                     <img src="../buap-negativo.png" height="64" width="64">
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-expand navbar-light bg-light">
+        <nav class="banner2 navbar-expand">
             <div class="nav navbar-nav">
-                <a class="btn text-dark nav-item nav-link" type="button" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step">Regresar</a>
+                <a class="btn btn-lat" id="botones-lat" type="button" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step">Regresar</a>
             </div>
         </nav>
         <div class="modal" id="regreso">
@@ -51,6 +50,10 @@
 
         <br>
         <main class="content">
+            <div class="txt-title">
+                <h1>Lista de usuarios</h1>
+            </div>
+
             <form action=""><div class="container text-center">
                 <div class="table-responsive-xxl">
                     <table class="table table-light table-bordered table-hover">
@@ -64,7 +67,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $ayudante->manejador->generar_tabla_usuarios(); ?>
+                            <?php $obj_gen_tab_usu->generar_tabla_usuarios(); ?>
                         </tbody>
                     </table>
                 </div>

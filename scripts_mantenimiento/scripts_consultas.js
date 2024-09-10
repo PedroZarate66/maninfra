@@ -29,7 +29,7 @@ function mostrarcalendario(qstr)
         document.getElementById("CalendarioAnual").innerHTML = this.responseText;
     }
     };
-    xhttp.open("GET", "../../funciones_php/Consulta_calendario.php?q="+qstr, true);
+    xhttp.open("GET", "../../include/Consulta_calendario.php?q="+qstr, true);
     xhttp.send();
 }
 

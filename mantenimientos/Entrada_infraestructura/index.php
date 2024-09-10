@@ -15,21 +15,16 @@
             <div class="col d-flex justify-content-start">
                 <img src="../../LNS.png" height="64" width="170">
             </div>
-            <div class="col">
-                <h3>Actualización, Mejoras y Preservacion de Infraestructura</h3>
-                <h4>Entrada Nueva</h4>
-            </div>
+            
             <div class="col d-flex justify-content-end">
                 <img src="../../buap-negativo.png" height="64" width="64">
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand navbar-light bg-light">
+    <nav class="banner2 navbar-expand">
         <div class="nav navbar-nav">
-            <a class="btn text-dark nav-item nav-link" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step"
-                >Regresar</a
-            >
-            <a class="btn text-dark nav-item nav-link" data-bs-toggle="modal" data-bs-target="#menu_inicial" aria-current="step">Menu inicial</a>
+            <a class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step"
+                >Regresar</a>
         </div>
     </nav>
     
@@ -117,12 +112,13 @@
                 $regeliminar = $_GET["reg_eliminar"];
                 $obj_eli_mej_inf->eliminar_mejora_infraestructura($regeliminar);
             }
-            else
-            {
-                echo "<h5 class='text-center'>Formulario de entrada</h5>";
-            }
+            
             ?>
             <br>
+            <div class="txt-title">
+                <h3>Actualización, Mejoras y Preservacion de Infraestructura</h3>
+                <h4>Entrada Nueva</h4>
+            </div>
     <form action="../Entrada_infraestrucutra/" method="post">
             <div class="row align-items-center">
                 <div class="col-3">
@@ -240,15 +236,16 @@
     <footer class="bg-body-tertiary text-center">
         <!-- Grid container -->
         <div class="container-fluid bg-white d-flex justify-content-end">
-            <button type="button" class="btn btn-lg" id="botones" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
+            <button type="button" class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
         </div>
         <div class="container p-4 bg-light"></div>
         <!-- Grid container -->
       
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-          Benemerita Universidad Autonoma de Puebla:
-          <a class="text-body">Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
+        <a class="text-body">  
+        Benemerita Universidad Autonoma de Puebla:
+          Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
         </div>
         <!-- Copyright -->
     </footer>
