@@ -24,6 +24,8 @@
     </div>
   </div>
 
+
+
   <body>
       <main class="content">
       <!--Se llaman las funciones de inicio de sesion-->
@@ -31,18 +33,60 @@
       require '../funciones_php/Configuracion_sesion.php';
       ?>
       
+
+
       <!--Aqui va en titulo de la pagina-->
           <div class="txt-title">
             <h1>Menu inicial</h1>
           </div>
-      <!--******************************-->
+
       <!--Esto corresponde a los botones que se muestran en en menu de inicio-->
       <div class="container text-center">
         <!--Esto es para alinearlos horizontalmente-->
         <div class="row justify-content-center align-items-center g-2">
-              <!-- El codigo siguiente pertenece al primer boton-->
 
-              <div class="col align-self-start">
+
+
+            <!--PRIMER BOTON "USUARIOS"-->
+            <?php
+              if($_SESSION['tipo'] == "Administrador"){
+                echo'
+                <div class="col align-self-start">
+                  <div class="col sub-title d-flex justify-content-center align-self-start">
+                    Usuarios
+                  </div>
+
+                
+                  <div class="row d-flex justify-content-center align-self-start"><a
+                        name="RegistrarUsuario"
+                        id="botones_desp"
+                        class="btn btn-lg"
+                        href="../Registrar_usuario"
+                        role="button"
+                    >Registrar</a>
+                  </div>
+
+                  <div class="row d-flex justify-content-center align-self-start"><a
+                        name="ListaUsuarios"
+                        id="botones_desp"
+                        class="btn btn-lg"
+                        href="../Lista_usuarios"
+                        role="button"
+                    >Lista</a>
+                  </div>
+
+                </div>';
+              }
+            ?>
+
+
+
+
+
+
+            <!--SEGUNDO BOTON "ISPECCION DIARIA"-->
+
+              <div class="col align-self-start conten_btn">
                 <div class="col sub-title d-flex justify-content-center align-self-start">
                   Inspección diaria
                 </div> 
@@ -63,16 +107,20 @@
                     id="botones_desp"
                     class="btn btn-lg"
                     href="../inspecciones/Historial_Inspecciones"
-                    role="button"
-                >Historial</a>
+                    role="button">
+                    Historial</a>
                 </div> 
-        
-              <!--Aqui tiene que ir la linea de division entre columnas-->
-              <hr class="hr1">
-              <!-- *************************************************** -->
               </div>
+
+
+            <!--SEGUNDO SEPARADOR-->
+            <hr class="hr2">
+            <!--PRIMER SEPARADOR-->
+            <hr class="hr1">
+
+
               
-              <!--El codigo siguiente pertenece al segundo boton-->
+            <!--TERCER BOTON "MANTENIMIENTO"-->
               <div class="col align-self-start">
                 <div class="col sub-title d-flex justify-content-center align-self-start">
                   Mantenimiento
@@ -105,62 +153,38 @@
                       role="button"
                   >Preservacion Inf</a>
                 </div>
-                <hr class="hr2">
               </div>
-            <!--El codigo siguiente pertenece al tercer boton, donde primero verifica que tipo de 
-            usuario es, al verificar el tipo, despliega el boton de usuarios solo si es administrador-->
-            <?php
-              if($_SESSION['tipo'] == "Administrador"){
-                echo'
-                <div class="col align-self-start">
-                  <div class="col sub-title d-flex justify-content-center align-self-start">
-                    Usuarios
-                  </div>
 
-                
-                  <div class="row d-flex justify-content-center align-self-start"><a
-                        name="RegistrarUsuario"
-                        id="botones_desp"
-                        class="btn btn-lg"
-                        href="../Registrar_usuario"
-                        role="button"
-                    >Registrar</a>
-                  </div>
 
-                  <div class="row d-flex justify-content-center align-self-start"><a
-                        name="ListaUsuarios"
-                        id="botones_desp"
-                        class="btn btn-lg"
-                        href="../Lista_usuarios"
-                        role="button"
-                    >Lista</a>
-                  </div>
+              
 
-                </div>';
-              }
-            ?>
+            </div>
+          </div>
+        </main>
+
+
+
+
+        <!--Banner donde se muestra el cierre de sesion-->
+        <div class="banner2 bg-body-tertiary">
+            <a class="btn btn-lg cerrar-sesion" href="../funciones_php/Logout.php">Cerrar sesion</a>
         </div>
-      </div>
-    </main>
 
-    <!--Muestra un pequeño banner donde se muestra el cierre de sesion y la
-      informacion del usuario que esta activo en el sistema-->
-    <div class="banner2 bg-body-tertiary">
-        <a class="btn btn-lg cerrar-sesion" href="../funciones_php/Logout.php">Cerrar sesion</a>
-    </div>
 
-  <footer class="bg-body-tertiary text-center">
-        <!-- Grid container -->
-        
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-        <div class="text-center p-3 footer">
-          Benemerita Universidad Autonoma de Puebla: Laboratorio Nacional de Supercomputo del Sureste de Mexico
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+
+      <!--Codigo correspondiente al Footer-->
+      <footer class="bg-body-tertiary text-center">
+            <div class="text-center p-3 footer">
+              Benemerita Universidad Autonoma de Puebla: Laboratorio Nacional de Supercomputo del Sureste de Mexico
+            </div>
+      </footer>
+
+
+
+      <!--Scripts-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
   </body>

@@ -64,55 +64,34 @@
 #botones_desp{
     background-color: rgb(68, 160, 221);
     color           : rgb(255, 255, 255);
-    margin-top      : 10px;
     line-height     : 20px;
     width           : 200px;   
-    margin-top      : 20px;
-    margin-bottom   : 20px;
-    font-size       : clamp(1rem, -0.875rem + 8.333vw, 1.1rem); ;
-}
-
-.contenedoruno{
-    
-    display        : flex;
-    flex-direction : column;
-    justify-content: center;
-    align-items    : center;
-}
-
-.contenedordos{
-    display       : flex;
-    flex-direction: column;
-    align-items   : center;
-}
-
-.grupo-boton{
-    display        : flex;
-    flex-direction : column;
-    align-items    : center;
-    justify-content: center;
+    margin          : 20px;
+    margin-bottom   : 2px;
+    font-size       : clamp(1rem, -0.875rem + 8.333vw, 1.1rem);
 }
 
 
 
 .hr1{
-    border-left: thick solid rgba(0, 0, 0,0.05);
-    height     : 75.1vh;
+    border-left: thick solid rgba(0, 0, 0, 0.20);;
+    border-top: none;
+    height     : 40vh;
     left       : 38%;
     width      : 0.5vh;
     position   : absolute;
-    top        : 32.3%;
-    transform  : translateY(-20%);
+    top        : 35%;
    }
 
+
 .hr2{
-    border-left: thick solid rgba(0, 0, 0, 0.05);
-    height     : 75.1vh;
+    border-left: thick solid rgba(0, 0, 0, 0.20);
+    border-top: none;
+    height     : 40vh;
     right      : 38%;
-    width      : 0.5vh;
+    width      : 0vh;
     position   : absolute;
-    top        : 32.3%;
-    transform  : translateY(-20%);
+    top        : 35%;
 }
 
 /*Estilos del boton de cerrar sesion */
@@ -142,7 +121,7 @@
 body {
     display         : flex;
     flex-direction  : column;
-    background-color: #F2F2F2;
+    background-color: #E6E6E6;
 }
 .content {
     flex: 1 0 auto;
@@ -162,7 +141,7 @@ body {
 
 
 /*Evadiendo estilos de Bootstrap sobrepuestos*/
-@media (max-width: 1350px) {
+@media (max-width: 1650px) {
 
     #lns-logo{
         width :140px;
@@ -174,7 +153,7 @@ body {
     }
 
     body{
-        background-color: #E6E6E6;
+        /*background-color: #E6E6E6;*/
     }
 
     html, body {
@@ -184,13 +163,13 @@ body {
      
 }
 
-@media (max-width: 580px) {
+@media (max-width: 730px) {
     .container, .container-sm {
     max-width: none !important; 
     }
 
     body{
-        background-color: rgb(60, 0, 255);
+        /*background-color: rgb(60, 0, 255);*/
     }
 
     html, body {
@@ -205,7 +184,7 @@ body {
     }
 
     body{
-        background-color: rgb(0, 255, 76);
+        /*background-color: rgb(0, 255, 76);*/
     }
 
     html, body {
@@ -220,7 +199,7 @@ body {
     }
 
     body{
-        background-color: rgb(255, 106, 0);
+        /*background-color: rgb(255, 106, 0);*/
     }
 
     html, body {
