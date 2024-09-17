@@ -146,15 +146,11 @@
         </div>
         </form>
         <br>
-        <form action="">
+        <form action='../../funciones_php/Editar_infraestructura.php' method='get'>
         <div class="container-fluid">
             <h5 class="text-center">Calendarizar desde actualización, mejoras y preservacion de infraestructura</h5>
-            <div
-                class="table-responsive-xxl"
-            >
-                <table
-                    class="table table-light table-bordered table-hover"
-                >
+            <div class="table-responsive-xxl">
+                <table class="table table-light table-bordered table-hover">
                     <thead>
                         <tr>
                             <th scope="col">Aspecto</th>
@@ -170,12 +166,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
-                        //se ha sustituido por una funcion de un archivo directo
-                        $obtDatInf->obtener_datos_infraestructura();
-                        //Funcion perteneciente a Subsistemas.php
-                        //$ayudante->manejador->obtener_datos_infraestructura(); 
-                        ?>
+                            <?php 
+                            //se ha sustituido por una funcion de un archivo directo
+                            $obtDatInf->obtener_datos_infraestructura();
+                            //Funcion perteneciente a Subsistemas.php
+                            //$ayudante->manejador->obtener_datos_infraestructura(); 
+                            ?>
                     </tbody>
                 </table>
             </div>
@@ -349,6 +345,7 @@
             </div>
         </div>
         </form>
+        <!--*********************************************************-->
 
         <form action="../Entrada_calendario/" method="get">
         <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
