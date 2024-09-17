@@ -73,6 +73,7 @@
                 </div>
             </div></form>
 
+            <!-- FORMULARIO PARA CAMBIAR CONTRASENA DE USUARIO -->
             <form class="needs-validation" action="../funciones_php/Actualizacion_User.php" method="post" novalidate>
                 <div class="modal fade" id="actualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -103,7 +104,8 @@
                     </div>
                 </div>
             </form>
-
+            <!--------------------------------------------------------------------------------------------------------->
+            
             <form action="../funciones_php/Eliminar_user.php" method="post">
                 <div class="modal fade" id="eliminaruser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">

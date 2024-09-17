@@ -402,9 +402,10 @@ class adminMariaDB extends Admin_sql{
             echo "La entrada de infraestructura no existe o ha sido eliminado.";
         }
         else{
-        echo "<div class='table-responsive-xxl text-center'>
+        echo "<div class='table-responsive-xxl text-center cerrar'>
+                <button onclick='cerrartabla()' type='button' class='btn-close text-reset' data-bs-dismiss='cerrar'></button>
                 <table class='table table-light table-bordered table-hover'>
-                    <thead>
+                      <thead>
                         <tr>
                             <th scope='col'>Aspecto</th>
                             <th scope='col'>Descripción</th>
@@ -825,7 +826,7 @@ class adminMariaDB extends Admin_sql{
         $entradainfra[0] = $_POST["nuevo_nombre"];
         $entradainfra[1] = $_POST["tipo_usuario"];
         $entradainfra[2] = $this->tratamiento_contrasenna();
-        $consultasql = "INSERT INTO `mantInfraUsuarios` (`nombreUsuario`, `tipoUsuario`, `contraseñaUsuario`) VALUES ('$entradainfra[0]', '$entradainfra[1]', '$entradainfra[2]');";
+        $consultasql = "INSERT INTO `mantinfrausuarios` (`nombreUsuario`, `tipoUsuario`, `contrasennaUsuario`) VALUES ('$entradainfra[0]', '$entradainfra[1]', '$entradainfra[2]');";
         return $consultasql;
     }
     public function guardar_usuario()

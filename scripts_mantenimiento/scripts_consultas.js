@@ -13,9 +13,14 @@ function mostrarmejora(qstr)
     document.getElementById("tabladatosEliminar").innerHTML = this.responseText;
     }
     };
-    xhttp.open("GET", "../../funciones_php/Consulta_infraestructura.php?q="+qstr, true);
+    xhttp.open("GET", "../../include/Consulta_infraestructura.php?q="+qstr, true);
      xhttp.send();
 }
+
+function editarinfraestructura(){
+        
+}
+
 function mostrarcalendario(qstr)
 {
     var xhttp;
@@ -31,6 +36,13 @@ function mostrarcalendario(qstr)
     };
     xhttp.open("GET", "../../include/Consulta_calendario.php?q="+qstr, true);
     xhttp.send();
+}
+
+function cerrartabla(){
+
+        document.getElementById("tabladatos").innerHTML = "";
+        return;
+    
 }
 
 function eliminarcalendario(qstr)

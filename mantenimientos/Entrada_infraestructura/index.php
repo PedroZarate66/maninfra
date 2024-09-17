@@ -119,7 +119,7 @@
                 <h3>Actualización, Mejoras y Preservacion de Infraestructura</h3>
                 <h4>Entrada Nueva</h4>
             </div>
-    <form action="../Entrada_infraestrucutra/" method="post">
+    <form action="../Entrada_infraestructura/" method="post">
             <div class="row align-items-center">
                 <div class="col-3">
                     Aspecto

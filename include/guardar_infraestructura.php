@@ -13,7 +13,6 @@ class Guardar_Infra{
         $obj_con_inf_ind    = new Consulta_Infraestructura_Ind;   
        
         $sql = $obj_tra_inf->tratamiento_infraestructura();
-        echo "hasta aqui jala";
         $conexion->crear_conection();
         if ($conexion->conexionBD->query($sql) === TRUE){
             echo "<br>";

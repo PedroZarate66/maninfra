@@ -170,19 +170,8 @@
                                 <th scope="col">Tipo</th>
                                 <th scope="col">Origen</th>
                                 <th scope="col">Estatus</th>
-                                <th class="vertical-text" scope="col">Jul</th>
-                                <th class="vertical-text" scope="col">Ago</th>
-                                <th class="vertical-text" scope="col">Sep</th>
-                                <th class="vertical-text" scope="col">Oct</th>
-                                <th class="vertical-text" scope="col">Nov</th>
-                                <th class="vertical-text" scope="col">Dic</th>
-                                <th class="vertical-text" scope="col">Ene</th>
-                                <th class="vertical-text" scope="col">Feb</th>
-                                <th class="vertical-text" scope="col">Mar</th>
-                                <th class="vertical-text" scope="col">Abr</th>
-                                <th class="vertical-text" scope="col">May</th>
-                                <th class="vertical-text" scope="col">Jun</th>
-                                <th></th>
+                                <th scope="col">Mes</th>
+                                <th scope="col">Accion</th>
 
                             </tr>
                         </thead>

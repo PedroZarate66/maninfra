@@ -268,7 +268,7 @@
                 </table>
             </div>
             <div class="container-fluid d-flex justify-content-end">
-                <button type="button" class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
+                <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
                 <div class="modal" id="termino">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -289,7 +289,7 @@
         </div>
         </form>
         <br>
-        <form action="">
+        <!-- <form action="">
         <div class="container-fluid">
             <h5 class="text-center">Calendarizar desde actualización, mejoras y preservacion de infraestructura</h5>
             <div
@@ -323,7 +323,7 @@
                 </table>
             </div>
         </div>
-        </form>
+        </form> -->
         
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
             <div class="offcanvas-header">
@@ -458,7 +458,7 @@
                         </div>
                     </div>
                     <div class="container-fluid d-flex justify-content-end">
-                        <button type="button" class="btn btn-lg" id="botones" data-bs-toggle="modal" data-bs-target="#termino2">Finalizar</button>
+                        <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino2">Finalizar</button>
                     </div>
             </div>
         </div>

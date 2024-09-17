@@ -1,26 +1,27 @@
 <?php
-include_once 'Admin_sql.php';
-
-abstract class generar_consulta_calendario extends Admin_sql{
+include_once 'conexion.php';
+class Generar_Consulta_Cal{
     public final function generar_consulta_calendario()
     {
+        $conexion = new Crear_Conexion;
         $fila = array();
-        $this->crear_conexion();
+        $conexion->crear_conection();
         $sql = "SELECT IdMejora, Aspecto, Descripcion, Beneficios,TipoMantenimiento,Frecuencia,MesPropuesto,AnnoPropuesto,Prioridad,Costo,DATE_FORMAT(`UltimaActualizacion`, '%d-%m-%Y') AS UltimaActualizacion FROM `actualizacionmejoramantenimietos` WHERE IdMejora = ? ";
-        $stmt = $this->conexionBD->prepare($sql);
+        $stmt = $conexion->conexionBD->prepare($sql);
         $stmt->bind_param("s", $_GET['q']);
         $stmt->execute();
         $stmt->store_result();
         $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10]);
         $stmt->fetch();
         $stmt->Close();
-        $this->cerrar_conxion();
+        $conexion->cerrar_conxion();
         if (is_null($fila[0]))
         {
             echo "La entrada de infraestructura no existe o ha sido eliminado.";
         }
         else{
         echo "<div class='table-responsive-xxl text-center'>
+        <button onclick='cerrartabla()' type='button' class='btn-close text-reset' data-bs-dismiss='cerrar'></button>      
                 <table class='table table-light table-bordered table-hover'>
                     <thead>
                         <tr>

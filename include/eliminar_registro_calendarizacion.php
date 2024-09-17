@@ -49,7 +49,42 @@ class Eliminar_Registro_Calendarizacion{
                                 <option value='Pendiente'>Pendiente</option>
                             </select>
                         </td>";
-                        $calendario->imprimircalendario();
+                        if($fila[10] == "1"){
+                            echo "<td>Enero</td>";
+                        }
+                        if($fila[10] == "2"){
+                            echo "<td>Febrero</td>";
+                        }
+                        if($fila[10] == "3"){
+                            echo "<td>Marzo</td>";
+                        }
+                        if($fila[10] == "4"){
+                            echo "<td>Abril</td>";
+                        }
+                        if($fila[10] == "5"){
+                            echo "<td>Mayo</td>";
+                        }
+                        if($fila[10] == "6"){
+                            echo "<td>Junio</td>";
+                        }
+                        if($fila[10] == "7"){
+                            echo "<td>Julio</td>";
+                        }
+                        if($fila[10] == "8"){
+                            echo "<td>Agosto</td>";
+                        }
+                        if($fila[10] == "9"){
+                            echo "<td>Septiembre</td>";
+                        }
+                        if($fila[10] == "10"){
+                            echo "<td>Octubre</td>";
+                        }
+                        if($fila[10] == "11"){
+                            echo "<td>Noviembre</td>";
+                        }
+                        if($fila[10] == "12"){
+                            echo "<td>Diciembre</td>";
+                        }
                         echo "<td><button type='button' class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#eliminar' onclick='mostrarregistro(\"".$fila[0]."\")'>Eliminar</button></td>
                         </tr>";
             }

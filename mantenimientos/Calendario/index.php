@@ -65,33 +65,19 @@
             </div>
         </div>
         <!--********************************************************************-->
-    
-        <!-- <div class="modal" id="menu_inicial">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-warning">
-                        <h4>Advertencia</h4>
-                    </div>
-                    <div class="modal-body">
-                        ¿Esta seguro que desea salir?
-                    </div>
-                    <div class="modal-footer">
-                        <a name="boton_salida" id="boton_salida" class="btn btn-success" href="../../menu_inicial/" role="button">Aceptar</a>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <br>
         <!--******COMIENZA EL CONTENIDO PRINCIPAL*********-->
         <main class="content">
+
         <div class="txt-title">
             <h1>Calendario de Mantenimiento</h1>
         </div>
+
         <div class="container-fluid d-flex justify-content-start">
             <input type="date" id="fecha" name="fecha" disabled>
         </div>
+        
         <form action="">
             <div class="container-fluid d-flex justify-content-start">
                 <div class="mb-3">
@@ -170,18 +156,7 @@
                                 <th scope="col">Tipo</th>
                                 <th scope="col">Origen</th>
                                 <th scope="col">Estatus</th>
-                                <th class="vertical-text" scope="col">Jul</th>
-                                <th class="vertical-text" scope="col">Ago</th>
-                                <th class="vertical-text" scope="col">Sep</th>
-                                <th class="vertical-text" scope="col">Oct</th>
-                                <th class="vertical-text" scope="col">Nov</th>
-                                <th class="vertical-text" scope="col">Dic</th>
-                                <th class="vertical-text" scope="col">Ene</th>
-                                <th class="vertical-text" scope="col">Feb</th>
-                                <th class="vertical-text" scope="col">Mar</th>
-                                <th class="vertical-text" scope="col">Abr</th>
-                                <th class="vertical-text" scope="col">May</th>
-                                <th class="vertical-text" scope="col">Jun</th>
+                                <th scope="col">Mes</th>
                             </tr>
                         </thead>
                         <tbody id="CalendarioAnual"></tbody>
