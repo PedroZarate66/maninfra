@@ -15,7 +15,8 @@ class Obtener_Dat_Infraestructura{
             {
                 if ($fila["HaSidoPlaneado"] == 'Si')
                 {
-                    echo "<tr class='align-middle table-warning'>
+                    echo " 
+                            <tr class='align-middle table-warning'>
                             <th scope='row'>" .$fila["Aspecto"]. "</th>
                             <td>" .$fila["Descripcion"]. "</td>
                             <td>" .$fila["Beneficios"]. "</td>
@@ -30,7 +31,7 @@ class Obtener_Dat_Infraestructura{
                                     <button type='button' class='btn btn-primary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>Accion</button>
                                     <ul class='dropdown-menu'>
                                         <li><a class='dropdown-item' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasScrolling' onclick='mostrarmejora(\"".$fila["IdMejora"]."\")'>Calendarizar</a></li>
-                                        <li><a class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#editar' onclick='mostrarmejora(\"".$fila["IdMejora"]."\")'>Editar</a></li>
+                                        <li><button class='dropdown-item' type='submit'>Editar</button></li>
                                         <li><a class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#eliminar' onclick='mostrarmejora(\"".$fila["IdMejora"]."\")'>Eliminar</a></li>
                                     </ul>
                                 </div>
@@ -39,7 +40,8 @@ class Obtener_Dat_Infraestructura{
                 }
                 else
                 {
-                    echo "<tr class='align-middle'>
+                    echo "
+                            <tr class='align-middle'>
                             <th scope='row'>" .$fila["Aspecto"]. "</th>
                             <td>" .$fila["Descripcion"]. "</td>
                             <td>" .$fila["Beneficios"]. "</td>
@@ -54,12 +56,13 @@ class Obtener_Dat_Infraestructura{
                                     <button type='button' class='btn btn-primary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>Accion</button>
                                     <ul class='dropdown-menu'>
                                         <li><a class='dropdown-item' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasScrolling' onclick='mostrarmejora(\"".$fila["IdMejora"]."\")'>Calendarizar</a></li>
-                                        <li><a class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#editar' onclick='mostrarmejora(\"".$fila["IdMejora"]."\")'>Editar</a></li>
+                                        <li><button class='dropdown-item' type='submit'>Editar</button></li>
                                         <li><a class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#eliminar' onclick='mostrarmejora(\"".$fila["IdMejora"]."\")'>Eliminar</a></li>
                                     </ul>
                                 </div>
                             </td>
-                        </tr>";
+                        </tr>
+                        <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila["IdMejora"]."' aria-describedby='id de mantenimiento' readonly>";
                 }
             }
         }
