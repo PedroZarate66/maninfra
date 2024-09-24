@@ -1,4 +1,43 @@
+//INTENTO PARA QUE PUEDA RECONOCER EL ANCHO DE PANTALLA Y VOLVER RESPONSIVO EL SITIO
+function dimensionarTabla(){
+    //COMENTADO PORQUE NO JALA LAS DIMENSIONES 
+    // if(window.matchMedia("(max-width: 1155px)".match)){
+    //     document.getElementById("tablaPrincipal") = "";
+    // }
+
+    var dimensionar = '<?php $obtDatInf->obtener_datos_infraestructuraT2(); ?>';
+
+    document.getElementById("tablauno").innerHTML = dimensionar;
+    console.log("recargando");
+}
+/*--------------------------------------------------------------------------------*/
+
+
+//FUNCION PARA QUE MUESTRE Y LIGUE EL REGISTRO QUE SE VA A CALENDARIZAR
 function mostrarmejora(qstr)
+{
+    var xhttp;
+    if (qstr == "") {
+        document.getElementById("tabladatos").innerHTML = "";
+        return;
+    }
+
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("tabladatos").innerHTML = this.responseText;
+    
+    }
+    };
+    
+    xhttp.open("GET", "../../include/Consulta_infraestructura.php?q="+qstr, true);
+    xhttp.send();
+}
+//-----------------------------------------------------------------------
+
+//MUESTRA EL REGISTRO QUE SE VA A ELIMINAR PARA QUE PREGUNTE SI ESTAS SEGURO
+function eliminarRegistro(qstr)
 {
     var xhttp;
     if (qstr == "") {
@@ -8,19 +47,15 @@ function mostrarmejora(qstr)
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-    document.getElementById("tabladatos").innerHTML = this.responseText;
-    document.getElementById("tabladatosEditar").innerHTML = this.responseText;
-    document.getElementById("tabladatosEliminar").innerHTML = this.responseText;
+        document.getElementById("tabladatosEliminar").innerHTML = this.responseText;
     }
     };
     xhttp.open("GET", "../../include/Consulta_infraestructura.php?q="+qstr, true);
-     xhttp.send();
+    xhttp.send();
 }
+//-----------------------------------------------------------------------------
 
-function editarinfraestructura(){
-        
-}
-
+//CONSULTA LA FUNCION QUE MUESTRA EL HISTORIAL DE REGISTROS EN LA BD Y LOS MUESTRA
 function mostrarcalendario(qstr)
 {
     var xhttp;
@@ -29,20 +64,20 @@ function mostrarcalendario(qstr)
         return;
     }
     xhttp = new XMLHttpRequest();
+    console.log(xhttp);
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         document.getElementById("CalendarioAnual").innerHTML = this.responseText;
     }
     };
-    xhttp.open("GET", "../../include/Consulta_calendario.php?q="+qstr, true);
+    xhttp.open("GET", "../../include/consulta_calendario.php?q="+qstr, true);
     xhttp.send();
 }
+//----------------------------------------------------------
 
 function cerrartabla(){
-
-        document.getElementById("tabladatos").innerHTML = "";
-        return;
-    
+        window.location.href = "../Historial_infraestructura";
+        return;   
 }
 
 function eliminarcalendario(qstr)
