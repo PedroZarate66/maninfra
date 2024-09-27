@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // //FUNCION DE CONEXION PARA ACCEDER A LOS DATOS DE MYSQL
 
 
@@ -6,6 +7,20 @@ function tabla(){
 }
 
 
+=======
+//INTENTO PARA QUE PUEDA RECONOCER EL ANCHO DE PANTALLA Y VOLVER RESPONSIVO EL SITIO
+function dimensionarTabla(){
+    //COMENTADO PORQUE NO JALA LAS DIMENSIONES 
+    // if(window.matchMedia("(max-width: 1155px)".match)){
+    //     document.getElementById("tablaPrincipal") = "";
+    // }
+
+    var dimensionar = '<?php $obtDatInf->obtener_datos_infraestructuraT2(); ?>';
+
+    document.getElementById("tablauno").innerHTML = dimensionar;
+    console.log("recargando");
+}
+>>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
 /*--------------------------------------------------------------------------------*/
 
 
@@ -21,8 +36,9 @@ function mostrarmejora(qstr)
  
     }
 
+<<<<<<< HEAD
+=======
     xhttp = new XMLHttpRequest();
- 
     xhttp.onreadystatechange = function() {
     
         if (this.readyState == 4 && this.status == 200) {
@@ -33,6 +49,36 @@ function mostrarmejora(qstr)
     
     xhttp.open("GET", "../../include/Consulta_infraestructura.php?q="+qstr, true);
     xhttp.send();
+}
+//-----------------------------------------------------------------------
+
+//MUESTRA EL REGISTRO QUE SE VA A ELIMINAR PARA QUE PREGUNTE SI ESTAS SEGURO
+function eliminarRegistro(qstr)
+{
+    var xhttp;
+    if (qstr == "") {
+        document.getElementById("tabladatos").innerHTML = "";
+        return;
+    }
+>>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
+    xhttp = new XMLHttpRequest();
+ 
+    xhttp.onreadystatechange = function() {
+<<<<<<< HEAD
+    
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("tabladatos").innerHTML = this.responseText;
+    
+=======
+    if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("tabladatosEliminar").innerHTML = this.responseText;
+>>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
+    }
+    };
+    
+    xhttp.open("GET", "../../include/Consulta_infraestructura.php?q="+qstr, true);
+    xhttp.send();
+<<<<<<< HEAD
 }
 //-----------------------------------------------------------------------
 
@@ -61,6 +107,8 @@ function eliminarRegistro(qstr)
     
     xhttp.open("GET", "../../include/Consulta_infraestructura.php?q="+qstr, true);
     xhttp.send();
+=======
+>>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
 }
 //-----------------------------------------------------------------------------
 
@@ -78,7 +126,10 @@ function mostrarcalendario(qstr)
     
     xhttp = new XMLHttpRequest();
     console.log(xhttp);
+<<<<<<< HEAD
     
+=======
+>>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
     xhttp.onreadystatechange = function() {
     
     if (this.readyState == 4 && this.status == 200) {
@@ -88,7 +139,10 @@ function mostrarcalendario(qstr)
     }
 
     };
+<<<<<<< HEAD
     
+=======
+>>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
     xhttp.open("GET", "../../include/consulta_calendario.php?q="+qstr, true);
     xhttp.send();
 }
@@ -230,5 +284,9 @@ function comprobarClave() {
   
           form.classList.add('was-validated')
         }, false)
+<<<<<<< HEAD
     })
+=======
+      })
+>>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
   })()
