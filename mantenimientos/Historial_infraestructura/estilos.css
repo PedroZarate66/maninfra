@@ -115,7 +115,6 @@ th{
     vertical-align: middle;
 }
 
-<<<<<<< HEAD
 
 .planeado{
     --bs-table-bg: #FFF3CD !important;
@@ -145,18 +144,6 @@ th{
 }
 /*---------------------------------------------------------------*/
 
-=======
-.dimensionar{
-    display: none;
-}
-/*---------------------------------------------------------------*/
-
-#tabla{
-    height: 5.78vh;
-    width: 10%;
-}
-
->>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
 
 
 /*Evadiendo estilos de Bootstrap sobrepuestos*/
@@ -181,14 +168,8 @@ th{
     }
 
     .tablados{
-<<<<<<< HEAD
         font-size       : 14px        ;
         display         : absolute    ;
-=======
-        font-size: 14px;
-        display: absolute;
-        
->>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
         background-color: aquamarine;
     }
 
@@ -223,15 +204,10 @@ th{
     .tablados{
         font-size: 12.45px;
         display  : none;/*SE OCULTA LA TABLA DE LA DERECHA*/
-<<<<<<< HEAD
-=======
-        
->>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
         background-color: aquamarine;
     }
 
     /*SE MUESTRA EL BOTON DE CAMBIAR VISTA*/
-<<<<<<< HEAD
     .cambiar_vista{
         align-items     : center;
         padding         : 5px                 ;
@@ -244,10 +220,6 @@ th{
         margin-bottom   : 2px                 ;
         font-size       : clamp(1rem, -0.875rem + 8.333vw, 1.1rem);
         display         : flex;
-=======
-    .dimensionar{
-        display:flex;
->>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
     }
 }
 

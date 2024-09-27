@@ -146,7 +146,6 @@
         </div>
         </form>
         <br>
-<<<<<<< HEAD
         
         <button type="button" id="tabla" class="cambiar_vista">Cambiar vista</button>
         
@@ -171,12 +170,6 @@
         <div class="container-fluid">
             <h5 class="text-center">Calendarizar desde actualización, mejoras y preservacion de infraestructura</h5>
                 <div class="table-responsive-xxl">
-=======
-        <form action='../../funciones_php/Editar_infraestructura.php' method='get'>
-        <div class="container-fluid">
-            <h5 class="text-center">Calendarizar desde actualización, mejoras y preservacion de infraestructura</h5>
-            <div class="table-responsive-xxl">
->>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
                 <table class="table table-light table-bordered table-hover">
                     <thead>
                         <tr>
@@ -195,11 +188,7 @@
                     <tbody>
                             <?php 
                             //se ha sustituido por una funcion de un archivo directo
-<<<<<<< HEAD
                             //$obtDatInf->obtener_datos_infraestructura();
-=======
-                            $obtDatInf->obtener_datos_infraestructura();
->>>>>>> 726e8b0079d7368b19cdc5c8d1321cc20ee2dfef
                             //Funcion perteneciente a Subsistemas.php
                             //$ayudante->manejador->obtener_datos_infraestructura(); 
                             ?>
