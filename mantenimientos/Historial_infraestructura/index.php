@@ -5,8 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style> @import url('../../css_estilos/menu_inicial.css'); </style>
-        <link rel="stylesheet" href="../../css_estilos/pantalla.css">
+        <style> @import url('estilos.css'); </style>
     </head>
     <body>
 
@@ -25,6 +24,7 @@
             $Meses           = array("Año", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diviembre");
             $anno            = date('Y');
             $annomasuno      = $anno++;
+            
         ?>
 
         <div class="p-3 text-center text-white" id="banner">
@@ -146,41 +146,57 @@
         </div>
         </form>
         <br>
-        <form action="">
+        
+        <button type="button" id="tabla" class="cambiar_vista">Cambiar vista</button>
+        
+        <br>
+        <br>
+        <form action='../../funciones_php/Editar_infraestructura.php' method='get'>
+            <div class="contenedortabla">
+                <div class="tablauno" id="tablauno">
+                    <?php $obtDatInf->obtener_datos_infraestructuraT1(); ?>
+                
+                </div>
+
+                <div class="tablados">
+                    <?php $obtDatInf->obtener_datos_infraestructuraT2(); ?>
+                </div>
+            </div>
+        </form>
+        
+
+<!-- 
+        <form action='../../funciones_php/Editar_infraestructura.php' method='get'>
         <div class="container-fluid">
             <h5 class="text-center">Calendarizar desde actualización, mejoras y preservacion de infraestructura</h5>
-            <div
-                class="table-responsive-xxl"
-            >
-                <table
-                    class="table table-light table-bordered table-hover"
-                >
+                <div class="table-responsive-xxl">
+                <table class="table table-light table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">Aspecto</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Beneficios</th>
-                            <th scope="col">Tipo de mantenimiento</th>
-                            <th scope="col">Frecuencia</th>
-                            <th scope="col">Fecha propuesta</th>
-                            <th scope="col">Prioridad</th>
-                            <th scope="col">Costo</th>
-                            <th scope="col">Ultima Actualizacion</th>
-                            <th scope="col"></th>
+                                <th scope="col">Aspecto</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Beneficios</th>
+                                <th scope="col">Tipo de mantenimiento</th>
+                                <th scope="col">Frecuencia</th>
+                                <th scope="col">Fecha propuesta</th>
+                                <th scope="col">Prioridad</th>
+                                <th scope="col">Costo</th>
+                                <th scope="col">Ultima Actualizacion</th>
+                                <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
-                        //se ha sustituido por una funcion de un archivo directo
-                        $obtDatInf->obtener_datos_infraestructura();
-                        //Funcion perteneciente a Subsistemas.php
-                        //$ayudante->manejador->obtener_datos_infraestructura(); 
-                        ?>
+                            <?php 
+                            //se ha sustituido por una funcion de un archivo directo
+                            //$obtDatInf->obtener_datos_infraestructura();
+                            //Funcion perteneciente a Subsistemas.php
+                            //$ayudante->manejador->obtener_datos_infraestructura(); 
+                            ?>
                     </tbody>
                 </table>
             </div>
         </div>
-        </form>
+        </form> -->
             <br>
             
                 <h5 class="text-center">Calendarizar infraestructura</h5>
@@ -349,6 +365,7 @@
             </div>
         </div>
         </form>
+        <!--*********************************************************-->
 
         <form action="../Entrada_calendario/" method="get">
         <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -385,6 +402,18 @@
         <!-- Copyright -->
     </footer>
     <script src="../../scripts_mantenimiento/scripts_consultas.js"></script>
+    <script>
+
+        document.getElementById('tabla').onclick = function(){
+            fetch("http://localhost/maninfra/scripts_mantenimiento/conexion.js")
+            .then(response => response.json())
+            .then(data => 
+            {console.log(data);
+            });
+        }
+
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>

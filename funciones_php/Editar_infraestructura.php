@@ -94,7 +94,7 @@
             }
             if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['origen']))
             {
-                $regeditar = $_GET["origen"];
+                $regeditar       = $_GET["origen"];
                 $infraestructura = $ayudante->manejador->consulta_infraestructura_individual($regeditar);
             }
             ?>
