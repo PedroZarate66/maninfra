@@ -147,6 +147,8 @@
         </form>
         <br>
         
+             <!--SE INTENTA IMPRIMIR LAS TABLAS PARA QUE SEAN RESPONSIVAS-->
+        
         <button type="button" id="tabla" class="cambiar_vista">Cambiar vista</button>
         
         <br>
@@ -158,11 +160,13 @@
                 
                 </div>
 
-                <div class="tablados">
+                <div class="tablados" id="tablados">
                     <?php $obtDatInf->obtener_datos_infraestructuraT2(); ?>
                 </div>
             </div>
         </form>
+        <br>
+        <!--********************************************************-->
         
 
 <!-- 
