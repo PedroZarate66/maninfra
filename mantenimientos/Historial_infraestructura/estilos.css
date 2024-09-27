@@ -21,21 +21,21 @@
 }
 
 .banner2{
-    display: flex;
-    position: static;
-    max-width: 100%;
-    height: 60px;
-    z-index: 2;
+    display         : flex;
+    position        : static;
+    max-width       : 100%;
+    height          : 60px;
+    z-index         : 2;
     background-color: #616161 !important;
-    justify-content: right;
-    align-items: center;
+    justify-content : right;
+    align-items     : center;
     
 }
 
 .minerva{
     width   : 80px;
     height  : 80px;
-    position:absolute;
+    position: absolute;
     right   : 1%;
     top     : 3%;
 }
@@ -43,7 +43,7 @@
 .lns-logo{
     width   : 170px;
     height  : 60px;
-    position:absolute;
+    position: absolute;
     left    : 1%;
     top     : 3.5%;
 }
@@ -61,64 +61,63 @@
 
 #botones-lat{
     border-radius: 5px;
-    margin: 0.7em;
-    border:2px solid white;
-    font-size: 16px; 
+    margin       : 0.7em;
+    border       : 2px solid white;
+    font-size    : 16px; 
 }
 
 body {
-    display:flex;
+    display         : flex;
     flex-direction  : column;
     background-color: #E6E6E6;
 }
 .content {
-    flex: 1 0 auto;
+    flex   : 1 0 auto;
     z-index: 3;
 }
 
 /* CODIGO PERTENECIENTE A LAS TABLA QUE MUESTRA EL HISTORIAL */
 .contenedortabla{
-    width: 99.5%;
-    height: 17%;
-    display: grid;
-    margin-left: 5px;
-    margin-right: 5px;
+    width                : 99.5%;
+    height               : 17%;
+    display              : grid;
+    margin-left          : 5px;
+    margin-right         : 5px;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
+    grid-template-rows   : 50% 50%;
 }
 
 .tablauno{
-    width: 100%;
-    height: 70%;
-    display: table;
-    text-align: center;
+    width           : 100%;
+    height          : 70%;
+    display         : table;
+    text-align      : center;
     background-color: aqua;
 }
 
 .tablados{
-    width: 100%;
-    height: 70%;
-    display: table;
-    text-align: center;
+    width           : 100%;
+    height          : 70%;
+    display         : table;
+    text-align      : center;
     background-color: antiquewhite;
 }
 
 td{
-    position: static;
-    height: 65px;
+    position      : static;
+    height        : 65px;
     vertical-align: middle;
 }
 
 th{
-    position: static;
-    height: 65px;
+    position      : static;
+    height        : 65px;
     vertical-align: middle;
 }
 
 
 .planeado{
     --bs-table-bg: #FFF3CD !important;
-    color: #ECE1BE;
 }
 
 .planeado:hover{
@@ -163,29 +162,17 @@ th{
         height: 100% !important;
     }
 
+    /*MODIFICACIONES DE LAS TABLAS PARA QUE SE AJUSTEN A CAMBIOS DE TAMAÑO
+    CUANDO LA PANTALLA SE HAGA PEQUEÑA*/
     .tablauno{
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .tablados{
-        font-size       : 14px        ;
+        font-size       : 13px        ;
         display         : absolute    ;
         background-color: aquamarine;
     }
-
-    .contenedortabla{
-        width: 99.5%;
-        height: 25%;
-        display: grid;
-        margin-left: 5px;
-        margin-right: 5px;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 50% 50%;
-    }
-}
-
-@media (max-width: 1155px) {
-
 
     .contenedortabla{
         width                : 99.5%;
@@ -193,19 +180,110 @@ th{
         display              : grid;
         margin-left          : 5px;
         margin-right         : 5px;
-        grid-template-columns: 100%;
+        grid-template-columns: 50% 50%;
         grid-template-rows   : 50% 50%;
+    }
+    /***********************************************************************/
+}
+
+@media (min-width: 1155px) {
+    /*MODIFICACIONES DE LAS TABLAS PARA QUE SE AJUSTEN A CAMBIOS DE TAMAÑO
+    CUANDO LA PANTALLA CREZCA*/
+    .contenedortabla{
+        width                : 99.5%;
+        height               : 17%;
+        display              : grid;
+        margin-left          : 5px;
+        margin-right         : 5px;
+        grid-template-columns: 50% 50%;
+        grid-template-rows   : 50% 50%;
+    }
+    
+    .tablauno{
+        width           : 100%;
+        height          : 70%;
+        display         : table !important;
+        text-align      : center;
+        background-color: aqua;
+    }
+    
+    .tablados{
+        width           : 100%;
+        height          : 70%;
+        display         : table !important;
+        text-align      : center;
+        background-color: antiquewhite;
+    }
+    
+    td{
+        position      : static;
+        height        : 65px;
+        vertical-align: middle;
+    }
+    
+    th{
+        position      : static;
+        height        : 65px;
+        vertical-align: middle;
+    }
+    
+    
+    .planeado{
+        --bs-table-bg: #FFF3CD !important;
+    }
+    
+    .planeado:hover{
+        --bs-table-hover-bg: #ebdcdc !important;
+    }
+    /******************************************************/
+}
+
+
+@media (max-width: 1155px) {
+
+    /*MODIFICACIONES DE LAS TABLAS PARA QUE SE AJUSTEN A CAMBIOS DE TAMAÑO*/
+    .contenedortabla{
+        width                : 99.5%;
+        height               : 25%;
+        display              : grid;
+        margin-left          : 5px;
+        margin-right         : 5px;
+        grid-template-columns: 98%;
+        grid-template-rows   : 100%;
     }
 
     .tablauno{
-        font-size: 12.45px;
+        font-size       : 11.45px;
+        width           : 99%;
+        height          : 70%;
+        display         : table;
+        text-align      : center;
+        background-color: aqua;
+
+    }
+
+    td{
+        position      : static;
+        height        : 65px;
+        vertical-align: middle;
+    }
+    
+    th{
+        position      : static;
+        height        : 65px;
+        vertical-align: middle;
     }
 
     .tablados{
-        font-size: 12.45px;
-        display  : none;/*SE OCULTA LA TABLA DE LA DERECHA*/
-        background-color: aquamarine;
+        font-size       : 12.45px;
+        width           : 98%;
+        height          : 20%;
+        display         : none;
+        text-align      : center;
+        background-color: antiquewhite;
+      
     }
+    /*****************************************************/
 
     /*SE MUESTRA EL BOTON DE CAMBIAR VISTA*/
     .cambiar_vista{
@@ -221,12 +299,13 @@ th{
         font-size       : clamp(1rem, -0.875rem + 8.333vw, 1.1rem);
         display         : flex;
     }
+    /****************************************/
 }
 
 
 @media (max-width: 730px) {
     .container, .container-sm {
-    max-width: none !important; 
+        max-width: none !important; 
     }
 
 
@@ -238,7 +317,7 @@ th{
 
 @media (max-width: 450px) {
     .container, .container-sm {
-    max-width: none !important; 
+        max-width: none !important; 
     }
 
     html, body {
@@ -249,7 +328,7 @@ th{
 
 @media (max-width: 170px) {
     .container, .container-sm {
-    max-width: none !important; 
+        max-width: none !important; 
     }
 
     html, body {
@@ -266,7 +345,7 @@ th{
     }
 
     .container, .container-sm {
-    max-width: none !important; 
+        max-width: none !important; 
     }
 
 
