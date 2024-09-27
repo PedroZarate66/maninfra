@@ -201,154 +201,185 @@
             </div>
         </div>
         </form> -->
-            <br>
+    <!--TITULO DEL SEGUNDO FORMULARIO-->
+        <br>
+            <h5 class="text-center">Calendarizar infraestructura</h5>
+        <br>
             
-                <h5 class="text-center">Calendarizar infraestructura</h5>
-            <br>
-            <form action="../Entrada_calendario/" method="post">
-                        <div class="container-fluid text-center" id="tabladatos"></div>
-                        <div class="container-fluid text-center">
-                            <div class="table-responsive-xxl">
-                                <table class="table table-light table-striped align-middle">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col"><label for="num_inventario" class="form-label">No. inventario</label></th>
-                                            <th scope="col"><label for="Desc_bien" class="form-label">Descripción del bien</label></th>
-                                            <th scope="col"><label for="marca" class="form-label">Marca</label></th>
-                                            <th scope="col"><label for="modelo" class="form-label">Modelo</label></th>
-                                            <th scope="col"><label for="num_serie" class="form-label">No. serie</label></th>
-                                            <th scope="col"><label for="ubicacion_Desc" class="form-label">Descripción de la ubicación</label></th>
-                                            <th scope="col"><label for="proveedor" class="form-label">Proveedor</label></th>
-                                            <th scope="col"><label for="tipo_mantenimiento" class="form-label">Tipo de mantenimiento</label></th>
-                                            <th scope="col">Fecha de realizacion</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td scope="row">
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    name="num_inventario"
-                                                    id="num_inventario"
-                                                    aria-describedby="numero de inventario que recivira mantenimiento"
-                                                    placeholder="Numero de inventario"
-                                                />
-                                            </td>
-                                            <td>
-                                                <textarea class="form-control" name="Desc_bien" id="Desc_bien" rows="3" required></textarea>
-                                            </td>
-                                            <td>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    name="marca"
-                                                    id="marca"
-                                                    aria-describedby="marca de la pieza"
-                                                    placeholder="Marca"
-                                                />
-                                            </td>
-                                            <td>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    name="modelo"
-                                                    id="modelo"
-                                                    aria-describedby="modelo de la pieza"
-                                                    placeholder="Modelo"
-                                                />
-                                            </td>
-                                            <td>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    name="num_serie"
-                                                    id="num_serie"
-                                                    aria-describedby="numero de serie de la pieza"
-                                                    placeholder="Numero de serie"
-                                                />
-                                            </td>
-                                            <td>
-                                                <textarea class="form-control" name="ubicacion_Desc" id="ubicacion_Desc" rows="3" required></textarea>
-                                            </td>
-                                            <td>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    name="proveedor"
-                                                    id="proveedor"
-                                                    aria-describedby="proveedor de la pieza"
-                                                    placeholder="Proveedor"
-                                                    required
-                                                />
-                                            </td>
-                                            <td>
-                                                <select class="form-select" name="tipo_mantenimiento" id="tipo_mantenimiento" aria-label="tipo de mantenimiento a realizar" required>
-                                                    <option selected disabled value="">Porfavor seleccione una opcion</option>
-                                                    <option value="Correctivo">Correctivo</option>
-                                                    <option value="Preventivo">Preventivo</option>
-                                                    <option value="Predictivo">Predictivo</option>
-                                                </select>
-                                            </td>
-                                            <td class="align-top">
-                                                <div
-                                                    class="row"
-                                                >
-                                                    <div class="col">
-                                                    <label for="mes" class="form-label">Mes</label>
-                                                        <select class="form-select" name="mes" id="mes" aria-label="Nivel de prioridad" required>
-                                                            <option selected disabled value="">Seleccione mes</option>
-                                                            <option value="1">Enero</option>
-                                                            <option value="2">Febrero</option>
-                                                            <option value="3">Marzo</option>
-                                                            <option value="4">Abril</option>
-                                                            <option value="5">Mayo</option>
-                                                            <option value="6">Junio</option>
-                                                            <option value="7">Julio</option>
-                                                            <option value="8">Agosto</option>
-                                                            <option value="9">Septiembre</option>
-                                                            <option value="10">Octubre</option>
-                                                            <option value="11">Noviembre</option>
-                                                            <option value="12">Diciembre</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="anno" class="form-label">Año</label>
-                                                        <select class="form-select form-select-sm" name="anno" id="anno" required>
-                                                            <option selected disabled value="">Seleccione año</option>
-                                                            <option value="<?php echo $annomasuno; ?>"><?php echo $annomasuno; ?></option>
-                                                            <option value="<?php echo $anno; ?>"><?php echo $anno; ?></option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+        <!--ESTE DIV NOS SIRVE PARA IMPRIMIR UN FORMULARIO PARA CORROBORAR QUE
+        ES EL REGISTRO QUE QUEREMOS ENLAZAR Y CALENDARIZAR-->
+        <div class="container-fluid text-center formulariodos" id="tabladatos"></div>
+
+        <!--FORMULARIO DONDE MUESTRA LOS DATOS QUE SE HAN INGRESADO
+        CON EL OPORTUNIDAD DE INSERTARLOS EN LA BD-->
+        <form action="../Entrada_calendario/" method="post">
+                <div class="contenedortabla">
+                    <!--SE HA OPTADO POR DIVIDIR EL FORMULARIO YA QUE SE NECESITA QUE SE
+                    ADAPTE A PANTALLAS PEQUEÑAS-->
+                    <div class="tablauno">
+                        <table class="table table-light table-striped align-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><label for="num_inventario" class="form-label">No. inventario</label></th>
+                                    <th scope="col"><label for="Desc_bien" class="form-label">Descripción del bien</label></th>
+                                    <th scope="col"><label for="marca" class="form-label">Marca</label></th>
+                                    <th scope="col"><label for="modelo" class="form-label">Modelo</label></th>
+                                    <th scope="col"><label for="num_serie" class="form-label">No. serie</label></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!--PRIMER INPUT DEL FORMULARIO-->
+                                    <td scope="row">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="num_inventario"
+                                            id="num_inventario"
+                                            aria-describedby="numero de inventario que recibira mantenimiento"
+                                            placeholder="Numero de inventario"
+                                        />
+                                    </td>
+                                    <!--SEGUNDO INPUT DEL FORMULARIO-->
+                                    <td>
+                                        <textarea class="form-control" name="Desc_bien" id="Desc_bien" rows="3" required></textarea>
+                                    </td>
+                                    <!--TERCER INPUT DEL FORMULARIO-->
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="marca"
+                                            id="marca"
+                                            aria-describedby="marca de la pieza"
+                                            placeholder="Marca"
+                                        />
+                                    </td>
+                                    <!--CUARTO INPUT DEL FORMULARIO-->
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="modelo"
+                                            id="modelo"
+                                            aria-describedby="modelo de la pieza"
+                                            placeholder="Modelo"
+                                        />
+                                    </td>
+                                    <!--QUINTO INPUT DEL FORMULARIO-->
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="num_serie"
+                                            id="num_serie"
+                                            aria-describedby="numero de serie de la pieza"
+                                            placeholder="Numero de serie"
+                                        />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--AQUI INICIA LA SEGUNDA PARTE DEL FORMULARIO-->
+                    <div class="tablados">
+                        <table class="table table-light table-striped align-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><label for="ubicacion_Desc" class="form-label">Descripción de la ubicación</label></th>
+                                    <th scope="col"><label for="proveedor" class="form-label">Proveedor</label></th>
+                                    <th scope="col"><label for="tipo_mantenimiento" class="form-label">Tipo de mantenimiento</label></th>
+                                    <th scope="col">Fecha de realizacion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!--PRIMER INPUT DE LA SEGUNDA PARTE-->
+                                    <td>
+                                        <textarea class="form-control" name="ubicacion_Desc" id="ubicacion_Desc" rows="3" required></textarea>
+                                    </td>
+                                    <!--SEGUNDO INPUT DE LA SEGUNDA PARTE-->
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="proveedor"
+                                            id="proveedor"
+                                            aria-describedby="proveedor de la pieza"
+                                            placeholder="Proveedor"
+                                            required
+                                        />
+                                    </td>
+                                    <!--TERCERA PARTE DE LA SEGUNDA PARTE-->
+                                    <td>
+                                        <select class="form-select" name="tipo_mantenimiento" id="tipo_mantenimiento" aria-label="tipo de mantenimiento a realizar" required>
+                                            <option selected disabled value="">Porfavor seleccione una opcion</option>
+                                            <option value="Correctivo">Correctivo</option>
+                                            <option value="Preventivo">Preventivo</option>
+                                            <option value="Predictivo">Predictivo</option>
+                                        </select>
+                                    </td>
+                                    <!--CUARTA PARTE DE LA SEGUNDA PARTE-->
+                                    <td class="align-top">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="mes" class="form-label">Mes</label>
+                                                    <select class="form-select" name="mes" id="mes" aria-label="Nivel de prioridad" required>
+                                                        <option selected disabled value="">Seleccione mes</option>
+                                                        <option value="1">Enero</option>
+                                                        <option value="2">Febrero</option>
+                                                        <option value="3">Marzo</option>
+                                                        <option value="4">Abril</option>
+                                                        <option value="5">Mayo</option>
+                                                        <option value="6">Junio</option>
+                                                        <option value="7">Julio</option>
+                                                        <option value="8">Agosto</option>
+                                                        <option value="9">Septiembre</option>
+                                                        <option value="10">Octubre</option>
+                                                        <option value="11">Noviembre</option>
+                                                        <option value="12">Diciembre</option>
+                                                    </select>
+                                            </div>
+                                            <div class="col">
+                                                <label for="anno" class="form-label">Año</label>
+                                                    <select class="form-select form-select-sm" name="anno" id="anno" required>
+                                                        <option selected disabled value="">Seleccione año</option>
+                                                        <option value="<?php echo $annomasuno; ?>"><?php echo $annomasuno; ?></option>
+                                                        <option value="<?php echo $anno; ?>"><?php echo $anno; ?></option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+     
+            <div class="container-fluid d-flex justify-content-end">
+                <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino2">Finalizar</button>
+            </div>
+      
+      
+            <!--INICIO DEL BOTON DE TERMINO, PREGUNTA SI ES CORRECTA LA INFORMACION
+            INGRESADA ANTES DE CONTINUAR--> 
+            <div class="modal" id="termino2">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-warning">
+                            <h4 class="modal-title">Advertencia</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
-                        <div class="container-fluid d-flex justify-content-end">
-                            <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino2">Finalizar</button>
+                        <div class="modal-body">
+                            Por favor asegure que todos los datos sean correctos antes de continuar.
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" type="submit" data-bs-dismiss="modal">Aceptar</button>
                         </div>
                     </div>
-                    </div>
-                    <div class="modal" id="termino2">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header bg-warning">
-                                    <h4 class="modal-title">Advertencia</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                                <div class="modal-body">
-                                    Por favor asegure que todos los datos sean correctos antes de continuar.
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-success" type="submit" data-bs-dismiss="modal">Aceptar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                </div>
+            </div>
+        </form>
 
         <!--FORMULARIO EMERGENTE QUE CORROBORA EL REGISTRO A EDITAR-->
         <form action="../../funciones_php/Editar_infraestructura.php" method="get">
