@@ -210,13 +210,13 @@
         ES EL REGISTRO QUE QUEREMOS ENLAZAR Y CALENDARIZAR-->
         <div class="container-fluid text-center formulariodos" id="tabladatos"></div>
 
-        <!--FORMULARIO DONDE MUESTRA LOS DATOS QUE SE HAN INGRESADO
+       <!--FORMULARIO DONDE MUESTRA LOS DATOS QUE SE HAN INGRESADO
         CON EL OPORTUNIDAD DE INSERTARLOS EN LA BD-->
         <form action="../Entrada_calendario/" method="post">
-                <div class="contenedortabla">
+                <div class="contenedorform">
                     <!--SE HA OPTADO POR DIVIDIR EL FORMULARIO YA QUE SE NECESITA QUE SE
                     ADAPTE A PANTALLAS PEQUEÑAS-->
-                    <div class="tablauno">
+                    <div class="formuno">
                         <table class="table table-light table-striped align-middle">
                             <thead>
                                 <tr>
@@ -282,7 +282,7 @@
                         </table>
                     </div>
                     <!--AQUI INICIA LA SEGUNDA PARTE DEL FORMULARIO-->
-                    <div class="tablados">
+                    <div class="formdos">
                         <table class="table table-light table-striped align-middle">
                             <thead>
                                 <tr>
