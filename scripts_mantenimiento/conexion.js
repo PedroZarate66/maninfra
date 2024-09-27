@@ -21,7 +21,7 @@
             if(error)throw error;
             res.json(results);
         });
-    })
+    });
 
     conexion.query("SELECT `IdMejora`, `Aspecto`, `Descripcion`, `Beneficios`,`TipoMantenimiento`, `Frecuencia`, `MesPropuesto`, `AnnoPropuesto`, `Prioridad`, `Costo`, DATE_FORMAT(`UltimaActualizacion`, '%d-%m-%Y') AS UltimaActualizacion, `HaSidoPlaneado` FROM `actualizacionmejoramantenimietos` ORDER BY `UltimaActualizacion` ASC;", (err,rows)=>{
         if(err) throw err
