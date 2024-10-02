@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../../css_estilos/pantalla.css">
     </head>
     <body>
-        <?php
+    <?php
         //Se incluyen las funciones que se utilizaran, ya que se encuentran en archivos externos
         include_once '../../include/obtener_anno_calendario.php';
         include_once '../../include/guardar_registro_calendario.php';
@@ -66,9 +66,9 @@
         </div>
         <!--********************************************************************-->
 
-        <br>
+ 
         <!--******COMIENZA EL CONTENIDO PRINCIPAL*********-->
-        <main class="content">
+    <main class="content">
 
         <div class="txt-title">
             <h1>Calendario de Mantenimiento</h1>
@@ -92,92 +92,79 @@
         <br>
 
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST")
-        {
-            $Meses = array("Año", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diviembre");
-            $idconsulta = $_POST["id_origen"];
-            $nuevoestatus = $_POST["actualizacion"];
-            //Aqui se llama a las funciones externas para que registren y actualicen el calendario
-            $consulta = $obj_gua_reg_cal->guardar_registro_calendario();
-            $obj_act_din_cal->actualizacion_dinamica_calendario($idconsulta, $nuevoestatus);
-            //$consulta = $ayudante->manejador->guardar_registro_calendario();
-            //$ayudante->manejador->actualizacion_dinamica_calendario($idconsulta,$nuevoestatus);
-            echo "<div class='container-fluid'><h5 class='text-center'>Registro de calendario guardado con exito</h5>";
-                echo "<div class='table-responsive'><table class='table table-bordered'><thead><tr><th scope='col'>Id</th><th scope='col'>No. inventario</th><th scope='col'>Descripción del bien</th><th scope='col'>Marca</th>
-                <th scope='col'>Modelo</th><th scope='col'>No. serie</th><th scope='col'>Descripción de la ubicación</th><th scope='col'>Proveedor</th>
-                <th scope='col'>Tipo de Mantenimiento</th><th scope='col'>Origen</th><th scope='col'>Fecha de realizacion</th><th scope='col'>Estatus</th></tr></thead>";
-                echo "<tbody><tr><th scope='row'>".$consulta["IdCalendario"]."</th><td>".$consulta["NumInventario"]."</td><td>".$consulta["DescBien"]."</td><td>".$consulta["Marca"]."</td><td>".$consulta["Modelo"]."</td>
-                <td>".$consulta["NumSerie"]."</td><td>".$consulta["DescUbicacion"]."</td><td>".$consulta["Proveedor"]."</td><td>".$consulta["TipoMantenimiento"]."</td><td>".$consulta["Origen"]."</td><td>".$Meses[$consulta["FechaMes"]]." ".$consulta["FechaAnno"]."</td><td>".$consulta["Estatus"]."</td></tr></tbody></table></div></div>";
-                echo '<form action="../Calendario/" method="get">
-                <div class="container-fluid d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar">Eliminar</button>
-                    <div class="modal" id="eliminar">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header bg-warning">
-                                    <h4 class="modal-title">Advertencia</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ¿Esta seguro que desea eliminar el registro?.
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-success" type="submit" data-bs-dismiss="modal">Eliminar</button>
+            if ($_SERVER["REQUEST_METHOD"] == "POST")
+            {
+                $Meses = array("Año", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diviembre");
+                $idconsulta = $_POST["id_origen"];
+                $nuevoestatus = $_POST["actualizacion"];
+                //Aqui se llama a las funciones externas para que registren y actualicen el calendario
+                $consulta = $obj_gua_reg_cal->guardar_registro_calendario();
+                $obj_act_din_cal->actualizacion_dinamica_calendario($idconsulta, $nuevoestatus);
+                //$consulta = $ayudante->manejador->guardar_registro_calendario();
+                //$ayudante->manejador->actualizacion_dinamica_calendario($idconsulta,$nuevoestatus);
+                echo "<div class='container-fluid'><h5 class='text-center'>Registro de calendario guardado con exito</h5>";
+                    echo "<div class='table-responsive'><table class='table table-bordered'><thead><tr><th scope='col'>Id</th><th scope='col'>No. inventario</th><th scope='col'>Descripción del bien</th><th scope='col'>Marca</th>
+                    <th scope='col'>Modelo</th><th scope='col'>No. serie</th><th scope='col'>Descripción de la ubicación</th><th scope='col'>Proveedor</th>
+                    <th scope='col'>Tipo de Mantenimiento</th><th scope='col'>Origen</th><th scope='col'>Fecha de realizacion</th><th scope='col'>Estatus</th></tr></thead>";
+                    echo "<tbody><tr><th scope='row'>".$consulta["IdCalendario"]."</th><td>".$consulta["NumInventario"]."</td><td>".$consulta["DescBien"]."</td><td>".$consulta["Marca"]."</td><td>".$consulta["Modelo"]."</td>
+                    <td>".$consulta["NumSerie"]."</td><td>".$consulta["DescUbicacion"]."</td><td>".$consulta["Proveedor"]."</td><td>".$consulta["TipoMantenimiento"]."</td><td>".$consulta["Origen"]."</td><td>".$Meses[$consulta["FechaMes"]]." ".$consulta["FechaAnno"]."</td><td>".$consulta["Estatus"]."</td></tr></tbody></table></div></div>";
+                    echo '<form action="../Calendario/" method="get">
+                    <div class="container-fluid d-flex justify-content-end">
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar">Eliminar</button>
+                        <div class="modal" id="eliminar">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-warning">
+                                        <h4 class="modal-title">Advertencia</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ¿Esta seguro que desea eliminar el registro?.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-success" type="submit" data-bs-dismiss="modal">Eliminar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <input type="hidden" class="form-control" name="reg_eliminar" value="'.$consulta["IdCalendario"].'" aria-describedby="id de mantenimiento" readonly>
-            </form>';
-        }
-        if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['reg_eliminar']))
-            {
-                $calendarioEliminar = $_GET["reg_eliminar"];
-                $obj_eli_reg_cal->eliminar_registro_calendario($calendarioEliminar);
-                //$ayudante->manejador->eliminar_reg_calendario($calendarioEliminar);
-                header('Location: ../Calendario/');
+                    <input type="hidden" class="form-control" name="reg_eliminar" value="'.$consulta["IdCalendario"].'" aria-describedby="id de mantenimiento" readonly>
+                </form>';
             }
+            if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['reg_eliminar']))
+                {
+                    $calendarioEliminar = $_GET["reg_eliminar"];
+                    $obj_eli_reg_cal->eliminar_registro_calendario($calendarioEliminar);
+                    //$ayudante->manejador->eliminar_reg_calendario($calendarioEliminar);
+                    header('Location: ../Calendario/');
+                }
         ?>
-        <br>
      
+
+            <!--SE INTENTA IMPRIMIR LAS TABLAS PARA QUE SEAN RESPONSIVAS-->
+        <button type="button" id="tabla" class="cambiar_vista">Cambiar vista</button>
+        
+
             <div class="container-fluid text-center">
                 <div class="table-responsive-xs text-center">
-                    <table class="table table-light table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">No. inventario</th>
-                                <th scope="col">Descripcion del bien</th>
-                                <th scope="col">Marca</th>
-                                <th scope="col">Modelo</th>
-                                <th scope="col">No. de Serie</th>
-                                <th scope="col">Descripcion de la ubicacion</th>
-                                <th scope="col">Proveedor</th>
-                                <th scope="col">Tipo</th>
-                                <th scope="col">Origen</th>
-                                <th scope="col">Estatus</th>
-                                <th scope="col">Mes</th>
-                            </tr>
-                        </thead>
-                        <tbody id="CalendarioAnual"></tbody>
-                    </table>
+                                    <!--PRIMER PARTE DEL HISTORIAL-->
+                    <div id="CalendarioAnual"></div>
+
+
                 </div>
             </div>
-      
+         
     </main>
-     
-    <footer class="bg-body-tertiary text-center">
-        <!-- Grid container -->
-        
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-                Benemerita Universidad Autonoma de Puebla:
-                <a class="text-body">Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
-            </div>
-        <!-- Copyright -->
-        </footer>
+
+
+    <footer class="text-center">
+        <div class="text-center p-3">
+            Benemerita Universidad Autonoma de Puebla:Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
+        </div>
+    </footer>
+  
+
+
         <div class="modal fade" id="visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
@@ -207,6 +194,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="modal" id="termino">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -257,6 +245,7 @@
                 </div>
             </div>
         </div>
+
     </body>
 
     <script src="../../scripts_mantenimiento/scripts_consultas.js"></script>
