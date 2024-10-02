@@ -7,7 +7,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <style> @import url('estilos.css'); </style>
     </head>
-    <body>
+<body>
 
         <?php
             require_once    '../../include/guardar_registro_calendario.php';
@@ -24,9 +24,9 @@
             $Meses           = array("Año", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diviembre");
             $anno            = date('Y');
             $annomasuno      = $anno++;
-            
         ?>
 
+            <!-- PRIMER DIV PERTENECIENTE AL BANNER #1 -->
         <div class="p-3 text-center text-white" id="banner">
             <div class="row">
                     <div class="col d-flex justify-content-start">
@@ -39,13 +39,15 @@
             </div>
         </div>
 
+                    <!-- NAV PERTENECIENTE AL BOTON DE SALIR REGRESAR #2-->
         <nav class="banner2 navbar-expand">
             <div class="nav navbar-nav">
-                <a class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step"
-                    >Regresar</a>
-                </div>
+                <a class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step">
+                    Regresar
+                </a>
+            </div>
         </nav>
-        
+                    <!--DIV PERTENECIENTE AL BOTON DE REGRESO #3-->
         <div class="modal" id="regreso">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -62,25 +64,12 @@
                 </div>
             </div>
         </div>
-    
-        <div class="modal" id="menu_inicial">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-warning">
-                        <h4>Advertencia</h4>
-                    </div>
-                    <div class="modal-body">
-                        ¿Esta seguro que desea salir?
-                    </div>
-                    <div class="modal-footer">
-                        <a name="boton_salida" id="boton_salida" class="btn btn-success" href="../../menu_inicial/" role="button">Aceptar</a>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <main class="content">
+
+
+                                        <!-- MAIN PERTENECIENTE AL CONTENIDO PRINCIPAL DEL SITIO #4-->
+    <main class="content">
+
+                    <!--PRIMER DIV #1-->
         <div class="container-fluid text-center">
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -140,19 +129,17 @@
                 header('Location: ../Entrada_calendario/');
             }
             ?>
-            <div class="txt-title">
-                <h1>Historial de Actualizacion, Mejoras y Preservacion de Infraestructura</h1>
-            </div>
         </div>
-        </form>
-        <br>
-        
-             <!--SE INTENTA IMPRIMIR LAS TABLAS PARA QUE SEAN RESPONSIVAS-->
-        
+            
+        <div class="txt-title">
+            <h1>Historial de Actualizacion, Mejoras y Preservacion de Infraestructura</h1>
+        </div>
+
+        <!--SE INTENTA IMPRIMIR LAS TABLAS PARA QUE SEAN RESPONSIVAS-->
+                    <!--SEGUNDO ELEMENTO #2-->
         <button type="button" id="tabla" class="cambiar_vista">Cambiar vista</button>
         
-        <br>
-        <br>
+                    <!--TERCER ELEMENTO #3-->
         <form action='../../funciones_php/Editar_infraestructura.php' method='get'>
             <div class="contenedortabla">
                 <div class="tablauno" id="tablauno">
@@ -165,53 +152,19 @@
                 </div>
             </div>
         </form>
-        <br>
         <!--********************************************************-->
-        
 
-<!-- 
-        <form action='../../funciones_php/Editar_infraestructura.php' method='get'>
-        <div class="container-fluid">
-            <h5 class="text-center">Calendarizar desde actualización, mejoras y preservacion de infraestructura</h5>
-                <div class="table-responsive-xxl">
-                <table class="table table-light table-bordered table-hover">
-                    <thead>
-                        <tr>
-                                <th scope="col">Aspecto</th>
-                                <th scope="col">Descripción</th>
-                                <th scope="col">Beneficios</th>
-                                <th scope="col">Tipo de mantenimiento</th>
-                                <th scope="col">Frecuencia</th>
-                                <th scope="col">Fecha propuesta</th>
-                                <th scope="col">Prioridad</th>
-                                <th scope="col">Costo</th>
-                                <th scope="col">Ultima Actualizacion</th>
-                                <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                            <?php 
-                            //se ha sustituido por una funcion de un archivo directo
-                            //$obtDatInf->obtener_datos_infraestructura();
-                            //Funcion perteneciente a Subsistemas.php
-                            //$ayudante->manejador->obtener_datos_infraestructura(); 
-                            ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        </form> -->
-    <!--TITULO DEL SEGUNDO FORMULARIO-->
+            <!--TITULO DEL SEGUNDO FORMULARIO #4-->
         <br>
             <h5 class="text-center">Calendarizar infraestructura</h5>
         <br>
             
         <!--ESTE DIV NOS SIRVE PARA IMPRIMIR UN FORMULARIO PARA CORROBORAR QUE
-        ES EL REGISTRO QUE QUEREMOS ENLAZAR Y CALENDARIZAR-->
+        ES EL REGISTRO QUE QUEREMOS ENLAZAR Y CALENDARIZAR #5-->
         <div class="container-fluid text-center formulariodos" id="tabladatos"></div>
 
-       <!--FORMULARIO DONDE MUESTRA LOS DATOS QUE SE HAN INGRESADO
-        CON EL OPORTUNIDAD DE INSERTARLOS EN LA BD-->
+        <!--FORMULARIO DONDE MUESTRA LOS DATOS QUE SE HAN INGRESADO
+        CON EL OPORTUNIDAD DE INSERTARLOS EN LA BD #6-->
         <form action="../Entrada_calendario/" method="post">
                 <div class="contenedorform">
                     <!--SE HA OPTADO POR DIVIDIR EL FORMULARIO YA QUE SE NECESITA QUE SE
@@ -355,10 +308,9 @@
                         </table>
                     </div>
                 </div>
-     
-            <div class="container-fluid d-flex justify-content-end">
-                <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino2">Finalizar</button>
-            </div>
+                <div class="finalizar">
+                    <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino2">Finalizar</button>
+                </div>
       
       
             <!--INICIO DEL BOTON DE TERMINO, PREGUNTA SI ES CORRECTA LA INFORMACION
@@ -381,7 +333,7 @@
             </div>
         </form>
 
-        <!--FORMULARIO EMERGENTE QUE CORROBORA EL REGISTRO A EDITAR-->
+                        <!--FORMULARIO EMERGENTE QUE CORROBORA EL REGISTRO A EDITAR #7-->
         <form action="../../funciones_php/Editar_infraestructura.php" method="get">
         <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -402,6 +354,7 @@
         </form>
         <!--*********************************************************-->
 
+                        <!--FORMULARIO PARA CORROBORAR EL ELIMINAR EL REGISTRO #8-->
         <form action="../Entrada_calendario/" method="get">
         <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -420,22 +373,15 @@
             </div>
         </div>
         </form>
-        </main>
-
-    <footer class="bg-body-tertiary text-center">
-        <!-- Grid container -->
-        
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-            <a class="text-body">
-                Benemerita Universidad Autonoma de Puebla:
-                Laboratorio Nacional de Supercomputo del Sureste de Mexico
-            </a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+        <!--*********************************************************-->
+                 
+                      <!--FOOTER DEL SITIO-->
+        <footer class="text-center footer">
+            <div class="text-center p-3">
+                Benemerita Universidad Autonoma de Puebla:Laboratorio Nacional de Supercomputo del Sureste de Mexico
+            </div>
+        </footer>
+    </main>
     <script src="../../scripts_mantenimiento/scripts_consultas.js"></script>
     <script>
 
