@@ -7,7 +7,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="estilos.css">
     </head>
-    <body>
+      <body>
     <?php
         //Se incluyen las funciones que se utilizaran, ya que se encuentran en archivos externos
         include_once '../../include/obtener_anno_calendario.php';
@@ -26,12 +26,12 @@
         <!--***************BANNER QUE CONTIENE LOS LOGOS************************-->
         <div class="p-3 text-center text-white" id="banner">
             <div class="row">
-                    <div class="col d-flex justify-content-start">
-                    <img src="../../LNS.png" height="64" width="170">
+                    <div class="col lns-logo d-flex justify-content-start">
+                    <img src="../../LNS.png">
                 </div>
                 
-                <div class="col d-flex justify-content-end">
-                    <img src="../../buap-negativo.png" height="64" width="64">
+                <div class="col minerva d-flex justify-content-end">
+                    <img src="../../buap-negativo.png">
                 </div>
             </div>
         </div>
@@ -72,22 +72,27 @@
         <div class="txt-title">
             <h1>Calendario de Mantenimiento</h1>
         </div>
-
-        <div class="container-fluid d-flex justify-content-start">
-            <input type="date" id="fecha" name="fecha" disabled>
-        </div>
         
-        <form action="">
+        <div class="menu-anio">
+            <div class="seleccionar-anio">
+
+            <!--SI SE BUSCA QUE MUESTRE LA FECHA ACTUAL EN EL MENU, 
+                        DESCOMENTAR LAS SIGUIENTES LINEAS:-->
+
+                <!-- <h5>Hoy es:</h5>
             <div class="container-fluid d-flex justify-content-start">
-                <div class="mb-3">
-                    <label for="anno_calendario" class="form-label">Año</label>
-                    <select class="form-select form-select-sm" size="3" name="anno_calendario" id="anno_calendario" onchange="mostrarcalendario(this.value)">
-                        <option selected disabled value=" ">Seleccione un año</option>
-                        <?php $obj_obt_an_cal->obtener_anno_calendario(); ?>
-                    </select>
-                </div>
+                <input type="date" id="fecha" name="fecha" disabled>
+            </div> -->
+
+               <label for="anno_calendario" class="form-label">Ver historial del año:</label>
+                    
+               <select class="form-select form-select-sm" size="3" name="anno_calendario" id="anno_calendario" onchange="mostrarcalendario(this.value)">
+                    <!-- <option selected disabled value=" ">Seleccione un año</option> -->
+                    <?php $obj_obt_an_cal->obtener_anno_calendario(); ?>
+                </select>
             </div>
-        </form>
+        </div>
+    
         <br>
 
         <?php
@@ -144,14 +149,12 @@
         <button type="button" id="tabla" class="cambiar_vista">Cambiar vista</button>
         
 
-            <div class="container-fluid text-center">
-                <div class="table-responsive-xs text-center">
-                                    <!--PRIMER PARTE DEL HISTORIAL-->
-                    <div id="CalendarioAnual"></div>
-
-
-                </div>
+        <div class="container-fluid text-center">
+            <div class="table-responsive-xs text-center">
+                     <!--PRIMER PARTE DEL HISTORIAL-->
+                <div id="CalendarioAnual"></div>
             </div>
+        </div>
      
 
     </main>
