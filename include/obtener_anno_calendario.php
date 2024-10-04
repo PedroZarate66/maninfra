@@ -11,7 +11,12 @@ class Obtener_An_Calendario{
         {
             while($fila = $resultado->fetch_assoc())
             {
-                echo '<option value="'.$fila["FechaAnno"].'">'.$fila["FechaAnno"].'</option>';
+                if($fila["FechaAnno"] == "0"){
+
+                }else{
+                    echo '<option value="'.$fila["FechaAnno"].'">'.$fila["FechaAnno"].'</option>';
+                }
+                
             }
         }
         else
@@ -22,3 +27,4 @@ class Obtener_An_Calendario{
     }
 }
 ?>
+
