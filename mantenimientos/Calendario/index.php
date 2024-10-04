@@ -5,8 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style> @import url('../../css_estilos/menu_inicial.css'); </style>
-        <link rel="stylesheet" href="../../css_estilos/pantalla.css">
+        <link rel="stylesheet" href="estilos.css">
     </head>
     <body>
     <?php
@@ -153,99 +152,17 @@
 
                 </div>
             </div>
-         
+     
+
     </main>
-
-
     <footer class="text-center">
         <div class="text-center p-3">
             Benemerita Universidad Autonoma de Puebla:Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
         </div>
     </footer>
-  
 
-
-        <div class="modal fade" id="visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header bg-info">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Datos de infraestructura</h1>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid text-center" id="tabladatos"></div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <form action="../Calendario/" method="post">
-            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="reprogramacion" aria-labelledby="offcanvasScrollingLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Recalendarizar infraestructura</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="container-fluid text-center" id="consultacalendario"></div>
-                    <div class="container-fluid d-flex justify-content-end">
-                        <button type="button" class="btn btn-lg" id="botones" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal" id="termino">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header bg-warning">
-                            <h4 class="modal-title">Advertencia</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            Por favor asegure que todos los datos sean correctos antes de continuar.
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-success" type="submit" data-bs-dismiss="modal">Aceptar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-        <form action="../Calendario/" method="get">
-            <div class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" id="eliminar">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header bg-danger">
-                            <h1 class="modal-title fs-5 text-white">Advertencia: ¿está seguro de elimininar la siguiente entrada?</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container-fluid text-center" id="consultaeliminar"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-danger" type="submit" data-bs-dismiss="modal">Aceptar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-        <div class="toast-container position-fixed bottom-0 end-0 p-3">
-            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-header">
-                    <img src="../../favicon.ico" class="rounded me-2" width="20" height="20">
-                    <strong class="me-auto">Server</strong>
-                    <small>Ahora</small>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-                    <div class="conteiner text-center" id="respuesta"></div>
-                </div>
-            </div>
-        </div>
-
+    
+      
     </body>
 
     <script src="../../scripts_mantenimiento/scripts_consultas.js"></script>
