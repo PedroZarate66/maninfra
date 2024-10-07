@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <!--<style> @import url('../../css_estilos/propiedades_menu_inicial.css'); </style>-->
-        <link rel="stylesheet" href="../../css_estilos/menu_inicial.css">
-        <link rel="stylesheet" href="../../css_estilos/pantalla.css">
+        <link rel="stylesheet" href="estilos.css">
     </head>
 
     <div class="p-3 text-center text-white" id="banner">
@@ -127,6 +126,7 @@
                 </div>
 
                 <div class="contenedorform">
+
                     <div class="formprincipal">
                         <!--FORMULARIO DE INSERCION DE DATOS-->
                         <form action="../Entrada_infraestructura/" method="post">
@@ -177,6 +177,9 @@
                                         <input class="form-control" type="text" name="infra_tipo_mantenimiento" placeholder="Ejemplo: Preventivo, Correctivo, Actualizacion o Mejora" aria-label="tipo de mantenimiento" required>
                                     </div>
                                 </div>
+                    </div>
+                                        <!--AQUI SE DIVIDE EL FORMULARIO-->
+                    <div class="form2">
                                 <br>
                                     <!--QUINTO INPUT DEL FORMULARIO-->
                                 <div class="row align-items-center">

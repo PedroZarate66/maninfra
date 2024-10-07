@@ -13,14 +13,22 @@ body {
     min-height : 69%;
 }
 
-footer {
+footer{
     width           : 100%;
-    height          : 6%;
+    height          : 5.5%;
+    color           : #F2F2F2 !important;
+    background-color: #242424 !important;
+    font            : 14px Karla, Sans-Serif;
+}
+
+/* .footer {
+    width           : 100%;
+    height          : 100%;
     color           : #F2F2F2 !important;
     background-color: #242424;
     font            : 14px Karla, Sans-Serif;
-
-}
+    font-size: 15px;
+} */
 
 /*PERTENECIENTE AL BANNER PRINCIPAL*/
 #banner {
@@ -165,28 +173,72 @@ footer {
     html, body {
         height: 100% !important;
     }
+
+    #banner{
+        height: 10%;
+    }
     
      
 }
 
 @media (max-width: 1650px) {
 
-    #lns-logo{
-        width :140px;
-        height: 60;
-    }
-
-    .container, .container-sm {
-    max-width: none !important; 
+    .lns-logo{
+        width : 120px;
+        height: 40;
     }
 
 
     html, body {
         height: 100% !important;
     }
-    
-     
+
+
+    .content{
+        height: 70%;
+    }
+
+    #botones_desp{
+        font-size: 14px;
+        height: 30px;
+        width: 120px;
+        padding: 2px;
+    }
+
+    #banner{
+        height: 20%;
+    }
+
+    .cerrar-sesion{
+        height: 6%;
+    }
+
+    .banner2{
+        height: 10%;
+    }
+
+    footer{
+        height: 10%;
+        align-content: center;
+     }
 }
+
+@media (max-width: 1355px){
+    .container, .container-sm {
+        max-width: none !important; 
+    }
+
+    html, body {
+        height: 100% !important;
+    }
+
+
+    footer{
+        height: 10%;
+    }
+}
+
+
 
 @media (max-width: 980px){
     .hr1{
@@ -195,6 +247,10 @@ footer {
 
     .hr2{
         display: none !important;
+    }
+
+    footer{
+        height: 10%;
     }
 }
 
@@ -207,16 +263,24 @@ footer {
     html, body {
         height: 110% !important;
     }
+
+    footer{
+        height: 10%;
+    }
     
 }
 
-@media (max-width: 450px) {
+@media (max-width: 470px) {
     .container, .container-sm {
     max-width: none !important; 
     }
 
     #banner{
-        height: 8.5%;
+        height: 11%;
+    }
+
+    .banner2{
+        height: 6%;
     }
 
     .minerva{
@@ -230,7 +294,7 @@ footer {
     }
 
     html, body {
-        height: 120% !important;
+        height: 110% !important;
     }
 
     footer{
@@ -239,6 +303,15 @@ footer {
     
 }
 
+@media (max-width: 320px){
+    html, body {
+        height: 120% !important;
+    }
+
+    footer{
+        height: 7.5%;
+    }
+}
 
 @media (max-width: 260px){
     .minerva{
@@ -246,11 +319,26 @@ footer {
     }
 
     footer{
-        height: 11%;
+        height: 10%;
+    }
+
+    html, body {
+        height: 120% !important;
     }
 }
 
-@media (max-width: 170px) {
+@media (max-width: 192px){
+    footer{
+        height: 10%;
+    }
+
+    html, body {
+        height: 125% !important;
+    }   
+}
+
+
+@media (max-width: 175px) {
     .container, .container-sm {
     max-width: none !important; 
     }
@@ -270,7 +358,7 @@ footer {
     }
     
     html, body {
-        height: 130% !important;
+        height: 128% !important;
     }
     
 }

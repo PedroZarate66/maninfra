@@ -13,7 +13,7 @@
 
     <!--Esto pertenece a el banner del menu inicial. se agregan los logos y titulos 
     correspondientes-->
-  <div class="p-3 text-center text-white" id="banner">
+  <div class="p-3" id="banner">
     <div class="row">
       <div class="col lns-logo d-flex justify-content-start">
         <img src="../LNS.png">
@@ -174,14 +174,14 @@
 
     <!--Muestra un pequeño banner donde se muestra el cierre de sesion y la
       informacion del usuario que esta activo en el sistema-->
-    <div class="banner2 bg-body-tertiary">
+    <div class="banner2">
         <a class="btn btn-lg cerrar-sesion" href="../funciones_php/Logout.php">Cerrar sesion</a>
     </div>
 
 
             <!--CODIGO PERTENECIENTE AL FOOTER-->
-    <footer class="bg-body-tertiary text-center">
-        <div class="text-center p-3 footer">
+    <footer class="text-center">
+        <div class="text-center ">
           Benemerita Universidad Autonoma de Puebla: Laboratorio Nacional de Supercomputo del Sureste de Mexico
         </div>
     </footer>

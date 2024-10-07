@@ -183,7 +183,29 @@ th{
         height        : 90px;
         vertical-align: middle;
     }
+
+    #banner{
+        height: 15%;
+    }
+
+    footer{
+        height: 8%;
+    }
      
+}
+
+@media (max-width: 1355px){
+    .container, .container-sm {
+        max-width: none !important; 
+    }
+
+    html, body {
+        height: 100% !important;
+    }
+
+    footer{
+        height: 8%;
+    }
 }
 
 /*SEGUNDO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
