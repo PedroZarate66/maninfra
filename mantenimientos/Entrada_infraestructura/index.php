@@ -8,25 +8,28 @@
         <!--<style> @import url('../../css_estilos/propiedades_menu_inicial.css'); </style>-->
         <link rel="stylesheet" href="estilos.css">
     </head>
-
+         <!--PERTENECE AL BANNER PRINCIPAL-->
     <div class="p-3 text-center text-white" id="banner">
         <div class="row">
-            <div class="col d-flex justify-content-start">
-                <img src="../../LNS.png" height="64" width="170">
+            <div class="col lns-logo d-flex justify-content-start">
+                <img src="../../LNS.png">
             </div>
             
-            <div class="col d-flex justify-content-end">
-                <img src="../../buap-negativo.png" height="64" width="64">
+            <div class="col minerva d-flex justify-content-end">
+                <img src="../../buap-negativo.png">
             </div>
         </div>
     </div>
+
+            <!--PERTENECE AL SEGUNDO BANNER-->
     <nav class="banner2 navbar-expand">
         <div class="nav navbar-nav">
-            <a class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step"
+            <a class="btn btn-lat" id="botones-lat" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step"
                 >Regresar</a>
         </div>
     </nav>
     
+            <!--PERTENECE AL MENSAJE EMERGENTE SE REGRESO-->
     <div class="modal" id="regreso">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -44,27 +47,10 @@
         </div>
     </div>
 
-    <div class="modal" id="menu_inicial">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-warning">
-                    <h4>Advertencia</h4>
-                </div>
-                <div class="modal-body">
-                    ¿Esta seguro que desea salir?
-                </div>
-                <div class="modal-footer">
-                    <a name="boton_salida" id="boton_salida" class="btn btn-success" href="../../menu_inicial/" role="button">Aceptar</a>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-           <!--COMIENZA EL CONTENIDO PRINCIPAL-->
+            <!--COMIENZA EL CONTENIDO PRINCIPAL-->
     <body>
         <main class="content">
-        
+            
             <div class="container-fluid mt-3">
 
                         <!--SE INSERTA CODIGO PHP PARA LA INSERCION DE REGISTROS-->
@@ -132,49 +118,49 @@
                         <form action="../Entrada_infraestructura/" method="post">
                                     <!--PRIMER INPUT DEL FORMULARIO-->
                                 <div class="row align-items-center">
-                                    <div class="col-3">
+                                    <div class="titulo-input">
                                         Aspecto
                                     </div>
 
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="infra_aspecto" class="form-label"></label>
-                                            <textarea class="form-control" name="infra_aspecto" id="infra_aspecto" rows="3" required></textarea>
+                                            <textarea class="input-area" name="infra_aspecto" id="infra_aspecto" rows="3" required></textarea>
                                         </div>
                                     </div>
                                 </div>
                                     <!--SEGUNDO INPUT DEL FORMULARIO-->
                                 <div class="row align-items-center">
-                                    <div class="col-3">
+                                    <div class="titulo-input">
                                         Descripción
                                     </div>
 
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="infra_desc" class="form-label"></label>
-                                            <textarea class="form-control" name="infra_desc" id="infra_desc" rows="3" required></textarea>
+                                            <textarea class="input-area" name="infra_desc" id="infra_desc" rows="3" required></textarea>
                                         </div>
                                     </div>
                                 </div>
                                     <!--TERCER INPUT DEL FORMULARIO-->
                                 <div class="row align-items-center">
-                                    <div class="col-3">
+                                    <div class="titulo-input">
                                         Beneficios
                                     </div>
 
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="infra_beneficios" class="form-label"></label>
-                                            <textarea class="form-control" name="infra_beneficios" id="infra_beneficios" rows="3" required></textarea>
+                                            <textarea class="input-area" name="infra_beneficios" id="infra_beneficios" rows="3" required></textarea>
                                         </div>
                                     </div>
                                 </div>
                                     <!--CUARTO INPUT DEL FORMULARIO-->
                                 <div class="row align-items-center">
-                                    <div class="col-3">Tipo de mantenimiento</div>
+                                    <div class="titulo-input">Tipo de mantenimiento</div>
 
-                                    <div class="col-4">
-                                        <input class="form-control" type="text" name="infra_tipo_mantenimiento" placeholder="Ejemplo: Preventivo, Correctivo, Actualizacion o Mejora" aria-label="tipo de mantenimiento" required>
+                                    <div class="contenedor-input">
+                                        <input class="input-area" type="text" name="infra_tipo_mantenimiento" placeholder="Ejemplo: Preventivo, Correctivo, Actualizacion o Mejora" aria-label="tipo de mantenimiento" required>
                                     </div>
                                 </div>
                     </div>
@@ -183,19 +169,19 @@
                                 <br>
                                     <!--QUINTO INPUT DEL FORMULARIO-->
                                 <div class="row align-items-center">
-                                    <div class="col-3">Frecuencia</div>
+                                    <div class="titulo-input">Frecuencia</div>
 
-                                    <div class="col-4">
-                                        <input class="form-control" type="text" name="infra_frecuencia" placeholder="Una vez, Trimestral, Semestral, Anual" aria-label="frecuencia del registro" required>
+                                    <div class="contenedor-input">
+                                        <input class="input" type="text" name="infra_frecuencia" placeholder="Una vez, Trimestral, Semestral, Anual" aria-label="frecuencia del registro" required>
                                     </div>
                                 </div>
                                 <br>
                                     <!--SEXTO INPUT DEL FORMULARIO-->
                                 <div class="row align-items-center">
-                                    <div class="col-3">Fecha propuesta para realización</div>
+                                    <div class="titulo-input">Fecha propuesta para realización</div>
 
-                                    <div class="col-2">
-                                        <select class="form-select" name="infra_mes_propuesto" aria-label="Nivel de prioridad" required>
+                                    <div class="contenedor-input">
+                                        <select class="input" name="infra_mes_propuesto" aria-label="Nivel de prioridad" required>
                                             <option selected disabled value="">Porfavor seleccione mes</option>
                                             <option value="Enero">Enero</option>
                                             <option value="Febrero">Febrero</option>
@@ -211,18 +197,19 @@
                                             <option value="Diciembre">Diciembre</option>
                                         </select>
                                     </div>
-
-                                    <div class="col-2">
-                                        <input class="form-control" type="number" name="infra_anno_propuesta" placeholder="Año" aria-label="No confundir con la fecha para calendarizar" required>
+                                    <br>
+                                    <br>
+                                    <div class="contenedor-input">
+                                        <input class="input" type="number" name="infra_anno_propuesta" placeholder="Año" aria-label="No confundir con la fecha para calendarizar" required>
                                     </div>
                                 </div>
                                 <br>
                                     <!--SEPTIMO INPUT DEL FORMULARIO-->
                                 <div class="row align-items-center">
-                                    <div class="col-3">Prioridad</div>
+                                    <div class="titulo-input">Prioridad</div>
 
-                                    <div class="col-2">
-                                        <select class="form-select" name="infra_prioridad" aria-label="Nivel de prioridad" required>
+                                    <div class="contenedor-input">
+                                        <select class="input" name="infra_prioridad" aria-label="Nivel de prioridad" required>
                                             <option selected disabled value="">Porfavor seleccione una opcion</option>
                                             <option value="Alta">Alta</option>
                                             <option value="Media">Media</option>
@@ -233,20 +220,17 @@
                                 <br>
                                     <!--OCTAVO INPUT DEL FORMULARIO-->
                                 <div class="row align-items-center">
-                                    <div class="col-3">Costo estimado</div>
+                                    <div class="titulo-input">Costo estimado</div>
                                     
-                                    <div class="col-2">
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text bg-light" id="basic-addon1">$</span>
-                                            <input type="number" class="form-control" name="infra_costo_estimado" placeholder=" " aria-label="campo para presupuesto" required>
-                                        </div>
+                                    <div class="contenedor-input">
+                                        <input type="number" class="input" name="infra_costo_estimado" placeholder="$Costo estimado" aria-label="campo para presupuesto" required>
                                     </div>
                                 </div>
                             
                             
                             
                                 <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
-                           
+                        
                                     <!--     PREGUNTA SI LOS DATOS SON CORRECTOS
                                     ESTE NO SE MUESTRA HASTA QUE SE DA CLIC EN FINALIZAR-->
                                 <div class="modal" id="termino">
@@ -267,10 +251,9 @@
                                 </div>
                             </form>
                     </div>
-                   
+                
                 </div>
         </main>
-
             <!--FOOTER DEL SITIO-->
         <footer class="text-center footer">
             <div class="text-center p-3">
