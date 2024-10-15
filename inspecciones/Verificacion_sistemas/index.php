@@ -5,8 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style> @import url('../../css_estilos/menu_inicial.css'); </style>
-        <link rel="stylesheet" href="../../css_estilos/pantalla.css">
+        <link rel="stylesheet" href="estilos.css">
     </head>
              <!--BANNER PRINCPIAL-->
     <div class="p-3 text-center text-white" id="banner">
@@ -234,7 +233,7 @@
                                 role="tabpanel"
                                 aria-labelledby="biometricos-tab"
                             >
-                                <div class="container">
+                                <div class="container1">
                                 
                                     <br>
                                 
@@ -465,7 +464,7 @@
                                     aria-labelledby="Lamparas-tab"
                                 >
                                         <!--CONTENEDOR PRINCIPAL, SEGUNDO FORMULARIO-->
-                                <div class="container">
+                                <div class="container2">
 
                                 <br>
 
