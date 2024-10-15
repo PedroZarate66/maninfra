@@ -7,15 +7,15 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="estilos.css">
     </head>
-             <!--BANNER PRINCPIAL-->
+              <!--BANNER PRINCPIAL-->
     <div class="p-3 text-center text-white" id="banner">
         <div class="row">
-                <div class="col d-flex justify-content-start">
-                <img src="../../LNS.png" height="64" width="170">
+                <div class="col lns-logo d-flex justify-content-start">
+                <img src="../../LNS.png">
             </div>
             
-            <div class="col d-flex justify-content-end">
-                <img src="../../buap-negativo.png" height="64" width="64">
+            <div class="col minerva d-flex justify-content-end">
+                <img src="../../buap-negativo.png">
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
 
 
 <body>
-    <main class="content">
+    <main class="content" id="contenedorbody">
         <!--LLAMAMOS ARCHIVO QUE SE UTILIZARAN MAS ADELANTE-->
         <?php
             include_once '../../include/obtener_ultimo_Id.php';
@@ -66,7 +66,7 @@
     
                 <!--INICIO DEL FORMULARIO PRINCIPAL-->
         <form class="needs-validation" action="../../include/guardar_registro_inspeccion.php" method="post" novalidate>
-            <div class="contenedor-principal container-fluid mt-3">
+            <div class="contenedor-principal">
                             <!--BOTON PARA INDICAR UNA ENTRADA-->
                         <div class="">
                             <input class="btn-check" type="radio" name="entrada_salida" id="Entrada" value="Entrada" required>
@@ -174,7 +174,7 @@
                                     aria-selected="false"
                                     onclick="saveForm()"
                                 >
-                                    Instalació hidráulica de AA-P
+                                    Instalación hidráulica de AA-P
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -227,13 +227,8 @@
 
                                         <!--INICIO DE FORMULARIO DE BIOMETRICOS-->
                         <div class="tab-content">
-                            <div
-                                class="tab-pane active"
-                                id="biometricos"
-                                role="tabpanel"
-                                aria-labelledby="biometricos-tab"
-                            >
-                                <div class="container1">
+                            <div class="tab-pane active  contenedorPrincipal" id="biometricos" role="tabpanel" aria-labelledby="biometricos-tab">
+                                <div class="contenedor1" id="form1">
                                 
                                     <br>
                                 
@@ -356,6 +351,9 @@
                                         </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="contenedor2" id="form11">
 
                                     <br>
                                             <!--QUINTO INPUT-->
@@ -457,815 +455,852 @@
                                     <!--FIN DEL PRIMER FORMULARIO-->
 
 
-                                <div
-                                    class="tab-pane"
-                                    id="Lamparas"
-                                    role="tabpanel"
-                                    aria-labelledby="Lamparas-tab"
-                                >
+                                    <!--INICIO DEL SEGUNDO FORMULARIO-->
+                            <div class="contenedorPrincipal" id="Lamparas" role="tabpanel" aria-labelledby="Lamparas-tab">
                                         <!--CONTENEDOR PRINCIPAL, SEGUNDO FORMULARIO-->
-                                <div class="container2">
+                                <div class="contenedor1" id="form2">
 
-                                <br>
+                                        <br>
 
-                                <h5>¿El LED está encendido sin parpadear?</h5>
-                                        <!--PRIMER INPUT-->
-                                <div class="row">
-                                    <div class="col-2">
-                                        Recepcion:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="lamp_emer_recepcion" id="lamp_recepcion_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="lamp_recepcion_pos"> Si </label>
+                                        <h5>¿El LED está encendido sin parpadear?</h5>
+                                                <!--PRIMER INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Recepcion:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="lamp_emer_recepcion" id="lamp_recepcion_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="lamp_recepcion_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="lamp_emer_recepcion"
+                                                        id="lamp_recepcion_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="lamp_recepcion_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="lamp_emer_recepcion"
-                                                id="lamp_recepcion_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="lamp_recepcion_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <br>
-                                        <!--SEGUNDO INPUT-->
-                                <div class="row">
-                                    <div class="col-2">
-                                        Pasillos triage:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="lamp_emer_pasillos" id="lamp_pasillos_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="lamp_pasillos_pos"> Si </label>
+                                        <br>
+                                                <!--SEGUNDO INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Pasillos triage:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="lamp_emer_pasillos" id="lamp_pasillos_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="lamp_pasillos_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="lamp_emer_pasillos"
+                                                        id="lamp_pasillos_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="lamp_pasillos_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="lamp_emer_pasillos"
-                                                id="lamp_pasillos_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="lamp_pasillos_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <br>
-                                        <!--TERCER INPUT-->
-                                <div class="row">
-                                    <div class="col-2">
-                                        Cuarto Electico 1:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="lamp_emer_ce1" id="lamp_ce1_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="lamp_ce1_pos"> Si </label>
+                                        <br>
+                                                <!--TERCER INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Cuarto Electico 1:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="lamp_emer_ce1" id="lamp_ce1_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="lamp_ce1_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="lamp_emer_ce1"
+                                                        id="lamp_ce1_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="lamp_ce1_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="lamp_emer_ce1"
-                                                id="lamp_ce1_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="lamp_ce1_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <br>
-                                        <!--CUARTO INPUT-->
-                                <div class="row">
-                                    <div class="col-2">
-                                        Cuarto Electico 2:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="lamp_emer_ce2" id="lamp_ce2_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="lamp_ce2_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="lamp_emer_ce2"
-                                                id="lamp_ce2_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="lamp_ce2_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <br>
-                                        <!--QUINTO INPUT-->
-                                <div class="row">
-                                    <div class="col-2">
-                                        Esclusa 1:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="lamp_emer_cpd1" id="lamp_cpd1_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="lamp_cpd1_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="lamp_emer_cpd1"
-                                                id="lamp_cpd1_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="lamp_cpd1_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <br>
-                                        <!--SEXTO INPUT-->
-                                <div class="row">
-                                    <div class="col-2">
-                                        Esclusa 2:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="lamp_emer_cpd2" id="lamp_cpd2_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="lamp_cpd2_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="lamp_emer_cpd2"
-                                                id="lamp_cpd2_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="lamp_cpd2_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                        <!--SEPTIMO INPUT-->
-                                    <div class="mb-3">
-                                        <label for="lamp_emer_obser" class="form-label">Observaciones</label>
-                                        <textarea class="form-control" name="lamp_emer_obser" id="lamp_emer_obser" placeholder="Sin observaciones" rows="5"></textarea>
-                                    </div>
                                     
-                                </div>
+                                        <br>
+                                                <!--CUARTO INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Cuarto Electico 2:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="lamp_emer_ce2" id="lamp_ce2_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="lamp_ce2_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="lamp_emer_ce2"
+                                                        id="lamp_ce2_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="lamp_ce2_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="contenedor2" id="form22">
+                                        <br>
+                                            <!--QUINTO INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Esclusa 1:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="lamp_emer_cpd1" id="lamp_cpd1_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="lamp_cpd1_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="lamp_emer_cpd1"
+                                                        id="lamp_cpd1_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="lamp_cpd1_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                            <!--SEXTO INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Esclusa 2:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="lamp_emer_cpd2" id="lamp_cpd2_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="lamp_cpd2_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="lamp_emer_cpd2"
+                                                        id="lamp_cpd2_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="lamp_cpd2_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                <!--SEPTIMO INPUT-->
+                                        <div class="mb-3">
+                                            <label for="lamp_emer_obser" class="form-label">Observaciones</label>
+                                            <textarea class="form-control" name="lamp_emer_obser" id="lamp_emer_obser" placeholder="Sin observaciones" rows="5"></textarea>
+                                        </div>
+                                        
+                                    </div>
                                 
                             </div>
-
-                            <div
-                                class="tab-pane"
-                                id="camaras"
-                                role="tabpanel"
-                                aria-labelledby="camaras-tab"
-                            >
+                                    <!--INICIO DEL TERCER FORMULARIO-->
+                            <div class="tab-pane contenedorPrincipal" id="camaras" role="tabpanel" aria-labelledby="camaras-tab">
                                         <!--CONTENEDOR PRINCIPAL DEL 3ER FORMULARIO-->
-                                <div class="container">
-                                <br>
-                                <h5>¿Las Cámaras presentan imagen?</h5>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Pasillos:
+                                <div class="contenedor1" id="form3">
+                                        <br>
+
+                                        <h5>¿Las Cámaras presentan imagen?</h5>
+                                                <!--PRIMER INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Pasillos:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="cctv_pasillo" id="cctv_pasillo_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="cctv_pasillo_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="cctv_pasillo"
+                                                        id="cctv_pasillo_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="cctv_pasillo_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                            <!--SEGUNDO INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                CPD 1:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="cctv_cpd1" id="cctv_cpd1_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="cctv_cpd1_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="cctv_cpd1"
+                                                        id="cctv_cpd1_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="cctv_cpd1_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                            <!--TERCER INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                CPD 2:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="cctv_cpd2" id="cctv_cpd2_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="cctv_cpd2_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="cctv_cpd2"
+                                                        id="cctv_cpd2_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="cctv_cpd2_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                            <!--CUARTO INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Recepción:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="cctv_recepcion" id="cctv_recepcion_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="cctv_recepcion_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="cctv_recepcion"
+                                                        id="cctv_recepcion_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="cctv_recepcion_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                                <!--QUINTO INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                CE:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="cctv_ce" id="cctv_ce_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="cctv_ce_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="cctv_ce"
+                                                        id="cctv_ce_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="cctv_ce_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
                                     </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="cctv_pasillo" id="cctv_pasillo_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="cctv_pasillo_pos"> Si </label>
+
+                                <div class="contenedor2" id="form33">
+                                                <!--SEXTO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            Entrada 360:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                                <input class="btn-check" type="radio" name="cctv_entrada360" id="cctv_entrada360_pos" value="Si" required/>
+                                                <label class="btn btn-outline-success" for="cctv_entrada360_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                                <input
+                                                    class="btn-check"
+                                                    type="radio"
+                                                    name="cctv_entrada360"
+                                                    id="cctv_entrada360_neg"
+                                                    value="No"
+                                                    required
+                                                />
+                                                <label class="btn btn-outline-danger" for="cctv_entrada360_neg">
+                                                    No
+                                                </label>
+                                                <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="cctv_pasillo"
-                                                id="cctv_pasillo_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="cctv_pasillo_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+
+                                    <br>
+                                                <!--SEPTIMO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                        Salida de emergencia:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                                <input class="btn-check" type="radio" name="cctv_sal_emer" id="cctv_sal_emer_pos" value="Si" required/>
+                                                <label class="btn btn-outline-success" for="cctv_sal_emer_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                                <input
+                                                    class="btn-check"
+                                                    type="radio"
+                                                    name="cctv_sal_emer"
+                                                    id="cctv_sal_emer_neg"
+                                                    value="No"
+                                                    required
+                                                />
+                                                <label class="btn btn-outline-danger" for="cctv_sal_emer_neg">
+                                                    No
+                                                </label>
+                                                <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        CPD 1:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="cctv_cpd1" id="cctv_cpd1_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="cctv_cpd1_pos"> Si </label>
+
+                                    <br>
+                                            <!--OCTAVO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            Cuarto de máquinas:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                                <input class="btn-check" type="radio" name="cctv_cuart_maqui" id="cctv_cuart_maqui_pos" value="Si" required/>
+                                                <label class="btn btn-outline-success" for="cctv_cuart_maqui_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                                <input
+                                                    class="btn-check"
+                                                    type="radio"
+                                                    name="cctv_cuart_maqui"
+                                                    id="cctv_cuart_maqui_neg"
+                                                    value="No"
+                                                    required
+                                                />
+                                                <label class="btn btn-outline-danger" for="cctv_cuart_maqui_neg">
+                                                    No
+                                                </label>
+                                                <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="cctv_cpd1"
-                                                id="cctv_cpd1_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="cctv_cpd1_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+
+                                    <br>
+                                                <!--NOVENO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            Entrada Principal:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                                <input class="btn-check" type="radio" name="cctv_entra_princ" id="cctv_entra_princ_pos" value="Si" required/>
+                                                <label class="btn btn-outline-success" for="cctv_entra_princ_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                                <input
+                                                    class="btn-check"
+                                                    type="radio"
+                                                    name="cctv_entra_princ"
+                                                    id="cctv_entra_princ_neg"
+                                                    value="No"
+                                                    required
+                                                />
+                                                <label class="btn btn-outline-danger" for="cctv_entra_princ_neg">
+                                                    No
+                                                </label>
+                                                <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        CPD 2:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="cctv_cpd2" id="cctv_cpd2_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="cctv_cpd2_pos"> Si </label>
+
+                                    <br>
+                                            <!--DECIMO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            Esclusa:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                                <input class="btn-check" type="radio" name="cctv_esclusa" id="cctv_esclusa_pos" value="Si" required/>
+                                                <label class="btn btn-outline-success" for="cctv_esclusa_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                                <input
+                                                    class="btn-check"
+                                                    type="radio"
+                                                    name="cctv_esclusa"
+                                                    id="cctv_esclusa_neg"
+                                                    value="No"
+                                                    required
+                                                />
+                                                <label class="btn btn-outline-danger" for="cctv_esclusa_neg">
+                                                    No
+                                                </label>
+                                                <div class="invalid-tooltip"> Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="cctv_cpd2"
-                                                id="cctv_cpd2_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="cctv_cpd2_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Recepción:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="cctv_recepcion" id="cctv_recepcion_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="cctv_recepcion_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="cctv_recepcion"
-                                                id="cctv_recepcion_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="cctv_recepcion_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        CE:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="cctv_ce" id="cctv_ce_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="cctv_ce_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="cctv_ce"
-                                                id="cctv_ce_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="cctv_ce_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Entrada 360:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="cctv_entrada360" id="cctv_entrada360_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="cctv_entrada360_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="cctv_entrada360"
-                                                id="cctv_entrada360_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="cctv_entrada360_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                    Salida de emergencia:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="cctv_sal_emer" id="cctv_sal_emer_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="cctv_sal_emer_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="cctv_sal_emer"
-                                                id="cctv_sal_emer_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="cctv_sal_emer_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Cuarto de máquinas:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="cctv_cuart_maqui" id="cctv_cuart_maqui_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="cctv_cuart_maqui_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="cctv_cuart_maqui"
-                                                id="cctv_cuart_maqui_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="cctv_cuart_maqui_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Entrada Principal:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="cctv_entra_princ" id="cctv_entra_princ_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="cctv_entra_princ_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="cctv_entra_princ"
-                                                id="cctv_entra_princ_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="cctv_entra_princ_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Esclusa:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="cctv_esclusa" id="cctv_esclusa_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="cctv_esclusa_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="cctv_esclusa"
-                                                id="cctv_esclusa_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="cctv_esclusa_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip"> Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                        
                                     <div class="mb-3">
                                         <label for="cctv_observaciones" class="form-label">Observaciones</label>
                                         <textarea class="form-control" name="cctv_observaciones" id="cctv_observaciones" placeholder="Sin observaciones" rows="5"></textarea>
                                     </div>
                                 </div>
-                                
                             </div>
+                                
+                       
 
                                         <!--CONTENERDOR PRINCIPAL DE 4T0 FORMULARIO-->
-                            <div
-                                class="tab-pane"
-                                id="aap"
-                                role="tabpanel"
-                                aria-labelledby="aap-tab"
-                            >
-                                <div class="container">
-                                <br>
+                            <div class="tab-pane contenedorPrincipal" id="aap" role="tabpanel" aria-labelledby="aap-tab">
+                                <div class="contenedor1" id="form4">
+                                    <br>
 
-                                <h5>¿El tablero de eventos presenta mensaje de alerta?</h5>
+                                    <h5>¿El tablero de eventos presenta mensaje de alerta?</h5>
+                                            <!--PRIMER INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            AA-P-1 CPD:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                                <input class="btn-check" type="radio" name="aap_1_cpd_alert" id="aap_1_cpd_alert_pos" value="Si" required/>
+                                                <label class="btn btn-outline-success" for="aap_1_cpd_alert_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                                <input
+                                                    class="btn-check"
+                                                    type="radio"
+                                                    name="aap_1_cpd_alert"
+                                                    id="aap_1_cpd_alert_neg"
+                                                    value="No"
+                                                    required
+                                                />
+                                                <label class="btn btn-outline-danger" for="aap_1_cpd_alert_neg">
+                                                    No
+                                                </label>
+                                                <div class="invalid-tooltip">Por favor seleccione una opción</div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div class="row">
-                                    <div class="col-2">
-                                        AA-P-1 CPD:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="aap_1_cpd_alert" id="aap_1_cpd_alert_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="aap_1_cpd_alert_pos"> Si </label>
+                                    <br>
+                                        <!--SEGUNDO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            AA-P-2 CPD:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                                <input class="btn-check" type="radio" name="aap_2_cpd_alert" id="aap_2_cpd_alert_pos" value="Si" required/>
+                                                <label class="btn btn-outline-success" for="aap_2_cpd_alert_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                                <input
+                                                    class="btn-check"
+                                                    type="radio"
+                                                    name="aap_2_cpd_alert"
+                                                    id="aap_2_cpd_alert_neg"
+                                                    value="No"
+                                                    required
+                                                />
+                                                <label class="btn btn-outline-danger" for="aap_2_cpd_alert_neg">
+                                                    No
+                                                </label>
+                                                <div class="invalid-tooltip">Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
+
+                                    <br>
+                                        <!--TERCER INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            AA-P-1 CE:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                                <input class="btn-check" type="radio" name="aap_1_ce_alert" id="aap_1_ce_alert_pos" value="Si" required/>
+                                                <label class="btn btn-outline-success" for="aap_1_ce_alert_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                                <input
+                                                    class="btn-check"
+                                                    type="radio"
+                                                    name="aap_1_ce_alert"
+                                                    id="aap_1_ce_alert_neg"
+                                                    value="No"
+                                                    required
+                                                />
+                                                <label class="btn btn-outline-danger" for="aap_1_ce_alert_neg">
+                                                    No
+                                                </label>
+                                                <div class="invalid-tooltip">Por favor seleccione una opción</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <br>
+                                        <!--CUARTO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            AA-P-2 CE:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                            <input class="btn-check" type="radio" name="aap_2_ce_alert" id="aap_2_ce_alert_pos" value="Si" required/>
+                                            <label class="btn btn-outline-success" for="aap_2_ce_alert_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
                                             <input
                                                 class="btn-check"
                                                 type="radio"
-                                                name="aap_1_cpd_alert"
-                                                id="aap_1_cpd_alert_neg"
+                                                name="aap_2_ce_alert"
+                                                id="aap_2_ce_alert_neg"
                                                 value="No"
                                                 required
                                             />
-                                            <label class="btn btn-outline-danger" for="aap_1_cpd_alert_neg">
+                                            <label class="btn btn-outline-danger" for="aap_2_ce_alert_neg">
                                                 No
                                             </label>
                                             <div class="invalid-tooltip">Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <br>
+                                    <br>
                                 </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        AA-P-2 CPD:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="aap_2_cpd_alert" id="aap_2_cpd_alert_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="aap_2_cpd_alert_pos"> Si </label>
+
+                                <div class="contenedor2" id="form44">
+                                    <h5>¿Inyecta y enfría el aire?</h5>
+                                            <!--QUINTO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            AA-P-1 CPD:
                                         </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                            <input class="btn-check" type="radio" name="aap_1_cpd_aire" id="aap_1_cpd_aire_pos" value="Si" required/>
+                                            <label class="btn btn-outline-success" for="aap_1_cpd_aire_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
                                             <input
                                                 class="btn-check"
                                                 type="radio"
-                                                name="aap_2_cpd_alert"
-                                                id="aap_2_cpd_alert_neg"
+                                                name="aap_1_cpd_aire"
+                                                id="aap_1_cpd_aire_neg"
                                                 value="No"
                                                 required
                                             />
-                                            <label class="btn btn-outline-danger" for="aap_2_cpd_alert_neg">
+                                            <label class="btn btn-outline-danger" for="aap_1_cpd_aire_neg">
                                                 No
                                             </label>
                                             <div class="invalid-tooltip">Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        AA-P-1 CE:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="aap_1_ce_alert" id="aap_1_ce_alert_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="aap_1_ce_alert_pos"> Si </label>
+
+                                    <br>
+                                        <!--SEXTO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            AA-P-2 CPD:
                                         </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                            <input class="btn-check" type="radio" name="aap_2_cpd_aire" id="aap_2_cpd_aire_pos" value="Si" required/>
+                                            <label class="btn btn-outline-success" for="aap_2_cpd_aire_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
                                             <input
                                                 class="btn-check"
                                                 type="radio"
-                                                name="aap_1_ce_alert"
-                                                id="aap_1_ce_alert_neg"
+                                                name="aap_2_cpd_aire"
+                                                id="aap_2_cpd_aire_neg"
                                                 value="No"
                                                 required
                                             />
-                                            <label class="btn btn-outline-danger" for="aap_1_ce_alert_neg">
+                                            <label class="btn btn-outline-danger" for="aap_2_cpd_aire_neg">
                                                 No
                                             </label>
                                             <div class="invalid-tooltip">Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        AA-P-2 CE:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                        <input class="btn-check" type="radio" name="aap_2_ce_alert" id="aap_2_ce_alert_pos" value="Si" required/>
-                                        <label class="btn btn-outline-success" for="aap_2_ce_alert_pos"> Si </label>
+
+                                    <br>
+                                        <!--SEPTIMO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            AA-P-1 CE:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                            <input class="btn-check" type="radio" name="aap_1_ce_aire" id="aap_1_ce_aire_pos" value="Si" required/>
+                                            <label class="btn btn-outline-success" for="aap_1_ce_aire_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                            <input
+                                                class="btn-check"
+                                                type="radio"
+                                                name="aap_1_ce_aire"
+                                                id="aap_1_ce_aire_neg"
+                                                value="No"
+                                                required
+                                            />
+                                            <label class="btn btn-outline-danger" for="aap_1_ce_aire_neg">
+                                                No
+                                            </label>
+                                            <div class="invalid-tooltip">Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                        <input
-                                            class="btn-check"
-                                            type="radio"
-                                            name="aap_2_ce_alert"
-                                            id="aap_2_ce_alert_neg"
-                                            value="No"
-                                            required
-                                        />
-                                        <label class="btn btn-outline-danger" for="aap_2_ce_alert_neg">
-                                            No
-                                        </label>
-                                        <div class="invalid-tooltip">Por favor seleccione una opción</div>
+                                    
+                                    <br>
+                                            <!--OCTAVO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            AA-P-2 CE:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                            <input class="btn-check" type="radio" name="aap_2_ce_aire" id="aap_2_ce_aire_pos" value="Si" required/>
+                                            <label class="btn btn-outline-success" for="aap_2_ce_aire_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                            <input
+                                                class="btn-check"
+                                                type="radio"
+                                                name="aap_2_ce_aire"
+                                                id="aap_2_ce_aire_neg"
+                                                value="No"
+                                                required
+                                            />
+                                            <label class="btn btn-outline-danger" for="aap_2_ce_aire_neg">
+                                                No
+                                            </label>
+                                            <div class="invalid-tooltip">Por favor seleccione una opción</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                                <br>
-                                <h5>¿Inyecta y enfría el aire?</h5>
-                                <div class="row">
-                                    <div class="col-2">
-                                        AA-P-1 CPD:
+                                    <br>
+
+                                        <!--NOVENO INPUT-->
+                                    <div class="mb-3">
+                                        <label for="aap_observaciones" class="form-label">Observaciones</label>
+                                        <textarea class="form-control" name="aap_observaciones" id="aap_observaciones" placeholder="Sin observaciones" rows="5"></textarea>
                                     </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                        <input class="btn-check" type="radio" name="aap_1_cpd_aire" id="aap_1_cpd_aire_pos" value="Si" required/>
-                                        <label class="btn btn-outline-success" for="aap_1_cpd_aire_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                        <input
-                                            class="btn-check"
-                                            type="radio"
-                                            name="aap_1_cpd_aire"
-                                            id="aap_1_cpd_aire_neg"
-                                            value="No"
-                                            required
-                                        />
-                                        <label class="btn btn-outline-danger" for="aap_1_cpd_aire_neg">
-                                            No
-                                        </label>
-                                        <div class="invalid-tooltip">Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        AA-P-2 CPD:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                        <input class="btn-check" type="radio" name="aap_2_cpd_aire" id="aap_2_cpd_aire_pos" value="Si" required/>
-                                        <label class="btn btn-outline-success" for="aap_2_cpd_aire_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                        <input
-                                            class="btn-check"
-                                            type="radio"
-                                            name="aap_2_cpd_aire"
-                                            id="aap_2_cpd_aire_neg"
-                                            value="No"
-                                            required
-                                        />
-                                        <label class="btn btn-outline-danger" for="aap_2_cpd_aire_neg">
-                                            No
-                                        </label>
-                                        <div class="invalid-tooltip">Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        AA-P-1 CE:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                        <input class="btn-check" type="radio" name="aap_1_ce_aire" id="aap_1_ce_aire_pos" value="Si" required/>
-                                        <label class="btn btn-outline-success" for="aap_1_ce_aire_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                        <input
-                                            class="btn-check"
-                                            type="radio"
-                                            name="aap_1_ce_aire"
-                                            id="aap_1_ce_aire_neg"
-                                            value="No"
-                                            required
-                                        />
-                                        <label class="btn btn-outline-danger" for="aap_1_ce_aire_neg">
-                                            No
-                                        </label>
-                                        <div class="invalid-tooltip">Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        AA-P-2 CE:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                        <input class="btn-check" type="radio" name="aap_2_ce_aire" id="aap_2_ce_aire_pos" value="Si" required/>
-                                        <label class="btn btn-outline-success" for="aap_2_ce_aire_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                        <input
-                                            class="btn-check"
-                                            type="radio"
-                                            name="aap_2_ce_aire"
-                                            id="aap_2_ce_aire_neg"
-                                            value="No"
-                                            required
-                                        />
-                                        <label class="btn btn-outline-danger" for="aap_2_ce_aire_neg">
-                                            No
-                                        </label>
-                                        <div class="invalid-tooltip">Por favor seleccione una opción</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="mb-3">
-                                    <label for="aap_observaciones" class="form-label">Observaciones</label>
-                                    <textarea class="form-control" name="aap_observaciones" id="aap_observaciones" placeholder="Sin observaciones" rows="5"></textarea>
-                                </div>
                                 </div>
                                 
                             </div>
 
                                     <!--CONTENEDOR PRINCIPAL DE QUINTO FORMULARIO-->
-                            <div
-                                class="tab-pane"
-                                id="hidraulica_aap"
-                                role="tabpanel"
-                                aria-labelledby="hidraulica_aap-tab"
-                            >
-                                <div class="container">
-                                <br>
-                                <h5>¿El manómetro tiene una presión diferente a "0"?</h5>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Manómetro 1 CPD:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="hidra_mano1_cpd" id="hidra_mano1_cpd_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="hidra_mano1_cpd_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="hidra_mano1_cpd"
-                                                id="hidra_mano1_cpd_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="hidra_mano1_cpd_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Manómetro 2 CPD:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="hidra_mano2_cpd" id="hidra_mano2_cpd_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="hidra_mano2_cpd_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="hidra_mano2_cpd"
-                                                id="hidra_mano2_cpd_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="hidra_mano2_cpd_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="tab-pane" id="hidraulica_aap" role="tabpanel" aria-labelledby="hidraulica_aap-tab">
+                                <div class="contenedor1" id="form5">
+
                                     <br>
+                                            <!--PIMER INPUT-->
+                                    <h5>¿El manómetro tiene una presión diferente a "0"?</h5>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            Manómetro 1 CPD:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                                <input class="btn-check" type="radio" name="hidra_mano1_cpd" id="hidra_mano1_cpd_pos" value="Si" required/>
+                                                <label class="btn btn-outline-success" for="hidra_mano1_cpd_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                                <input
+                                                    class="btn-check"
+                                                    type="radio"
+                                                    name="hidra_mano1_cpd"
+                                                    id="hidra_mano1_cpd_neg"
+                                                    value="No"
+                                                    required
+                                                />
+                                                <label class="btn btn-outline-danger" for="hidra_mano1_cpd_neg">
+                                                    No
+                                                </label>
+                                                <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <br>
+
+                                        <!--SEGUNDO INPUT-->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            Manómetro 2 CPD:
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="form-check">
+                                                <input class="btn-check" type="radio" name="hidra_mano2_cpd" id="hidra_mano2_cpd_pos" value="Si" required/>
+                                                <label class="btn btn-outline-success" for="hidra_mano2_cpd_pos"> Si </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-check position-relative">
+                                                <input
+                                                    class="btn-check"
+                                                    type="radio"
+                                                    name="hidra_mano2_cpd"
+                                                    id="hidra_mano2_cpd_neg"
+                                                    value="No"
+                                                    required
+                                                />
+                                                <label class="btn btn-outline-danger" for="hidra_mano2_cpd_neg">
+                                                    No
+                                                </label>
+                                                <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contenedor2" id="form55">
+                                        <br>
+
+                                        <!--TERCER INPUT-->
                                     <div class="mb-3">
                                         <label for="hidra_mano_observaciones" class="form-label">Observaciones</label>
                                         <textarea class="form-control" name="hidra_mano_observaciones" id="hidra_mano_observaciones" placeholder="Sin observaciones" rows="5"></textarea>
@@ -1275,357 +1310,377 @@
                             </div>
 
                                         <!--CONTENEDOR PRINCPIAL DE SEXTO FORMULARIO-->
-                            <div
-                                class="tab-pane"
-                                id="incendios"
-                                role="tabpanel"
-                                aria-labelledby="incendios-tab"
-                            >
-                                <div class="container">
-                                <br>
-                                <h5>¿La aguja del manómetro marca el color verde?</h5>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Cilindro CPD:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="incendia_cpd" id="incendia_cpd_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="incendia_cpd_pos"> Si </label>
+                            <div class="tab-pane" id="incendios" role="tabpanel" aria-labelledby="incendios-tab">
+                                <div class="contenedor1" id="form6">
+                                        <br>
+                                                <!--PRIMER INPUT-->                                
+                                        <h5>¿La aguja del manómetro marca el color verde?</h5>
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Cilindro CPD:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="incendia_cpd" id="incendia_cpd_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="incendia_cpd_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="incendia_cpd"
+                                                        id="incendia_cpd_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="incendia_cpd_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="incendia_cpd"
-                                                id="incendia_cpd_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="incendia_cpd_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+
+                                        <br>
+                                            <!--SEGUNDO INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Cilindro CE:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="incendia_ce" id="incendia_ce_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="incendia_ce_pos"> Si </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="form-check position-relative">
+                                                        <input
+                                                            class="btn-check"
+                                                            type="radio"
+                                                            name="incendia_ce"
+                                                            id="incendia_ce_neg"
+                                                            value="No"
+                                                            required
+                                                        />
+                                                        <label class="btn btn-outline-danger" for="incendia_ce_neg">
+                                                            No
+                                                        </label>
+                                                        <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
                                         </div>
-                                    </div>
+
+                                        <div class="contenedor2" id="form66">
+                                            <br>
+                                            <!--TERCER INPUT-->
+                                            <div class="mb-3">
+                                                <label for="incendia_observaciones" class="form-label">Observaciones</label>
+                                                <textarea class="form-control" name="incendia_observaciones" id="incendia_observaciones" placeholder="Sin observaciones" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                    
                                 </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Cilindro CE:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="incendia_ce" id="incendia_ce_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="incendia_ce_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="incendia_ce"
-                                                id="incendia_ce_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="incendia_ce_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                    <div class="mb-3">
-                                        <label for="incendia_observaciones" class="form-label">Observaciones</label>
-                                        <textarea class="form-control" name="incendia_observaciones" id="incendia_observaciones" placeholder="Sin observaciones" rows="5"></textarea>
-                                    </div>
-                                </div>
-                                
-                            </div>
 
                                         <!--CONTENEDOR PRINCIPAL DEL SEPTIMO FORMULARIO-->
-                            <div
-                                class="tab-pane"
-                                id="ups"
-                                role="tabpanel"
-                                aria-labelledby="ups-tab"
-                            >
-                                <div class="container">
-                                <br>
-                                <h5>¿El tablero de eventos presenta mensaje de alerta?</h5>
-                                <div class="row">
-                                    <div class="col-2">
-                                        UPS 1:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="ups_1" id="ups_1_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="ups_1_pos"> Si </label>
+                            <div class="tab-pane contenedorPrincipal" id="ups" role="tabpanel" aria-labelledby="ups-tab">
+                                <div class="contenedor1" id="form7">
+                                        <br>
+                                                <!--PRIMER INPUT-->
+                                        <h5>¿El tablero de eventos presenta mensaje de alerta?</h5>
+                                        <div class="row">
+                                            <div class="col-2">
+                                                UPS 1:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="ups_1" id="ups_1_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="ups_1_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="ups_1"
+                                                        id="ups_1_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="ups_1_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="ups_1"
-                                                id="ups_1_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="ups_1_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+
+                                        <br>
+                                            <!--SEGUNDO INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                                UPS 2:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="ups_2" id="ups_2_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="ups_2_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="ups_2"
+                                                        id="ups_2_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="ups_2_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        UPS 2:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="ups_2" id="ups_2_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="ups_2_pos"> Si </label>
+
+            
+                                        <br>
+                                                <!--TERCER INPUT-->
+                                        <div class="row">
+                                            <div class="col-3 d-flex justify-content-start">
+                                                Consumo red electrica (TT):
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-start position-relative">
+                                                <div class="input-group has-validation">
+                                                    <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwred_consumo" id="kwred_consumo" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia" required>
+                                                    <span class="input-group-text">KVA</span>
+                                                    <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="ups_2"
-                                                id="ups_2_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="ups_2_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+
+                                        <br>
+                                            <!--CUARTO INPUT-->
+                                        <div class="row">
+                                            <div class="col-3 d-flex justify-content-start">
+                                                Salida UPS DCyTIC:
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-start position-relative">
+                                                <div class="input-group has-validation">
+                                                    <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwsalida_dctyc" id="kwsalida_dctyc" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia">
+                                                    <span class="input-group-text">KVA</span>
+                                                    <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
+                                                </div>
+                                            </div>
                                         </div>
+
+                                        <br>
+
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-3 d-flex justify-content-start">
-                                        Consumo red electrica (TT):
-                                    </div>
-                                    <div class="col-4 d-flex justify-content-start position-relative">
-                                        <div class="input-group has-validation">
-                                            <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwred_consumo" id="kwred_consumo" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia" required>
-                                            <span class="input-group-text">KVA</span>
-                                            <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
+
+                                    <div class="contenedor2" id="form77">
+                                            <!--QUINTO INPUT-->
+                                        <div class="row">
+                                            <div class="col-3 d-flex justify-content-start">
+                                                Salida UPS LNS 1:
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-start position-relative">
+                                                <div class="input-group has-validation">
+                                                    <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwsalida_lns1" id="kwsalida_lns1" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia" required>
+                                                    <span class="input-group-text">KVA</span>
+                                                    <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-3 d-flex justify-content-start">
-                                        Salida UPS DCyTIC:
-                                    </div>
-                                    <div class="col-4 d-flex justify-content-start position-relative">
-                                        <div class="input-group has-validation">
-                                            <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwsalida_dctyc" id="kwsalida_dctyc" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia">
-                                            <span class="input-group-text">KVA</span>
-                                            <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
+
+                                        <br>
+                                                <!--SEXTO INPUT-->
+                                        <div class="row">
+                                            <div class="col-3 d-flex justify-content-start">
+                                                Salida UPS LNS 2:
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-start position-relative">
+                                                <div class="input-group has-validation">
+                                                    <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwsalida_lns2" id="kwsalida_lns2" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia" required>
+                                                    <span class="input-group-text">KVA</span>
+                                                    <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-3 d-flex justify-content-start">
-                                        Salida UPS LNS 1:
-                                    </div>
-                                    <div class="col-4 d-flex justify-content-start position-relative">
-                                        <div class="input-group has-validation">
-                                            <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwsalida_lns1" id="kwsalida_lns1" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia" required>
-                                            <span class="input-group-text">KVA</span>
-                                            <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
+
+                                        <br>
+                                                <!--SEPTIMO INPUT-->
+                                        <div class="row">
+                                            <div class="col-3 d-flex justify-content-start">
+                                                Potencia total UPS:
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-start position-relative">
+                                                <div class="input-group has-validation">
+                                                    <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kvatotal" id="kvatotal" class="form-control" aria-label="cantidad total de potencia" required>
+                                                    <span class="input-group-text">KVA</span>
+                                                    <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <br>
+                                                <!--OCTAVO INPUT-->
+                                            <div class="mb-3">
+                                                <label for="ups_observaciones" class="form-label">Observaciones</label>
+                                                <textarea class="form-control" name="ups_observaciones" id="ups_observaciones" placeholder="Sin observaciones" rows="5"></textarea>
+                                            </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-3 d-flex justify-content-start">
-                                        Salida UPS LNS 2:
-                                    </div>
-                                    <div class="col-4 d-flex justify-content-start position-relative">
-                                        <div class="input-group has-validation">
-                                            <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwsalida_lns2" id="kwsalida_lns2" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia" required>
-                                            <span class="input-group-text">KVA</span>
-                                            <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-3 d-flex justify-content-start">
-                                        Potencia total UPS:
-                                    </div>
-                                    <div class="col-4 d-flex justify-content-start position-relative">
-                                        <div class="input-group has-validation">
-                                            <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kvatotal" id="kvatotal" class="form-control" aria-label="cantidad total de potencia" required>
-                                            <span class="input-group-text">KVA</span>
-                                            <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                    <div class="mb-3">
-                                        <label for="ups_observaciones" class="form-label">Observaciones</label>
-                                        <textarea class="form-control" name="ups_observaciones" id="ups_observaciones" placeholder="Sin observaciones" rows="5"></textarea>
-                                    </div>
-                                </div>
                                 
                             </div>
 
 
                                     <!--CONTENEDOR PRINCIPAL DEL OCTAVO FORMULARIO-->
-                            <div
-                                class="tab-pane"
-                                id="electrogeno"
-                                role="tabpanel"
-                                aria-labelledby="electrogeno-tab"
-                            >
-                                <div
-                                    class="container"
-                                >
-                                <br>
-                                <h5>¿El generador presenta algún tipo de fuga?</h5>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Generador A:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="electrogeno_fugagenerador_a" id="electrogeno_fugagenerador_a_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="electrogeno_fugagenerador_a_pos"> Si </label>
+                            <div class="tab-pane contenedorPrincipal" id="electrogeno" role="tabpanel" aria-labelledby="electrogeno-tab">
+                                <div class="contenedor1" id="form8">
+                                        <br>
+                                                <!--PRIMER INPUT-->
+                                        <h5>¿El generador presenta algún tipo de fuga?</h5>
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Generador A:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="electrogeno_fugagenerador_a" id="electrogeno_fugagenerador_a_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="electrogeno_fugagenerador_a_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="electrogeno_fugagenerador_a"
+                                                        id="electrogeno_fugagenerador_a_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="electrogeno_fugagenerador_a_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="electrogeno_fugagenerador_a"
-                                                id="electrogeno_fugagenerador_a_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="electrogeno_fugagenerador_a_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                        <br>
+                                                <!--SEGUNDO INPUT-->
+                                        <div class="row">
+                                            <div class="col-2">
+                                            Generador B:
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-check">
+                                                    <input class="btn-check" type="radio" name="electrogeno_fugagenerador_b" id="electrogeno_fugagenerador_b_pos" value="Si" required/>
+                                                    <label class="btn btn-outline-success" for="electrogeno_fugagenerador_b_pos"> Si </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-check position-relative">
+                                                    <input
+                                                        class="btn-check"
+                                                        type="radio"
+                                                        name="electrogeno_fugagenerador_b"
+                                                        id="electrogeno_fugagenerador_b_neg"
+                                                        value="No"
+                                                        required
+                                                    />
+                                                    <label class="btn btn-outline-danger" for="electrogeno_fugagenerador_b_neg">
+                                                        No
+                                                    </label>
+                                                    <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <br>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                    Generador B:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="electrogeno_fugagenerador_b" id="electrogeno_fugagenerador_b_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="electrogeno_fugagenerador_b_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="electrogeno_fugagenerador_b"
-                                                id="electrogeno_fugagenerador_b_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="electrogeno_fugagenerador_b_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <h5>¿El pre-calentador emite calor, produce ruido y vibra?</h5>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Generador A:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="electrogeno_ruidogenerador_a" id="electrogeno_ruidogenerador_a_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="electrogeno_ruidogenerador_a_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="electrogeno_ruidogenerador_a"
-                                                id="electrogeno_ruidogenerador_a_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="electrogeno_ruidogenerador_a_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-2">
-                                        Generador B:
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-check">
-                                            <input class="btn-check" type="radio" name="electrogeno_ruidogenerador_b" id="electrogeno_ruidogenerador_b_pos" value="Si" required/>
-                                            <label class="btn btn-outline-success" for="electrogeno_ruidogenerador_b_pos"> Si </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check position-relative">
-                                            <input
-                                                class="btn-check"
-                                                type="radio"
-                                                name="electrogeno_ruidogenerador_b"
-                                                id="electrogeno_ruidogenerador_b_neg"
-                                                value="No"
-                                                required
-                                            />
-                                            <label class="btn btn-outline-danger" for="electrogeno_ruidogenerador_b_neg">
-                                                No
-                                            </label>
-                                            <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                    <div class="mb-3">
-                                        <label for="electrogeno_observaciones" class="form-label">Observaciones</label>
-                                        <textarea class="form-control" name="electrogeno_observaciones" id="electrogeno_observaciones" placeholder="Sin observaciones" rows="5"></textarea>
-                                    </div>
+
+                                    <div class="contenedor2" id="form88">
+                                            <!--TERCER INPUT-->
+                                            <h5>¿El pre-calentador emite calor, produce ruido y vibra?</h5>
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    Generador A:
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="form-check">
+                                                        <input class="btn-check" type="radio" name="electrogeno_ruidogenerador_a" id="electrogeno_ruidogenerador_a_pos" value="Si" required/>
+                                                        <label class="btn btn-outline-success" for="electrogeno_ruidogenerador_a_pos"> Si </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="form-check position-relative">
+                                                        <input
+                                                            class="btn-check"
+                                                            type="radio"
+                                                            name="electrogeno_ruidogenerador_a"
+                                                            id="electrogeno_ruidogenerador_a_neg"
+                                                            value="No"
+                                                            required
+                                                        />
+                                                        <label class="btn btn-outline-danger" for="electrogeno_ruidogenerador_a_neg">
+                                                            No
+                                                        </label>
+                                                        <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+
+                                                        <!--CUARTO INPUT-->
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    Generador B:
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="form-check">
+                                                        <input class="btn-check" type="radio" name="electrogeno_ruidogenerador_b" id="electrogeno_ruidogenerador_b_pos" value="Si" required/>
+                                                        <label class="btn btn-outline-success" for="electrogeno_ruidogenerador_b_pos"> Si </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="form-check position-relative">
+                                                        <input
+                                                            class="btn-check"
+                                                            type="radio"
+                                                            name="electrogeno_ruidogenerador_b"
+                                                            id="electrogeno_ruidogenerador_b_neg"
+                                                            value="No"
+                                                            required
+                                                        />
+                                                        <label class="btn btn-outline-danger" for="electrogeno_ruidogenerador_b_neg">
+                                                            No
+                                                        </label>
+                                                        <div class="invalid-tooltip">Por favor seleccione una opción.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                                    <!--QUINTO INPUT-->
+                                                <div class="mb-3">
+                                                    <label for="electrogeno_observaciones" class="form-label">Observaciones</label>
+                                                    <textarea class="form-control" name="electrogeno_observaciones" id="electrogeno_observaciones" placeholder="Sin observaciones" rows="5"></textarea>
+                                                </div>
                                     
-                                </div>
+                                        </div>
                                 
-                            </div>
+                                </div>
                             <!-- a partir de aqui van los nuevos espacios de las pestañas -->
 
 
                         </div>
                     </div>
+
                     <div class="modal" id="termino">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -1641,13 +1696,15 @@
                                 </div>
                             </div>
                         </div>
-            </div>
+                    </div>
+                </div>
 
-            <div class="container-fluid finalizar d-flex justify-content-center">
-                 <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
-            </div>
+                <div class="container-fluid finalizar d-flex justify-content-center">
+                    <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
+                </div>
         </form>
     </main> 
+    
     
     
 
