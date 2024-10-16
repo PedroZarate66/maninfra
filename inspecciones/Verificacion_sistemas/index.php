@@ -67,14 +67,10 @@
                 <!--INICIO DEL FORMULARIO PRINCIPAL-->
         <form class="needs-validation" action="../../include/guardar_registro_inspeccion.php" method="post" novalidate>
             <div class="contenedor-principal">
-                            <!--BOTON PARA INDICAR UNA ENTRADA-->
-                        <div class="">
-                            <input class="btn-check" type="radio" name="entrada_salida" id="Entrada" value="Entrada" required>
-                            <label class="btn btn-outline-primary" for="Entrada"> Entrada </label>
-                        </div>
+                        
 
                             <!--BOTON PARA INDICAR UNA SALIDA-->
-                        <div class="form-check position-relative">
+                        <!-- <div class="form-check position-relative">
                             <input
                                 class="btn-check"
                                 type="radio"
@@ -87,17 +83,30 @@
                                 Salida
                             </label>
                             <div class="invalid-tooltip">Por favor seleccione una opción.</div>
-                        </div>
+                        </div> -->
 
                             <!--ID DE IDENTIFICACION DEL REGISTRO-->
-                        <div class="row align-items-center g-2">
-                            <div class="col d-flex justify-content-start"><div class="mb-3 position-relative">
-                                <label for="identidad" class="form-label">ID</label>
-                                <textarea class="form-control" name="identificador" id="identidad" rows="1" required><?php echo $idactual;?></textarea>
-                                <div class="invalid-tooltip">El registro debe tener un identificador</div>
+                        <div class="row align-items-center">
+                            <div class="d-flex justify-content-start">
+                                <div class="identificadores">
+                                    <label for="identidad" class="form-label">ID</label>
+                                    <textarea class="form-control" name="identificador" id="identidad" rows="1" required><?php echo $idactual;?></textarea>
+                                    <div class="invalid-tooltip">El registro debe tener un identificador</div>
+
+                                       <!--BOTON PARA INDICAR UNA ENTRADA-->
+                                    <div class="entrada-salida">
+                                        <input class="btn-check" type="radio" name="entrada_salida" id="Entrada" value="Entrada" required>
+                                        <label class="btn btn-outline-primary" for="Entrada"><div class="boton">Entrada</div></label>
+                                            <!--INDICA UNA SALIDA-->
+                                        <input class="btn-check" type="radio" name="entrada_salida" id="salida" Value="Salida" placeholder="Salida" required>
+                                        <label class="btn btn-outline-primary" for="Entrada"><div class="boton">Salida</div></label>
+
+                                    </div>
+
+                                    <div class="col d-flex justify-content-end"><input type="date" id="fecha" name="fecha" disabled></div>
+
+                                </div>
                             </div>
-                            </div>
-                            <div class="col d-flex justify-content-end"><input type="date" id="fecha" name="fecha" disabled></div>
                         </div>
                         
                                     <!--INICIO DE LA BARRA DE NAVEGACION-->
@@ -1676,8 +1685,10 @@
                                 
                                 </div>
                             <!-- a partir de aqui van los nuevos espacios de las pestañas -->
-
-
+                        </div>
+                                        <!--BOTON DE FINALIZAR-->
+                        <div class="container-fluid finalizar d-flex justify-content-center">
+                            <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>  
                         </div>
                     </div>
 
@@ -1699,9 +1710,7 @@
                     </div>
                 </div>
 
-                <div class="container-fluid finalizar d-flex justify-content-center">
-                    <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>
-                </div>
+                
         </form>
     </main> 
     
