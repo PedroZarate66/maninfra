@@ -161,6 +161,8 @@ function loadForm() {
   if (electrogeno_observaciones) document.getElementById('electrogeno_observaciones').value = electrogeno_observaciones;
 }
 
+
+/*PERTENECE AL BOTON DE LAMPARAS DE EMERGENCIA*/ 
 document.getElementById('Lamparas-tab').onclick = function(){
   /*LO SIGUIENTE ES PARA QUE SE OCULE Y SE MUESTRE LA PESTAÑA QUE SELECCIONEMOS*/
       /*pertenece al primer formulario*/
@@ -195,11 +197,15 @@ document.getElementById('Lamparas-tab').onclick = function(){
       const form8 = document.getElementById("form8");
       const form88 = document.getElementById("form88");
     
+      const content = document.getElementById("contenedorbody");
+
+      
+
             /*PARA QUE SE MUESTRE EL SEGUNDO FORMULARIO*/
       if(form2.style.display == "none" || form22.style.display == ""){
         form2.style.display = "block";
         form22.style.display = "block";
-        
+
         form1.style.display = "none";
         form11.style.display = "none"; 
     
@@ -221,9 +227,14 @@ document.getElementById('Lamparas-tab').onclick = function(){
         form8.style.display = "none";
         form88.style.display = "none"; 
       }
-      
+
+    if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)){
+        content.style.height = "98%";
+    }
 }
 
+
+        /*PERTENECIENTE AL BOTON DE BIOMETRICOS*/
 document.getElementById('biometricos-tab').onclick = function(){
   /*LO SIGUIENTE ES PARA QUE SE OCULE Y SE MUESTRE LA PESTAÑA QUE SELECCIONEMOS*/
       /*pertenece al primer formulario*/
@@ -258,12 +269,15 @@ document.getElementById('biometricos-tab').onclick = function(){
       const form8 = document.getElementById("form8");
       const form88 = document.getElementById("form88");
     
-  
+      const content = document.getElementById("contenedorbody");
+
+      
       
       if(form1.style.display == "none" || form11.style.display == ""){
       /*PARA QUE SE MUESTRE EL PRIMER FORMULARIO*/
         form1.style.display = "block";
         form11.style.display = "block";
+       
         
         form2.style.display = "none";
         form22.style.display = "none"; 
@@ -286,9 +300,15 @@ document.getElementById('biometricos-tab').onclick = function(){
         form8.style.display = "none";
         form88.style.display = "none"; 
       }
+
+    if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)){
+       content.style.height = "100%";
+    }
       
 }
 
+
+        /*PERTENECE AL BOTON DE CAMARAS DE CCTV*/
 document.getElementById('camaras-tab').onclick = function(){
   /*LO SIGUIENTE ES PARA QUE SE OCULE Y SE MUESTRE LA PESTAÑA QUE SELECCIONEMOS*/
       /*pertenece al primer formulario*/
@@ -323,11 +343,15 @@ document.getElementById('camaras-tab').onclick = function(){
       const form8 = document.getElementById("form8");
       const form88 = document.getElementById("form88");    
       
+      const content = document.getElementById("contenedorbody");
+      
+
       if(form3.style.display == "none" || form33.style.display == ""){
-      /*PARA QUE SE MUESTRE EL PRIMER FORMULARIO*/
+      /*PARA QUE SE MUESTRE EL TERCER FORMULARIO*/
         form3.style.display = "block";
         form33.style.display = "block";
         
+
         form2.style.display = "none";
         form22.style.display = "none"; 
     
@@ -349,72 +373,83 @@ document.getElementById('camaras-tab').onclick = function(){
         form8.style.display = "none";
         form88.style.display = "none"; 
       }
+
+      if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)){
+        content.style.height = "125%";
+    } 
       
 }
 
 document.getElementById('aap-tab').onclick = function(){
   /*LO SIGUIENTE ES PARA QUE SE OCULE Y SE MUESTRE LA PESTAÑA QUE SELECCIONEMOS*/
       /*pertenece al primer formulario*/
-      const form1 = document.getElementById("form1");
-      const form11 = document.getElementById("form11");
+      const form1   = document.getElementById("form1");
+      const form11  = document.getElementById("form11");
     
           /*pertenece al segundo formulario*/
-      const form2 = document.getElementById("form2");
-      const form22 = document.getElementById("form22");
+      const form2   = document.getElementById("form2");
+      const form22  = document.getElementById("form22");
     
           /*pertenece al tercer formulario*/
-      const form3 = document.getElementById("form3");
-      const form33 = document.getElementById("form33");
+      const form3   = document.getElementById("form3");
+      const form33  = document.getElementById("form33");
     
           /*pertenece al cuarto formulario*/
-      const form4 = document.getElementById("form4");
-      const form44 = document.getElementById("form44");
+      const form4   = document.getElementById("form4");
+      const form44  = document.getElementById("form44");
     
           /*pertenece al quinto formulario*/
-      const form5 = document.getElementById("form5");
-      const form55 = document.getElementById("form55");
+      const form5   = document.getElementById("form5");
+      const form55  = document.getElementById("form55");
     
           /*pertenece al sexto formulario*/
-      const form6 = document.getElementById("form6");
-      const form66 = document.getElementById("form66");
+      const form6   = document.getElementById("form6");
+      const form66  = document.getElementById("form66");
     
           /*pertenece al septimo formulario*/
-      const form7 = document.getElementById("form7");
-      const form77 = document.getElementById("form77");
+      const form7   = document.getElementById("form7");
+      const form77  = document.getElementById("form77");
     
       /*pertenece al octavo formulario*/
-      const form8 = document.getElementById("form8");
-      const form88 = document.getElementById("form88");    
+      const form8   = document.getElementById("form8");
+      const form88  = document.getElementById("form88");    
+
+      const content = document.getElementById("contenedorbody");
       
       if(form4.style.display == "none" || form44.style.display == ""){
-      /*PARA QUE SE MUESTRE EL PRIMER FORMULARIO*/
-        form4.style.display = "block";
+      /*PARA QUE SE MUESTRE EL CUARTO FORMULARIO*/
+        form4.style.display  = "block";
         form44.style.display = "block";
         
-        form2.style.display = "none";
+
+        form2.style.display  = "none";
         form22.style.display = "none"; 
     
-        form1.style.display = "none";
+        form1.style.display  = "none";
         form11.style.display = "none"; 
     
-        form3.style.display = "none";
+        form3.style.display  = "none";
         form33.style.display = "none"; 
     
-        form5.style.display = "none";
+        form5.style.display  = "none";
         form55.style.display = "none"; 
         
-        form6.style.display = "none";
+        form6.style.display  = "none";
         form66.style.display = "none"; 
     
-        form7.style.display = "none";
+        form7.style.display  = "none";
         form77.style.display = "none"; 
     
-        form8.style.display = "none";
+        form8.style.display  = "none";
         form88.style.display = "none"; 
       }
-      
+
+    if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)){
+        content.style.height = "135%";
+    }
 }
 
+            /*PERTENECE AL BOTON INSTALACION HIDRAULICA DE AA-P*/
 document.getElementById('hidraulica_aap-tab').onclick = function(){
   /*LO SIGUIENTE ES PARA QUE SE OCULE Y SE MUESTRE LA PESTAÑA QUE SELECCIONEMOS*/
       /*pertenece al primer formulario*/
@@ -449,8 +484,10 @@ document.getElementById('hidraulica_aap-tab').onclick = function(){
       const form8 = document.getElementById("form8");
       const form88 = document.getElementById("form88");    
       
+      const content = document.getElementById("contenedorbody");
+
       if(form5.style.display == "none" || form55.style.display == ""){
-      /*PARA QUE SE MUESTRE EL PRIMER FORMULARIO*/
+      /*PARA QUE SE MUESTRE EL QUINTO FORMULARIO*/
         form5.style.display = "block";
         form55.style.display = "block";
         
@@ -475,10 +512,14 @@ document.getElementById('hidraulica_aap-tab').onclick = function(){
         form8.style.display = "none";
         form88.style.display = "none"; 
       }
-      
+
+      if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)){
+            content.style.height = "75%";
+        }
+    
 }
 
-
+            /*PERTENECE AL BOTON DE SISTEMA CONTRA INCENDIOS*/
 document.getElementById('incendios-tab').onclick = function(){
   /*LO SIGUIENTE ES PARA QUE SE OCULE Y SE MUESTRE LA PESTAÑA QUE SELECCIONEMOS*/
       /*pertenece al primer formulario*/
@@ -511,12 +552,15 @@ document.getElementById('incendios-tab').onclick = function(){
     
       /*pertenece al octavo formulario*/
       const form8 = document.getElementById("form8");
-      const form88 = document.getElementById("form88");    
+      const form88 = document.getElementById("form88");  
+      const content = document.getElementById("contenedorbody");  
       
+
       if(form6.style.display == "none" || form66.style.display == ""){
-      /*PARA QUE SE MUESTRE EL PRIMER FORMULARIO*/
+      /*PARA QUE SE MUESTRE EL SEXTO FORMULARIO*/
         form6.style.display = "block";
         form66.style.display = "block";
+        
         
         form2.style.display = "none";
         form22.style.display = "none"; 
@@ -539,9 +583,14 @@ document.getElementById('incendios-tab').onclick = function(){
         form8.style.display = "none";
         form88.style.display = "none"; 
       }
+
+      if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)){
+            content.style.height = "78%";
+        }
       
 }
 
+        /*PERTENECE AL BOTON DE UPS*/
 document.getElementById('ups-tab').onclick = function(){
   /*LO SIGUIENTE ES PARA QUE SE OCULE Y SE MUESTRE LA PESTAÑA QUE SELECCIONEMOS*/
       /*pertenece al primer formulario*/
@@ -574,10 +623,12 @@ document.getElementById('ups-tab').onclick = function(){
     
       /*pertenece al octavo formulario*/
       const form8 = document.getElementById("form8");
-      const form88 = document.getElementById("form88");    
-      
+      const form88 = document.getElementById("form88");
+      const content = document.getElementById("contenedorbody"); 
+
+
       if(form7.style.display == "none" || form77.style.display == ""){
-      /*PARA QUE SE MUESTRE EL PRIMER FORMULARIO*/
+      /*PARA QUE SE MUESTRE EL SEPTIMO FORMULARIO*/
         form7.style.display = "block";
         form77.style.display = "block";
         
@@ -602,9 +653,16 @@ document.getElementById('ups-tab').onclick = function(){
         form8.style.display = "none";
         form88.style.display = "none"; 
       }
+
+      if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)){
+            content.style.height = "115%";
+        }
+    
       
 }
 
+
+        /*PERTENECE AL BOTON DE GRUPO DE ELECTROGENO DE EMERGENCIA*/
 document.getElementById('electrogeno-tab').onclick = function(){
   /*LO SIGUIENTE ES PARA QUE SE OCULE Y SE MUESTRE LA PESTAÑA QUE SELECCIONEMOS*/
       /*pertenece al primer formulario*/
@@ -637,13 +695,16 @@ document.getElementById('electrogeno-tab').onclick = function(){
     
       /*pertenece al octavo formulario*/
       const form8 = document.getElementById("form8");
-      const form88 = document.getElementById("form88");    
+      const form88 = document.getElementById("form88");   
+      const content = document.getElementById("contenedorbody"); 
       
       if(form8.style.display == "none" || form88.style.display == ""){
-      /*PARA QUE SE MUESTRE EL PRIMER FORMULARIO*/
+      /*PARA QUE SE MUESTRE EL OCTAVO FORMULARIO*/
         form8.style.display = "block";
         form88.style.display = "block";
-        
+
+       
+
         form2.style.display = "none";
         form22.style.display = "none"; 
     
@@ -665,69 +726,15 @@ document.getElementById('electrogeno-tab').onclick = function(){
         form3.style.display = "none";
         form33.style.display = "none"; 
       }
-      
-}
 
-document.getElementById('Lamparas-tab').onclick = function(){
-  /*LO SIGUIENTE ES PARA QUE SE OCULE Y SE MUESTRE LA PESTAÑA QUE SELECCIONEMOS*/
-      /*pertenece al primer formulario*/
-      const form1 = document.getElementById("form1");
-      const form11 = document.getElementById("form11");
+
+      
+
+      if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)){
+            content.style.height = "95%";
+        }
     
-          /*pertenece al segundo formulario*/
-      const form2 = document.getElementById("form2");
-      const form22 = document.getElementById("form22");
-    
-          /*pertenece al tercer formulario*/
-      const form3 = document.getElementById("form3");
-      const form33 = document.getElementById("form33");
-    
-          /*pertenece al cuarto formulario*/
-      const form4 = document.getElementById("form4");
-      const form44 = document.getElementById("form44");
-    
-          /*pertenece al quinto formulario*/
-      const form5 = document.getElementById("form5");
-      const form55 = document.getElementById("form55");
-    
-          /*pertenece al sexto formulario*/
-      const form6 = document.getElementById("form6");
-      const form66 = document.getElementById("form66");
-    
-          /*pertenece al septimo formulario*/
-      const form7 = document.getElementById("form7");
-      const form77 = document.getElementById("form77");
-    
-      /*pertenece al octavo formulario*/
-      const form8 = document.getElementById("form8");
-      const form88 = document.getElementById("form88");
-        
-            /*PARA QUE SE MUESTRE EL SEGUNDO FORMULARIO*/
-      if(form2.style.display == "none" || form22.style.display == ""){
-        form2.style.display = "block";
-        form22.style.display = "block";
-        
-        form1.style.display = "none";
-        form11.style.display = "none"; 
-    
-        form3.style.display = "none";
-        form33.style.display = "none"; 
-    
-        form4.style.display = "none";
-        form44.style.display = "none"; 
-    
-        form5.style.display = "none";
-        form55.style.display = "none"; 
-        
-        form6.style.display = "none";
-        form66.style.display = "none"; 
-    
-        form7.style.display = "none";
-        form77.style.display = "none"; 
-    
-        form8.style.display = "none";
-        form88.style.display = "none"; 
-      }      
+      
 }
 
 function saveForm() {
