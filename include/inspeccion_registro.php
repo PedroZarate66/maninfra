@@ -5,57 +5,52 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style> @import url('../css_estilos/menu_inicial.css'); </style>
-        <link rel="stylesheet" href="../css_estilos/pantalla.css">
-        <div class="p-3 text-center text-white" id="banner">
-            <div class="row">
-                <div class="col d-flex justify-content-start">
-                    <img src="../LNS.png" height="64" width="170">
-                </div>
-                
-                <div class="col d-flex justify-content-end">
-                    <img src="../buap-negativo.png" height="64" width="64">
-                </div>
-            </div>    
-        </div>
+       <style> @import url('../inspecciones/Historial_Inspecciones/estilos.css'); </style>
     </head>
     <?php include_once '../funciones_php/Configuracion_sesion.php';?>
     <body>
-        
-        <div class="banner2">
-            <div class=" container d-flex justify-content-end ">
-                <a class="btn btn-lg" id="botones-lat" href="../inspecciones/Historial_Inspecciones/" aria-current="page"
-                    >Regresar</a>
+        <div class="p-3 text-center text-white" id="banner">
+            <div class="row">
+                <div class="col lns-logo d-flex justify-content-start">
+                    <img src="../LNS.png">
+                </div>
+                
+                <div class="col minerva d-flex justify-content-end">
+                    <img src="../buap-negativo.png">
+                </div>
             </div>
         </div>
-
+        
+        <nav class="banner2 ">
+            <div class="nav">
+                <a class="btn btn-lg" id="botones-lat" href="../menu_inicial/" aria-current="page"
+                    >Regresar</a>
+            </div>
+        </nav>
         <main class="content">
-        <div class="txt-title">
+            <?php
+                include_once 'consulta_registro_individual.php';
+                $obj_con_reg_ind = new Consulta_Reg_Individual;
+                
+                $color      = array("Si"=>"btn-success", "No"=>"btn-danger");
+                if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                $idconsulta = $_GET["reg_detalles"];
+
+                $consulta   = $obj_con_reg_ind->consulta_registro_individual($idconsulta);
+
+                }
+                if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["mensaje"]))
+                {
+                    echo "<div class='container text-center'>Cambio Realizado con exito</div>";
+                }
+            ?>
+            <div class="txt-title">
                 <h1>Registro Diario</h1>
-        </div>
-        <?php
-            include_once 'consulta_registro_individual.php';
-            $obj_con_reg_ind = new Consulta_Reg_Individual;
+            </div>
             
-            $color = array("Si"=>"btn-success", "No"=>"btn-danger");
-            if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            $idconsulta = $_GET["reg_detalles"];
 
-            $consulta = $obj_con_reg_ind->consulta_registro_individual($idconsulta);
-
-            }
-            if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["mensaje"]))
-            {
-                echo "<div class='container text-center'>Cambio Realizado con exito</div>";
-            }
-        ?>
-        <br>
-        <div
-            class="container"
-        >
-            <div
-                class="row d-flex align-items-end g-2"
-            >
+        <div class="container">
+            <div class="row d-flex align-items-end g-2">
                 <div class="col d-flex justify-content-start">
                     <div class="mb-3">
                         <label for="identificador" class="form-label">ID</label>
@@ -119,9 +114,7 @@
             </div>
         </div>
         <br>
-        <div
-            class="container"
-        >
+        <div class="container">
             <h5 class="d-flex justify-content-center">Biometricos</h5>
             <div
                 class="table-responsive"
@@ -161,10 +154,8 @@
             
         </div>
         <br>
-        <div
-            class="container"
-        >
-            <h5 class="d-flex justify-content-center">Lampatas de emergencia</h5>
+        <div class="container">
+            <h5 class="d-flex justify-content-center">Lamparas de emergencia</h5>
             <div
                 class="table-responsive"
             >
@@ -529,20 +520,16 @@
                 </div>
             </div>
         </form>
-        </main>
-        <footer class="bg-body-tertiary text-center">
-        <!-- Grid container -->
+
+        <footer class="text-center">
+            <div class="text-center p-3">
+                    Benemerita Universidad Autonoma de Puebla:
+                    Laboratorio Nacional de Supercomputo del Sureste de Mexico
+            </div>
+        </footer>
+
+    </main>
         
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-        <a class="text-body">  
-        Benemerita Universidad Autonoma de Puebla:
-          Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
     <script src="../scripts_mantenimiento/scripts_consultas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
