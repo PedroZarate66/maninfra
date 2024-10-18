@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title>Editar Registro</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style> @import url('../../css_estilos/menu_inicial.css'); </style>
-        <link rel="stylesheet" href="../../css_estilos/pantalla.css">
-    </head>
-    <body>
-        <?php
+<body>
+    <?php
         //Se incluyen las funciones que se utilizaran, ya que se encuentran en archivos externos
         include_once '../../include/obtener_anno_calendario.php';
         include_once '../../include/guardar_registro_calendario.php';
@@ -65,23 +55,6 @@
             </div>
         </div>
         <!--********************************************************************-->
-    
-        <!-- <div class="modal" id="menu_inicial">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-warning">
-                        <h4>Advertencia</h4>
-                    </div>
-                    <div class="modal-body">
-                        ¿Esta seguro que desea salir?
-                    </div>
-                    <div class="modal-footer">
-                        <a name="boton_salida" id="boton_salida" class="btn btn-success" href="../../menu_inicial/" role="button">Aceptar</a>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <br>
         <!--******COMIENZA EL CONTENIDO PRINCIPAL*********-->
@@ -157,43 +130,19 @@
      
             <div class="container-fluid text-center">
                 <div class="table-responsive-xs text-center">
-                    <table class="table table-light table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">No. inventario</th>
-                                <th scope="col">Descripcion del bien</th>
-                                <th scope="col">Marca</th>
-                                <th scope="col">Modelo</th>
-                                <th scope="col">No. de Serie</th>
-                                <th scope="col">Descripcion de la ubicacion</th>
-                                <th scope="col">Proveedor</th>
-                                <th scope="col">Tipo</th>
-                                <th scope="col">Origen</th>
-                                <th scope="col">Estatus</th>
-                                <th scope="col">Mes</th>
-                                <th scope="col">Accion</th>
-
-                            </tr>
-                        </thead>
-                        <tbody id="CalendarioAnual"></tbody>
-                    </table>
+                    <div id="CalendarioAnual"></div>              
                 </div>
             </div>
       
     </main>
      
-    <footer class="bg-body-tertiary text-center">
-        <!-- Grid container -->
-        
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        <footer class="text-center">
+            <div class="text-center p-3">
                 Benemerita Universidad Autonoma de Puebla:
-                <a class="text-body">Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
+                Laboratorio Nacional de Supercomputo del Sureste de Mexico
             </div>
-        <!-- Copyright -->
         </footer>
+
         <div class="modal fade" id="visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
@@ -274,8 +223,3 @@
             </div>
         </div>
     </body>
-
-    <script src="../../scripts_mantenimiento/scripts_consultas.js"></script>
-    <script src="../../scripts_mantenimiento/scripts_rutinarios.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</html>
