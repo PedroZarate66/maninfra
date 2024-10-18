@@ -2,7 +2,7 @@
 include_once 'conexion.php';
 
 class Generar_Tabla_Usu{
-    public function generar_tabla_usuarios()
+    public function generar_tabla_usuariosT1()
     {
         $conexion = new Crear_Conexion;
         $conexion->crear_conection();
@@ -16,6 +16,27 @@ class Generar_Tabla_Usu{
                             <th scope='row'>" .$fila["idusuario"]. "</th>
                             <td>" .$fila["nombreUsuario"]. "</td>
                             <td>" .$fila["tipoUsuario"]. "</td>
+                      </tr>";
+            }
+        }
+        else
+        {
+            echo "Cero resultados";
+        }
+        $conexion->cerrar_conxion();
+    }
+
+    public function generar_tabla_usuariosT2()
+    {
+        $conexion = new Crear_Conexion;
+        $conexion->crear_conection();
+        $sql = "SELECT * FROM `mantinfrausuarios`;";
+        $resultado = $conexion->conexionBD->query($sql);
+        if ($resultado->num_rows > 0)
+        {
+            while($fila = $resultado->fetch_assoc())
+            {
+                echo "<tr class='align-middle'>
                             <td>" .$fila["contrasennaUsuario"]. "</td>
                             <td>
                                 <div class='btn-group'>
@@ -35,5 +56,6 @@ class Generar_Tabla_Usu{
         }
         $conexion->cerrar_conxion();
     }
+
 }
 ?>
