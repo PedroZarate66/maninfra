@@ -151,7 +151,7 @@ footer{
 
 
     html, body {
-        height: 100% !important;
+        height: 100%;
     }
 
     #banner{
@@ -170,7 +170,7 @@ footer{
 
 
     html, body {
-        height: 100% !important;
+        height: 100%;
     }
 
 
@@ -201,11 +201,11 @@ footer{
     }
 
     html, body {
-        height: 100% !important;
+        height: 98.8%;
     }
 
     footer{
-        height: 10%;
+        height: 13%;
     }
 }
 
@@ -231,7 +231,7 @@ footer{
     }
 
     html, body {
-        height: 110% !important;
+        height: 110%;
     }
 
    
@@ -272,7 +272,7 @@ footer{
     }
 
     .banner2{
-        height: 6%;
+        height: 7%;
     }
 
     .minerva{
@@ -286,9 +286,12 @@ footer{
     }
 
     html, body {
-        height: 100% !important;
+        height: 100%;
     }
 
+    .content{
+        height: 75%;
+    }
    
     /*ESTILOS DEL FORMULARIO*/
 
@@ -307,7 +310,7 @@ footer{
     }
 
     footer{
-        height: 7.5%;
+        height: 8.2%;
     }
     
 }
