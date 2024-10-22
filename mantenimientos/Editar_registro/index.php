@@ -14,15 +14,15 @@
         $obj_eli_reg_cal = new Eliminar_Reg_Calendario;
 
         ?>
-        <!--***************BANNER QUE CONTIENE LOS LOGOS************************-->
+         <!--***************BANNER QUE CONTIENE LOS LOGOS************************-->
         <div class="p-3 text-center text-white" id="banner">
             <div class="row">
-                    <div class="col d-flex justify-content-start">
-                    <img src="../../LNS.png" height="64" width="170">
+                    <div class="col lns-logo d-flex justify-content-start">
+                    <img src="../../LNS.png">
                 </div>
                 
-                <div class="col d-flex justify-content-end">
-                    <img src="../../buap-negativo.png" height="64" width="64">
+                <div class="col minerva d-flex justify-content-end">
+                    <img src="../../buap-negativo.png">
                 </div>
             </div>
         </div>
@@ -59,23 +59,31 @@
         <br>
         <!--******COMIENZA EL CONTENIDO PRINCIPAL*********-->
         <main class="content">
+
         <div class="txt-title">
             <h1>Editar Calendarizacion</h1>
         </div>
-        <div class="container-fluid d-flex justify-content-start">
-            <input type="date" id="fecha" name="fecha" disabled>
-        </div>
-        <form action="">
+
+        <div class="menu-anio">
+            <div class="seleccionar-anio">
+
+            <!--SI SE BUSCA QUE MUESTRE LA FECHA ACTUAL EN EL MENU, 
+                        DESCOMENTAR LAS SIGUIENTES LINEAS:-->
+
+                <!-- <h5>Hoy es:</h5>
             <div class="container-fluid d-flex justify-content-start">
-                <div class="mb-3">
-                    <label for="anno_calendario" class="form-label">Año</label>
-                    <select class="form-select form-select-sm" size="3" name="anno_calendario" id="anno_calendario" onchange="eliminarcalendario(this.value)">
-                        <option selected disabled value=" ">Seleccione un año</option>
-                        <?php $obj_obt_an_cal->obtener_anno_calendario(); ?>
-                    </select>
-                </div>
+                <input type="date" id="fecha" name="fecha" disabled>
+            </div> -->
+
+               <label for="anno_calendario" class="form-label">Ver historial del año:</label>
+                    
+               <select class="form-select form-select-sm" size="3" name="anno_calendario" id="anno_calendario" onchange="eliminarcalendario(this.value)">
+                    <!-- <option selected disabled value=" ">Seleccione un año</option> -->
+                    <?php $obj_obt_an_cal->obtener_anno_calendario(); ?>
+                </select>
             </div>
-        </form>
+        </div>
+
         <br>
 
         <?php
@@ -118,6 +126,7 @@
                 <input type="hidden" class="form-control" name="reg_eliminar" value="'.$consulta["IdCalendario"].'" aria-describedby="id de mantenimiento" readonly>
             </form>';
         }
+
         if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['reg_eliminar']))
             {
                 $calendarioEliminar = $_GET["reg_eliminar"];
@@ -126,13 +135,18 @@
                 header('Location: ../Calendario/');
             }
         ?>
+
+
+            <!--SE INTENTA IMPRIMIR LAS TABLAS PARA QUE SEAN RESPONSIVAS-->
+        <button type="button" id="tabla" class="cambiar_vista">Cambiar vista</button>
+
         <br>
-     
-            <div class="container-fluid text-center">
-                <div class="table-responsive-xs text-center">
-                    <div id="CalendarioAnual"></div>              
-                </div>
+                        <!--COTENEDOR DE LA TABLA DE DATOS-->
+        <div class="container-fluid text-center">
+            <div class="contenedorPrincipal table-responsive-xs text-center">
+                <div id="CalendarioAnual"></div>              
             </div>
+        </div>
       
     </main>
      
@@ -172,6 +186,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="modal" id="termino">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -223,3 +238,8 @@
             </div>
         </div>
     </body>
+
+    <script src="../../scripts_mantenimiento/scripts_consultas.js"></script>
+    <script src="../../scripts_mantenimiento/scripts_rutinarios.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+</html>
