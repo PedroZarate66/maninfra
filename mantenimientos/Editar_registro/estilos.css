@@ -1,59 +1,3 @@
-body {
-    min-width       : 100%;
-    min-height      : 100%;
-    display         : flex;
-    flex-direction  : column;
-    background-color: #E6E6E6;
-}
-
-.content {
-    flex: 1 0 auto;
-    z-index: 3;
-    width  : 100%;
-    min-height : 69%;
-}
-
-footer{
-    width           : 100%;
-    height          : 5.5%;
-    color           : #F2F2F2 !important;
-    background-color: #242424 !important;
-    font            : 14px Karla, Sans-Serif;
-}
-
-/* .footer {
-    width           : 100%;
-    height          : 100%;
-    color           : #F2F2F2 !important;
-    background-color: #242424;
-    font            : 14px Karla, Sans-Serif;
-    font-size: 15px;
-} */
-
-/*PERTENECIENTE AL BANNER PRINCIPAL*/
-#banner {
-    background-color: rgb(0, 59, 92);
-    height          : 15%;
-    width           : 100%;
-    position        : static;
-    box-shadow      : 5px 5px 20px rgba(53, 71, 82, 0.381);
-    z-index         : 1;
-}
-
-/*PERTENECIENTE AL BANNER DONDE SE ENCUENTRA EL BOTON DE CERRAR SESION*/
-.banner2{
-    display: flex;
-    position: static;
-    max-width: 100%;
-    height: 60px;
-    z-index: 2;
-    background-color: #616161 !important;
-    justify-content: right;
-    align-items: center;
-    
-}
-
-/*ESTILOS DEL TITULO PRINCIPAL, SIEMPRE AL INICIO DE PAGINA*/
 .txt-title{
     text-align    : center;
     padding       : 1.75em 0;
@@ -65,16 +9,49 @@ footer{
     font-size     : clamp(1rem, -0.875rem + 8.333vw, 1.7rem);  
 }
 
-/*ESTILOS DE TITULOS SECUNDARIOS*/
-.sub-title{
-    text-align    : center;
-    padding       : 0.75em 0;
-    letter-spacing: 0.075rem;
-    line-height   : 1.25;
-    color         : #616161;
-    font-family   : "Roboto ligth", sans-serif;
-    font-weight   : 600;
-    font-size     : clamp(1rem, -0.875rem + 8.333vw, 1.1rem);
+body {
+    min-width            : 100%;
+    min-height           : 100%;
+    display              : flex;
+    flex-direction       : column;
+    background-color     : #E6E6E6;
+}
+
+.content {
+    flex       : 1 0 auto;
+    z-index    : 3;
+    width      : 100%;
+    min-height : 69%;
+}
+
+footer{
+    width           : 100%;
+    height          : 5.5%;
+    color           : #F2F2F2 !important;
+    background-color: #242424 !important;
+    font            : 14px Karla, Sans-Serif;
+}
+
+/*ESTILOS DEL BANNER PRINCIPAL*/
+#banner {
+    background-color: rgb(0, 59, 92);
+    height          : 12%;
+    width           : 100%;
+    position        : static;
+    box-shadow      : 5px 5px 20px rgba(53, 71, 82, 0.381);
+    z-index         : 1;
+}
+
+/*ESTILOS DEL BANNER SECUNDARIO*/
+.banner2{
+    display         : flex;
+    position        : static;
+    max-width       : 100%;
+    height          : 8%;
+    z-index         : 2;
+    background-color: #616161 !important;
+    justify-content : right;
+    align-items     : center;
     
 }
 
@@ -82,85 +59,199 @@ footer{
 .minerva{
     width   : 80px;
     height  : 80px;
-    position:absolute;
-    right   : 1%;
-    top     : 3%;
+
 }
+
 
 /*ESTILOS DEL LOGO DEL LNS*/
 .lns-logo{
     width   : 170px;
     height  : 60px;
-    position:absolute;
-    left    : 1%;
-    top     : 3.5%;
 }
 
-/*ESTILOS DE BOTONES DEL MENU, EN COLOR AZUL*/
-#botones_desp{
-    background-color: rgb(68, 160, 221);
+
+/*ESTILOS PARA QUE EL BOTON DE "REGRESAR" RESALTE*/
+#botones-lat{
+    border-radius: 5px;
+    margin       : 0.7em;
+    border       : 2px solid white;
+    font-size    : 16px; 
+}
+
+/*ESTO ES PARA QUE SE SEPARE EN DOS LA TABLA ALINEADA*/
+#CalendarioAnual{
+    display              : grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows   : 100%;
+    font-size            : 15px;
+}
+
+/*PARA QUE LAS CELDAS SEAN DEL MISMO TAMAÑO*/
+td{
+    position      : static;
+    height        : 60px;
+    vertical-align: middle;
+}
+
+th{
+    position      : static;
+    height        : 60px;
+    vertical-align: middle;
+}
+/*-----------------------------------------*/
+
+
+/*ESTILOS DEL BOTON DE CAMBIAR VISTA*/
+.cambiar_vista{
+
+    padding         : 5px                 ;
+    border-radius   : 10px                ;
+    width           : 150px               ;
+    height          : 40px                  ;
+    background-color: rgb(68, 160, 221) ;
     color           : rgb(255, 255, 255);
-    line-height     : 20px;
-    width           : 200px;   
-    margin          : 20px;
-    margin-bottom   : 2px;
+    line-height     : 20px                ; 
+    margin          : 20px                ;
+    margin-bottom   : 20px !important     ;
     font-size       : clamp(1rem, -0.875rem + 8.333vw, 1.1rem);
+    display         : none;        
+}
+/*---------------------------------------------------------------*/
+
+/*PERTENECIENTE AL CONTENEDOR DE LA OPCION DE SELECCIONAR AÑO*/
+.menu-anio{
+    padding        : 3px;
+    width          : 100%;
+    height         : 130px;
+    display        : flex;
+    justify-content: center;
+    border-left    : 5px;
+}
+/*------------------------------------------------------------*/
+
+/*PERTENECIENTE A LA OPCION DE SELECCIONAR AÑO*/
+
+.seleccionar-anio{
+    background-color: rgb(204, 204, 204);
+    width           : 200px;
+    height          : 100%;
+    border-radius   : 10px;
+    margin-bottom   : 20px;
+    padding         : 10px;
+    text-align      : center;
+    position        : static;
+    display         : block;
 }
 
+/*--------------------------------------------*/
 
-/*ESTILOS DE LAS LINEAS QUE DIVIDEN EN SECCIONES EL MENU*/
-.hr1{
-    border-left: thick solid rgba(0, 0, 0, 0.20);;
-    border-top: none;
-    height     : 40vh;
-    left       : 38%;
-    width      : 0.5vh;
-    position   : absolute;
-    top        : 35%;
-   }
-
-
-.hr2{
-    border-left: thick solid rgba(0, 0, 0, 0.20);
-    border-top: none;
-    height     : 40vh;
-    right      : 38%;
-    width      : 0vh;
-    position   : absolute;
-    top        : 35%;
-}
-/*-------------------------------------------------------*/
-
-
-/*Estilos del boton de cerrar sesion */
-.cerrar-sesion {
-    width: 140px;
-    height: 40px;
-    position: absolute;
-    background-color: #616161; 
-    color: rgb(255, 255, 255);
-    border: 2px solid white; 
-    text-align: center;
-    line-height: 18px;
-    text-decoration: none; 
-    font-size: 16px; 
-    border-radius: 5px; 
-    transition: background-color 0.3s ease, border-color 0.3s ease; /*Aplicamos transiciones suaves*/
-    margin: 0.7em;
-}
-
-/* Estilos del botón cuando está en estado activo (clickeado) */
-.cerrar-sesion:hover {
-    background-color: #242424; 
-    border-color: white;
-}
 
 
 /*Evadiendo estilos de Bootstrap sobrepuestos*/
 
-@media (min-width: 1650px) {
 
-    #lns-logo{
+/*PRIMER CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 1650px) {
+
+    .lns-logo{
+        width :140px;
+        height: 60;
+    }
+
+    .container, .container-sm {
+        max-width: none !important; 
+    }
+
+
+    html, body {
+        height: 100% !important;
+    }
+
+
+    #CalendarioAnual{
+        font-size: 14px;
+    }
+
+    td{
+        position      : static;
+        height        : 90px;
+        vertical-align: middle;
+    }
+    
+    th{
+        position      : static;
+        height        : 90px;
+        vertical-align: middle;
+    }
+     
+}
+
+/*SEGUNDO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (min-width: 966px) {
+    /*MODIFICACIONES DE LAS TABLAS PARA QUE SE AJUSTEN A CAMBIOS DE TAMAÑO
+    CUANDO LA PANTALLA CREZCA*/
+    #CalendarioAnual{
+        font-size: 13px;
+    }
+
+    #tablauno{
+        width           : 100%;
+        height          : 70%;
+        display         : table !important;
+        text-align      : center;
+    }
+    
+    #tablados{
+        width           : 100%;
+        height          : 70%;
+        display         : table !important;
+        text-align      : center;
+    }
+    
+    td{
+        position      : static;
+        height        : 65px;
+        vertical-align: middle;
+    }
+    
+    th{
+        position      : static;
+        height        : 65px;
+        vertical-align: middle;
+    }
+
+    html, body {
+        height: 100% !important;
+    }
+    
+
+    /******************************************************/
+}
+
+/*TERCER CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-height: 945px) {
+
+    .lns-logo{
+        width :140px;
+        height: 60;
+    }
+
+    .container, .container-sm {
+    max-width: none !important; 
+    }
+
+
+    html, body {
+        height: 100% !important;
+    }
+    
+     
+}
+
+/*CUARTO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 959px) {
+
+    .lns-logo{
         width :140px;
         height: 60;
     }
@@ -174,57 +265,69 @@ footer{
         height: 100% !important;
     }
 
-    #banner{
-        height: 13%;
+    td{
+        position      : static;
+        height        : 40px;
+        vertical-align: middle;
+    }
+    
+    th{
+        position      : static;
+        height        : 40px;
+        vertical-align: middle;
+    }
+
+    #tablauno{
+        font-size       : 11.45px;
+        width           : 99%;
+        height          : 70%;
+        display         : table;
+        text-align      : center;
+
+    }
+
+    #tablados{
+        font-size       : 12.45px;
+        width           : 98%;
+        height          : 20%;
+        display         : none;
+        text-align      : center;
+      
+    }
+
+    .cambiar_vista{
+        display: flex;
+    }
+
+    #CalendarioAnual{
+        display              : grid;
+        grid-template-columns: 100%;
+        grid-template-rows   : 100%;
+        font-size            : 11.50px;
     }
     
      
 }
 
-@media (max-width: 1650px) {
 
-    .lns-logo{
-        width : 120px;
-        height: 40;
+/*QUINTO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 730px) {
+    .container, .container-sm {
+        max-width: none !important; 
     }
 
 
     html, body {
         height: 100% !important;
     }
-
-
-    .content{
-        height: 70%;
-    }
-
-    #botones_desp{
-        font-size: 14px;
-        height: 30px;
-        width: 120px;
-        padding: 2px;
-    }
-
-    #banner{
-        height: 20%;
-    }
-
-    .cerrar-sesion {
-        width: 130px;
-        height: 40px;
-    }
-
-    .banner2{
-        height: 10%;
-    }
-
+    
     footer{
-        height: 10%;
-        align-content: center;
-     }
+        height: 15%;
+    }
 }
 
-@media (max-width: 1355px){
+/*SEXTO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 450px) {
     .container, .container-sm {
         max-width: none !important; 
     }
@@ -233,153 +336,87 @@ footer{
         height: 100% !important;
     }
 
-    .cerrar-sesion {
-        width: 130px;
-        height: 40px;
+    #banner{
+        height: 12%;
+    }
+
+
+    /*SE AJUSTAN LOS TAMAÑOS DE CELDAS Y CONTENIDO DE LA TABLA 
+    PARA QUE PUEDA MOSTRARSE EN MOVILES*/
+
+    #tablados{
+        width    : 70%;
+        font-size: 9.5px;
+    }
+
+    .btn{
+        --bs-btn-font-size: 10px !important;
+    }
+
+    tr{
+        font-size: 9px;
     }
 
     footer{
-        height: 10%;
+        height: 6.5%;
     }
 }
 
-
-
-@media (max-width: 980px){
-    .hr1{
-        display: none !important;
-    }
-
-    .hr2{
-        display: none !important;
-    }
-
-    .cerrar-sesion {
-        width: 130px;
-        height: 40px;
-    }
-
-    footer{
-        height: 10%;
-    }
-}
-
-@media (max-width: 730px) {
-    .container, .container-sm {
-    max-width: none !important; 
-    }
-
-
-    html, body {
-        height: 110% !important;
-    }
-
-    .cerrar-sesion {
-        width: 130px;
-        height: 40px;
-    }
-
-    footer{
-        height: 10%;
-    }
+/*SEPTIMO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 413px){
     
-}
-
-@media (max-width: 470px) {
-    .container, .container-sm {
-    max-width: none !important; 
+    .lns-logo{
+        width   : 90px;
+        height  : 10px;
+        position: absolute;
+        left    : 1%;
+        top     : 3.5%;
     }
 
     #banner{
+        height: 10%;
+    }
+
+    .minerva{
+        width : 60px !important;
+        height: 60px !important;
+    }
+
+    .lns-logo{
+        width   : 150px;
+        height  : 40px;
+    }
+
+    footer{
+        height: 8%;
+    }
+}
+
+/*OCTAVO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 220px) {
+    .container, .container-sm {
+    max-width: none !important; 
+    }
+
+    .minerva{
+        display: none !important;
+    }
+
+    #banner{
+        height: 7%;
+    }
+
+    .lns-logo{
+        width   : 150px;
+        height  : 40px;
+    }
+
+    html, body {
+        height: 130% !important;
+    }
+
+    footer{
         height: 11%;
-    }
-
-    .banner2{
-        height: 6%;
-    }
-
-    .minerva{
-        width: 70px;
-        height: 65px;
-    }
-
-    .lns-logo{
-        width: 160px;
-        height: 50px;
-    }
-
-    html, body {
-        height: 100% !important;
-    }
-
-    .cerrar-sesion {
-        font-size: 13px ;
-        width: 130px;
-        height: 40px;
-    }
-
-    footer{
-        height: 7.5%;
-    }
-    
-}
-
-@media (max-width: 320px){
-    html, body {
-        height: 120% !important;
-    }
-
-    footer{
-        height: 7.5%;
-    }
-}
-
-@media (max-width: 260px){
-    .minerva{
-        display: none !important;
-    }
-
-    footer{
-        height: 10%;
-    }
-
-    html, body {
-        height: 120% !important;
-    }
-}
-
-@media (max-width: 192px){
-    footer{
-        height: 10%;
-    }
-
-    html, body {
-        height: 125% !important;
-    }   
-}
-
-
-@media (max-width: 175px) {
-    .container, .container-sm {
-    max-width: none !important; 
-    }
-
-    #banner{
-        height: 6%;
-    }
-
-  
-    .lns-logo{
-        width: 150px;
-        height: 40px;
-    }
-
-    footer{
-        height: 15%;
-    }
-    
-    html, body {
-        height: 118% !important;
     }
     
 }
