@@ -243,7 +243,7 @@ class Eliminar_Registro_Calendarizacion{
                         if($fila[10] == "12"){
                             echo "<td>Diciembre</td>";
                         }
-                        echo "<td><button type='button' class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#eliminar' onclick='mostrarregistro(\"".$fila[0]."\")'>Eliminar</button></td>
+                        echo "<td><button type='button' class='btn btn-danger' id='btneliminar' data-bs-toggle='modal' data-bs-target='#eliminar' onclick='mostrarregistro(\"".$fila[0]."\")'>Eliminar</button></td>
                         </tr>";
             }
 
