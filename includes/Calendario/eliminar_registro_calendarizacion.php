@@ -25,7 +25,7 @@ class Eliminar_Registro_Calendarizacion{
             $stmt->bind_param("s", $_GET['q']);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
+            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12],$fila[13]);
             while ($stmt->fetch())
             {
                 $calendario = new tablameses($Meses[$fila[10]]);
@@ -105,7 +105,7 @@ class Eliminar_Registro_Calendarizacion{
             $stmt->bind_param("s", $_GET['q']);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
+            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12], $fila[13]);
             
             echo "
             
@@ -170,7 +170,7 @@ class Eliminar_Registro_Calendarizacion{
             $stmt->bind_param("s", $_GET['q']);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
+            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12], $fila[13]);
             
             echo "
             
