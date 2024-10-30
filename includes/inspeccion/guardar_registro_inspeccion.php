@@ -7,43 +7,56 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <style> @import url('../css_estilos/propiedades_menu_inicial.css'); </style>
         <link rel="stylesheet" href="../css_estilos/pantalla.css">
+        
+    </head>
+     <body>
+    
         <div class="p-3 text-center text-white" id="banner">
             <div class="row">
-                <div class="col d-flex justify-content-start">
-                    <img src="../LNS.png" height="64" width="170">
+                <div class="col lns-logo d-flex justify-content-start">
+                    <img src="../../LNS.png" height="64" width="170">
                 </div>
-                <div class="col">
-                    <h1>Registro Diario</h1>
-                </div>
-                <div class="col d-flex justify-content-end">
-                    <img src="../buap-negativo.png" height="64" width="64">
+                <div class="col minerva d-flex justify-content-end">
+                    <img src="../../buap-negativo.png" height="64" width="64">
                 </div>
             </div>
         </div>
-    </head>
-    <body>
-        
-        <nav class="navbar navbar-expand navbar-light bg-light">
+
+        <nav class="banner2">
             <div class="nav navbar-nav">
-                <a class="nav-item nav-link active" href="../menu_inicial/" aria-current="page"
-                    >Regresar</a>
-                    <a class="nav-item nav-link active" href="../menu_inicial/" aria-current="page"
-                    >Inicio</a>
+                <a class="nav-item nav-link active" href="../../menu_inicial/" aria-current="page">Regresar</a>
             </div>
         </nav>
-        <?php
-            include_once '../include/Registro/guardar_registro.php';
-            include_once '../funciones_php/Configuracion_sesion.php';
-            $obj_gua_reg = new Guardar_Reg;
-            $consulta    = $obj_gua_reg->guardar_registro();
 
+        <?php
+            include_once '../../include/Registro/guardar_registro.php';
+            include_once '../../funciones_php/Configuracion_sesion.php';
+            $obj_gua_reg = new Guardar_Reg;
+            
+
+            
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $consulta = $ayudante->manejador->guardar_registro();
-                header('Location: Inspeccion_registro.php?reg_detalles='.$consulta["IdRegistro"].'');
+                $consulta = $obj_gua_reg->guardar_registro();
+                header('Location: ../../inspecciones/Historial_Inspecciones');
             }
         ?>
         <br>
         <main class="content">
+
+            <div class="p-3 text-center text-white" id="banner">
+                <div class="row">
+                    <div class="col d-flex justify-content-start">
+                        <img src="../LNS.png" height="64" width="170">
+                    </div>
+                    <div class="col">
+                        <h1>Registro Diario</h1>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <img src="../buap-negativo.png" height="64" width="64">
+                    </div>
+                </div>
+            </div>
+                
         <div
             class="container"
         >
