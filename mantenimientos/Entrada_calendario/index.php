@@ -83,35 +83,37 @@
                                 //AQUI SE REIMPRIME HASTA ARRIBA DE LA PAGINA EL REGISTRO RECIEN INGRESADO
                                 //CON LA OPCION DE QUE SE PUEDA ELIMINAR O REVISAR SU CONTENIDO
                     echo "<div class='container-fluid'><h5 class='text-center'>Registro de calendario guardado con exito</h5>";
+           //SI SE DESEA QUE EL REGISTRO RECIEN GUARDADO SE MUESTRE A LA HORA GUARDARLOS
+                                //EN ESTA MISMA PAGINA, DESCOMENTAR LOS SIGUIENTE
 
-                    echo "<div class='table-responsive'><table class='table table-bordered'><thead><tr><th scope='col'>Id</th><th scope='col'>No. inventario</th><th scope='col'>Descripción del bien</th><th scope='col'>Marca</th>
-                    <th scope='col'>Modelo</th><th scope='col'>No. serie</th><th scope='col'>Descripción de la ubicación</th><th scope='col'>Proveedor</th>
-                    <th scope='col'>Tipo de Mantenimiento</th><th scope='col'>Origen</th><th scope='col'>Fecha de realizacion</th><th scope='col'>Estatus</th></tr></thead>";
+                //     echo "<div class='table-responsive'><table class='table table-bordered'><thead><tr><th scope='col'>Id</th><th scope='col'>No. inventario</th><th scope='col'>Descripción del bien</th><th scope='col'>Marca</th>
+                //     <th scope='col'>Modelo</th><th scope='col'>No. serie</th><th scope='col'>Descripción de la ubicación</th><th scope='col'>Proveedor</th>
+                //     <th scope='col'>Tipo de Mantenimiento</th><th scope='col'>Origen</th><th scope='col'>Fecha de realizacion</th><th scope='col'>Estatus</th></tr></thead>";
                     
-                    echo "<tbody><tr><th scope='row'>".$consulta['IdCalendario']."</th><td>".$consulta['NumInventario']."</td><td>".$consulta['DescBien']."</td><td>".$consulta['Marca']."</td><td>".$consulta['Modelo']."</td>
-                    <td>".$consulta['NumSerie']."</td><td>".$consulta['DescUbicacion']."</td><td>".$consulta['Proveedor']."</td><td>".$consulta['TipoMantenimiento']."</td><td>".$consulta['Origen']."</td><td>".$Meses[$consulta['FechaMes']]." ".$consulta['FechaAnno']."</td><td>".$consulta['Estatus']."</td></tr></tbody></table></div></div>";
+                //     echo "<tbody><tr><th scope='row'>".$consulta['IdCalendario']."</th><td>".$consulta['NumInventario']."</td><td>".$consulta['DescBien']."</td><td>".$consulta['Marca']."</td><td>".$consulta['Modelo']."</td>
+                //     <td>".$consulta['NumSerie']."</td><td>".$consulta['DescUbicacion']."</td><td>".$consulta['Proveedor']."</td><td>".$consulta['TipoMantenimiento']."</td><td>".$consulta['Origen']."</td><td>".$Meses[$consulta['FechaMes']]." ".$consulta['FechaAnno']."</td><td>".$consulta['Estatus']."</td></tr></tbody></table></div></div>";
                     
-                    echo '<form action="../Entrada_calendario/" method="get">
-                    <div class="container-fluid d-flex justify-content-end">
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar">Eliminar</button>
-                        <div class="modal" id="eliminar">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-warning">
-                                        <h4 class="modal-title">Advertencia</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ¿Esta seguro que desea eliminar el registro?.
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-success" type="submit" name="reg_eliminar" value="'.$consulta['IdCalendario'].'" data-bs-dismiss="modal">Eliminar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>';
+                //     echo '<form action="../Entrada_calendario/" method="get">
+                //     <div class="container-fluid d-flex justify-content-end">
+                //         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar">Eliminar</button>
+                //         <div class="modal" id="eliminar">
+                //             <div class="modal-dialog modal-dialog-centered">
+                //                 <div class="modal-content">
+                //                     <div class="modal-header bg-warning">
+                //                         <h4 class="modal-title">Advertencia</h4>
+                //                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                //                     </div>
+                //                     <div class="modal-body">
+                //                         ¿Esta seguro que desea eliminar el registro?.
+                //                     </div>
+                //                     <div class="modal-footer">
+                //                         <button class="btn btn-success" type="submit" name="reg_eliminar" value="'.$consulta['IdCalendario'].'" data-bs-dismiss="modal">Eliminar</button>
+                //                     </div>
+                //                 </div>
+                //             </div>
+                //         </div>
+                //     </div>
+                // </form>'
                 }
                         //ESTE METODO ES POR SI ES PARA ELIMINAR EL REGISTRO UNA VES INGRESADO
                 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['reg_eliminar']))
