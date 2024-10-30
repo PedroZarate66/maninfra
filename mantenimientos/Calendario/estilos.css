@@ -118,7 +118,7 @@ th{
 }
 /*---------------------------------------------------------------*/
 
-/*PERTENECIENCTE AL CONTENEDOR DE LA OPCION DE SELECCIONAR AÑO*/
+/*PERTENECIENTE AL CONTENEDOR DE LA OPCION DE SELECCIONAR AÑO*/
 .menu-anio{
     padding        : 3px;
     width          : 100%;
@@ -146,7 +146,11 @@ th{
 /*--------------------------------------------*/
 
 
-
+/*ESTILOS QUE MUESTRAN LOS REGISTROS INACTIVOS*/
+.inactivo{
+    background-color: antiquewhite;
+}
+/*--------------------------------------------*/
 /*Evadiendo estilos de Bootstrap sobrepuestos*/
 
 
@@ -183,29 +187,7 @@ th{
         height        : 90px;
         vertical-align: middle;
     }
-
-    #banner{
-        height: 15%;
-    }
-
-    footer{
-        height: 8%;
-    }
      
-}
-
-@media (max-width: 1355px){
-    .container, .container-sm {
-        max-width: none !important; 
-    }
-
-    html, body {
-        height: 100% !important;
-    }
-
-    footer{
-        height: 8%;
-    }
 }
 
 /*SEGUNDO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
