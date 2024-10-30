@@ -65,7 +65,7 @@
         </div>
     
                 <!--INICIO DEL FORMULARIO PRINCIPAL-->
-        <form class="needs-validation" action="../../include/guardar_registro_inspeccion.php" method="post" novalidate>
+        <form class="needs-validation" action="../../include/inspeccion/guardar_registro_inspeccion.php" method="post" novalidate>
             <div class="contenedor-principal">
                         
 
