@@ -25,7 +25,7 @@ class Desplegar_Calendario{
             $stmt->bind_param("s", $_GET['q']);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
+            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12], $fila[13]);
             
 
             while ($stmt->fetch())
@@ -101,7 +101,7 @@ class Desplegar_Calendario{
             $stmt->bind_param("s", $_GET['q']);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
+            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12],$fila[13]);
 
             echo "
             
@@ -122,13 +122,25 @@ class Desplegar_Calendario{
 
             while ($stmt->fetch())
             {
-                echo "<tr class='align-middle'>
+                if($fila[13] === 1){
+                    echo "<tr class='align-middle'>
+                            <th scope='row'>" .$fila[1]. "</th>
+                            <td>" .$fila[2]. "</td>
+                            <td>" .$fila[3]. "</td>
+                            <td>" .$fila[4]. "</td>
+                            <td>" .$fila[5]. "</td>
+                        ";
+                }else{
+                    echo "<tr class='inactivo align-middle'>
                         <th scope='row'>" .$fila[1]. "</th>
                         <td>" .$fila[2]. "</td>
                         <td>" .$fila[3]. "</td>
                         <td>" .$fila[4]. "</td>
                         <td>" .$fila[5]. "</td>
                      ";
+                }
+
+                
                
                         
             }
@@ -153,7 +165,7 @@ class Desplegar_Calendario{
             $stmt->bind_param("s", $_GET['q']);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
+            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12],$fila[13]);
 
             echo "
             <table class='table table-light table-bordered table-hover' id='tablados'>
@@ -174,48 +186,94 @@ class Desplegar_Calendario{
             while ($stmt->fetch())
             {
                 $calendario = new tablameses($Meses[$fila[10]]);
-                echo "<tr class='align-middle'>
-                        <td>" .$fila[6]. "</td>
-                        <td>" .$fila[7]. "</td>
-                        <td>" .$fila[8]. "</td>
-                        <td><a class='btn' role='button' data-bs-toggle='modal' data-bs-target='#visualizar' onclick='mostrarmejora(\"".$fila[9]."\")'>".$fila[9]."</a></td>
-                        <td>".$fila[12]."</td>";
-                        if($fila[10] == "1"){
-                            echo "<td>Enero</td>";
-                        }
-                        if($fila[10] == "2"){
-                            echo "<td>Febrero</td>";
-                        }
-                        if($fila[10] == "3"){
-                            echo "<td>Marzo</td>";
-                        }
-                        if($fila[10] == "4"){
-                            echo "<td>Abril</td>";
-                        }
-                        if($fila[10] == "5"){
-                            echo "<td>Mayo</td>";
-                        }
-                        if($fila[10] == "6"){
-                            echo "<td>Junio</td>";
-                        }
-                        if($fila[10] == "7"){
-                            echo "<td>Julio</td>";
-                        }
-                        if($fila[10] == "8"){
-                            echo "<td>Agosto</td>";
-                        }
-                        if($fila[10] == "9"){
-                            echo "<td>Septiembre</td>";
-                        }
-                        if($fila[10] == "10"){
-                            echo "<td>Octubre</td>";
-                        }
-                        if($fila[10] == "11"){
-                            echo "<td>Noviembre</td>";
-                        }
-                        if($fila[10] == "12"){
-                            echo "<td>Diciembre</td>";
-                        }
+
+                if($fila[13] === 1){
+                        echo "<tr class='align-middle'>
+                            <td>" .$fila[6]. "</td>
+                            <td>" .$fila[7]. "</td>
+                            <td>" .$fila[8]. "</td>
+                            <td><a class='btn' role='button' data-bs-toggle='modal' data-bs-target='#visualizar' onclick='mostrarmejora(\"".$fila[9]."\")'>".$fila[9]."</a></td>
+                            <td>".$fila[12]."</td>";
+                            if($fila[10] == "1"){
+                                echo "<td>Enero</td>";
+                            }
+                            if($fila[10] == "2"){
+                                echo "<td>Febrero</td>";
+                            }
+                            if($fila[10] == "3"){
+                                echo "<td>Marzo</td>";
+                            }
+                            if($fila[10] == "4"){
+                                echo "<td>Abril</td>";
+                            }
+                            if($fila[10] == "5"){
+                                echo "<td>Mayo</td>";
+                            }
+                            if($fila[10] == "6"){
+                                echo "<td>Junio</td>";
+                            }
+                            if($fila[10] == "7"){
+                                echo "<td>Julio</td>";
+                            }
+                            if($fila[10] == "8"){
+                                echo "<td>Agosto</td>";
+                            }
+                            if($fila[10] == "9"){
+                                echo "<td>Septiembre</td>";
+                            }
+                            if($fila[10] == "10"){
+                                echo "<td>Octubre</td>";
+                            }
+                            if($fila[10] == "11"){
+                                echo "<td>Noviembre</td>";
+                            }
+                            if($fila[10] == "12"){
+                                echo "<td>Diciembre</td>";
+                            }
+                }else{
+                    echo "<tr class='inactivo align-middle'>
+                            <td>" .$fila[6]. "</td>
+                            <td>" .$fila[7]. "</td>
+                            <td>" .$fila[8]. "</td>
+                            <td><a class='btn' role='button' data-bs-toggle='modal' data-bs-target='#visualizar' onclick='mostrarmejora(\"".$fila[9]."\")'>".$fila[9]."</a></td>
+                            <td>".$fila[12]."</td>";
+                            if($fila[10] == "1"){
+                                echo "<td>Enero</td>";
+                            }
+                            if($fila[10] == "2"){
+                                echo "<td>Febrero</td>";
+                            }
+                            if($fila[10] == "3"){
+                                echo "<td>Marzo</td>";
+                            }
+                            if($fila[10] == "4"){
+                                echo "<td>Abril</td>";
+                            }
+                            if($fila[10] == "5"){
+                                echo "<td>Mayo</td>";
+                            }
+                            if($fila[10] == "6"){
+                                echo "<td>Junio</td>";
+                            }
+                            if($fila[10] == "7"){
+                                echo "<td>Julio</td>";
+                            }
+                            if($fila[10] == "8"){
+                                echo "<td>Agosto</td>";
+                            }
+                            if($fila[10] == "9"){
+                                echo "<td>Septiembre</td>";
+                            }
+                            if($fila[10] == "10"){
+                                echo "<td>Octubre</td>";
+                            }
+                            if($fila[10] == "11"){
+                                echo "<td>Noviembre</td>";
+                            }
+                            if($fila[10] == "12"){
+                                echo "<td>Diciembre</td>";
+                            }
+                }
                        
                         
             }
