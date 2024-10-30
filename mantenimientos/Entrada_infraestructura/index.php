@@ -69,32 +69,32 @@
                 {
                     $consulta = $obj_gua_inf->guardar_infraestructura();
                     echo "<div class='container-fluid'><h5 class='text-center'>Registro de infraestructura guardado con exito</h5>";
-                    echo "<div class='table-responsive'><table class='table table-bordered'><thead><tr><th scope='col'>Id</th><th scope='col'>Aspecto</th><th scope='col'>Descripción</th><th scope='col'>Beneficios</th>
-                    <th scope='col'>Tipo de mantenimiento</th><th scope='col'>Frecuencia</th><th scope='col'>Fecha Propuesta para realización</th><th scope='col'>Prioridad</th>
-                    <th scope='col'>Costo estimado</th><th scope='col'>Ultima fecha de calendarizacion</th></tr></thead>";
-                    echo "<tbody><tr><th scope='row'>".$consulta["IdMejora"]."</th><td>".$consulta["Aspecto"]."</td><td>".$consulta["Descripcion"]."</td><td>".$consulta["Beneficios"]."</td><td>".$consulta["TipoMantenimiento"]."</td>
-                    <td>".$consulta["Frecuencia"]."</td><td>".$consulta["MesPropuesto"]." ".$consulta["AnnoPropuesto"]."</td><td>".$consulta["Prioridad"]."</td><td>$".$consulta["Costo"]."</td><td>".$consulta["UltimaActualizacion"]."</td></tr></tbody></table></div></div>";
-                    echo '<form action="../Entrada_infraestrucutra/" method="get">
-                    <div class="container-fluid d-flex justify-content-start">
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar">Eliminar</button>
-                        <div class="modal" id="eliminar">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-warning">
-                                        <h4 class="modal-title">Advertencia</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ¿Esta seguro que desea eliminar el registro?.
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-success" type="submit" name="reg_eliminar" value="'.$consulta["IdMejora"].'" data-bs-dismiss="modal">Eliminar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </form>';
+                   // echo "<div class='table-responsive'><table class='table table-bordered'><thead><tr><th scope='col'>Id</th><th scope='col'>Aspecto</th><th scope='col'>Descripción</th><th scope='col'>Beneficios</th>
+                    // <th scope='col'>Tipo de mantenimiento</th><th scope='col'>Frecuencia</th><th scope='col'>Fecha Propuesta para realización</th><th scope='col'>Prioridad</th>
+                    // <th scope='col'>Costo estimado</th><th scope='col'>Ultima fecha de calendarizacion</th></tr></thead>";
+                    // echo "<tbody><tr><th scope='row'>".$consulta["IdMejora"]."</th><td>".$consulta["Aspecto"]."</td><td>".$consulta["Descripcion"]."</td><td>".$consulta["Beneficios"]."</td><td>".$consulta["TipoMantenimiento"]."</td>
+                    // <td>".$consulta["Frecuencia"]."</td><td>".$consulta["MesPropuesto"]." ".$consulta["AnnoPropuesto"]."</td><td>".$consulta["Prioridad"]."</td><td>$".$consulta["Costo"]."</td><td>".$consulta["UltimaActualizacion"]."</td></tr></tbody></table></div></div>";
+                    // echo '<form action="../Entrada_infraestrucutra/" method="get">
+                    // <div class="container-fluid d-flex justify-content-start">
+                    //     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar">Eliminar</button>
+                    //     <div class="modal" id="eliminar">
+                    //         <div class="modal-dialog modal-dialog-centered">
+                    //             <div class="modal-content">
+                    //                 <div class="modal-header bg-warning">
+                    //                     <h4 class="modal-title">Advertencia</h4>
+                    //                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    //                 </div>
+                    //                 <div class="modal-body">
+                    //                     ¿Esta seguro que desea eliminar el registro?.
+                    //                 </div>
+                    //                 <div class="modal-footer">
+                    //                     <button class="btn btn-success" type="submit" name="reg_eliminar" value="'.$consulta["IdMejora"].'" data-bs-dismiss="modal">Eliminar</button>
+                    //                 </div>
+                    //             </div>
+                    //         </div>
+                    //     </div>
+                    // </div>
+                    // </form>';
                 }
                         //EN CASO DE QUE SE QUIERA ELIMINAR EL REGISTRO RECIEN INGRESADO
                 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['reg_eliminar']))
