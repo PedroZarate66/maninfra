@@ -16,7 +16,6 @@ document.getElementById('tabla').onclick = function(){
 //------------------------------------------------
 
 
-
 //FUNCION PARA QUE MUESTRE Y LIGUE EL REGISTRO QUE SE VA A CALENDARIZAR
 function mostrarmejora(qstr)
 {
@@ -35,7 +34,7 @@ function mostrarmejora(qstr)
     }
     };
     
-    xhttp.open("GET", "../../include/Consulta_infraestructura.php?q="+qstr, true);
+    xhttp.open("GET", "../../include/Infraestructura/Consulta_infraestructura.php?q="+qstr, true);
     xhttp.send();
 }
 //-----------------------------------------------------------------------
@@ -54,7 +53,7 @@ function eliminarRegistro(qstr)
         document.getElementById("tabladatosEliminar").innerHTML = this.responseText;
     }
     };
-    xhttp.open("GET", "../../include/Consulta_infraestructura.php?q="+qstr, true);
+    xhttp.open("GET", "../../include/Infraestructura/Consulta_infraestructura.php?q="+qstr, true);
     xhttp.send();
 }
 //-----------------------------------------------------------------------------
@@ -67,6 +66,7 @@ function mostrarcalendario(qstr)
         document.getElementById("CalendarioAnual").innerHTML = "";
         return;
     }
+    
     xhttp = new XMLHttpRequest();
     console.log(xhttp);
     xhttp.onreadystatechange = function() {
@@ -74,7 +74,7 @@ function mostrarcalendario(qstr)
         document.getElementById("CalendarioAnual").innerHTML = this.responseText;
     }
     };
-    xhttp.open("GET", "../../include/consulta_calendario.php?q="+qstr, true);
+    xhttp.open("GET", "../../include/Calendario/consulta_calendario.php?q="+qstr, true);
     xhttp.send();
 }
 //----------------------------------------------------------
@@ -95,9 +95,10 @@ function eliminarcalendario(qstr)
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         document.getElementById("CalendarioAnual").innerHTML = this.responseText;
+        console.log("entro a la funcion");
     }
     };
-    xhttp.open("GET", "../../include/eliminar_calendarizacion.php?q="+qstr, true);
+    xhttp.open("GET", "../../include/Calendario/eliminar_calendarizacion.php?q="+qstr, true);
     xhttp.send();
 }
 
@@ -137,11 +138,19 @@ function mostrarregistro(qstr)
     }
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
+
     if (this.readyState == 4 && this.status == 200) {
         document.getElementById("consultaeliminar").innerHTML = this.responseText;
+        console.log("funciona");
+    }else{
+        console.log("no funciona");
     }
+    
     };
-    xhttp.open("GET", "../../funciones_php/consulta_regcalendario.php?q="+qstr, true);
+
+     xhttp.open("GET", "../../funciones_php/consulta_regcalendario.php?q="+qstr, true);
+
+    //xhttp.open("GET", "../include/Calendario/eliminar_reg_calendario.php?q="+qstr, true);
     xhttp.send();
 }
 
