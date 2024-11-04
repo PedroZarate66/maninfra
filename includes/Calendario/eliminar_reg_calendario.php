@@ -9,6 +9,7 @@ class Eliminar_Reg_Calendario{
             $conexion->crear_conection();
             //AQUI SE LOGRA QUE SE BLOQUEE EL REGISTRO SI ES QUE SE DECIDE ELIMINAR
             $sql = "UPDATE calendarios SET activo = 0 WHERE IdCalendario = ".$idconsulta.";";
+            
             if ($conexion->conexionBD->query($sql) === TRUE) {
                 echo "<h5 class='text-center'>Registro eliminado exitosamente</h5>";
             } else {
