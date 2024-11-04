@@ -150,6 +150,10 @@ th{
 .inactivo{
     background-color: antiquewhite;
 }
+
+.activo{
+    background-color: #f8f9fa;
+}
 /*--------------------------------------------*/
 /*Evadiendo estilos de Bootstrap sobrepuestos*/
 
