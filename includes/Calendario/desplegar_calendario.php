@@ -105,8 +105,8 @@ class Desplegar_Calendario{
 
             echo "
             
-            <table class='table table-light table-bordered table-hover' id='tablauno'>
-                    <thead>
+            <table class='table-light table-bordered table-hover' id='tablauno'>
+                    <thead class='activo'>
                         <tr>
                             <th scope='col'>No. inventario</th>
                             <th scope='col'>Descripcion del bien</th>
@@ -123,7 +123,7 @@ class Desplegar_Calendario{
             while ($stmt->fetch())
             {
                 if($fila[13] === 1){
-                    echo "<tr class='align-middle'>
+                    echo "<tr class='activo align-middle'>
                             <th scope='row'>" .$fila[1]. "</th>
                             <td>" .$fila[2]. "</td>
                             <td>" .$fila[3]. "</td>
@@ -168,8 +168,8 @@ class Desplegar_Calendario{
             $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12],$fila[13]);
 
             echo "
-            <table class='table table-light table-bordered table-hover' id='tablados'>
-                    <thead>
+            <table class='table-light table-bordered table-hover' id='tablados'>
+                    <thead class='activo'>
                         <tr>
                             <th scope='col'>Descripcion de ubicacion</th>
                             <th scope='col'>Proveedor</th>
@@ -188,14 +188,14 @@ class Desplegar_Calendario{
                 $calendario = new tablameses($Meses[$fila[10]]);
 
                 if($fila[13] === 1){
-                        echo "<tr class='align-middle'>
+                        echo "<tr class='activo align-middle'>
                             <td>" .$fila[6]. "</td>
                             <td>" .$fila[7]. "</td>
                             <td>" .$fila[8]. "</td>
                             <td><a class='btn' role='button' data-bs-toggle='modal' data-bs-target='#visualizar' onclick='mostrarmejora(\"".$fila[9]."\")'>".$fila[9]."</a></td>
                             <td>".$fila[12]."</td>";
                             if($fila[10] == "1"){
-                                echo "<td>Enero</td>";
+                                echo "<td class='activo'>Enero</td>";
                             }
                             if($fila[10] == "2"){
                                 echo "<td>Febrero</td>";
