@@ -7,6 +7,7 @@
         include_once '../../include/eliminar_reg_calendario.php';
         include_once '../../funciones_php/Configuracion_sesion.php';
 
+       
         //Se crean los objetos que utilizaremos para llamar a las funciones externas
         $obj_obt_an_cal  = new Obtener_An_Calendario;
         $obj_gua_reg_cal = new Guardar_Reg_Calendario;
@@ -14,7 +15,7 @@
         $obj_eli_reg_cal = new Eliminar_Reg_Calendario;
 
         ?>
-         <!--***************BANNER QUE CONTIENE LOS LOGOS************************-->
+        <!--***************BANNER QUE CONTIENE LOS LOGOS************************-->
         <div class="p-3 text-center text-white" id="banner">
             <div class="row">
                     <div class="col lns-logo d-flex justify-content-start">
@@ -66,15 +67,6 @@
 
         <div class="menu-anio">
             <div class="seleccionar-anio">
-
-            <!--SI SE BUSCA QUE MUESTRE LA FECHA ACTUAL EN EL MENU, 
-                        DESCOMENTAR LAS SIGUIENTES LINEAS:-->
-
-                <!-- <h5>Hoy es:</h5>
-            <div class="container-fluid d-flex justify-content-start">
-                <input type="date" id="fecha" name="fecha" disabled>
-            </div> -->
-
                <label for="anno_calendario" class="form-label">Ver historial del año:</label>
                     
                <select class="form-select form-select-sm" size="3" name="anno_calendario" id="anno_calendario" onchange="eliminarcalendario(this.value)">
@@ -86,24 +78,33 @@
 
         <br>
 
+                <!--INICIO DEL CODIGO PHP-->
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
             $Meses = array("Año", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diviembre");
             $idconsulta = $_POST["id_origen"];
             $nuevoestatus = $_POST["actualizacion"];
+
             //Aqui se llama a las funciones externas para que registren y actualicen el calendario
             $consulta = $obj_gua_reg_cal->guardar_registro_calendario();
             $obj_act_din_cal->actualizacion_dinamica_calendario($idconsulta, $nuevoestatus);
+
             //$consulta = $ayudante->manejador->guardar_registro_calendario();
             //$ayudante->manejador->actualizacion_dinamica_calendario($idconsulta,$nuevoestatus);
+
+
+
             echo "<div class='container-fluid'><h5 class='text-center'>Registro de calendario guardado con exito</h5>";
-                echo "<div class='table-responsive'><table class='table table-bordered'><thead><tr><th scope='col'>Id</th><th scope='col'>No. inventario</th><th scope='col'>Descripción del bien</th><th scope='col'>Marca</th>
+                
+            echo "<div class='table-responsive'><table class='table table-bordered'><thead><tr><th scope='col'>Id</th><th scope='col'>No. inventario</th><th scope='col'>Descripción del bien</th><th scope='col'>Marca</th>
                 <th scope='col'>Modelo</th><th scope='col'>No. serie</th><th scope='col'>Descripción de la ubicación</th><th scope='col'>Proveedor</th>
                 <th scope='col'>Tipo de Mantenimiento</th><th scope='col'>Origen</th><th scope='col'>Fecha de realizacion</th><th scope='col'>Estatus</th></tr></thead>";
-                echo "<tbody><tr><th scope='row'>".$consulta["IdCalendario"]."</th><td>".$consulta["NumInventario"]."</td><td>".$consulta["DescBien"]."</td><td>".$consulta["Marca"]."</td><td>".$consulta["Modelo"]."</td>
+                
+            echo "<tbody><tr><th scope='row'>".$consulta["IdCalendario"]."</th><td>".$consulta["NumInventario"]."</td><td>".$consulta["DescBien"]."</td><td>".$consulta["Marca"]."</td><td>".$consulta["Modelo"]."</td>
                 <td>".$consulta["NumSerie"]."</td><td>".$consulta["DescUbicacion"]."</td><td>".$consulta["Proveedor"]."</td><td>".$consulta["TipoMantenimiento"]."</td><td>".$consulta["Origen"]."</td><td>".$Meses[$consulta["FechaMes"]]." ".$consulta["FechaAnno"]."</td><td>".$consulta["Estatus"]."</td></tr></tbody></table></div></div>";
-                echo '<form action="../Calendario/" method="get">
+                
+            echo '<form action="../Calendario/" method="get">
                 <div class="container-fluid d-flex justify-content-end">
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar">Eliminar</button>
                     <div class="modal" id="eliminar">
@@ -127,9 +128,12 @@
             </form>';
         }
 
+        //ESTO ES PARA QUE SE ELIMINE EL REGISTRO, O EN ESTE CASO, SE INHABILITE EL REGISTRO
+
         if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['reg_eliminar']))
             {
                 $calendarioEliminar = $_GET["reg_eliminar"];
+
                 $obj_eli_reg_cal->eliminar_registro_calendario($calendarioEliminar);
                 //$ayudante->manejador->eliminar_reg_calendario($calendarioEliminar);
                 header('Location: ../Calendario/');
@@ -149,7 +153,7 @@
         </div>
       
     </main>
-     
+             <!--FOOTER EL SITIO-->
         <footer class="text-center">
             <div class="text-center p-3">
                 Benemerita Universidad Autonoma de Puebla:
@@ -157,6 +161,7 @@
             </div>
         </footer>
 
+                <!--MUESTRA EN UNA VENTANA EMERGENTE LOS DATOS DEL REGISTRO QUE HEMOS SELECCIONADO-->
         <div class="modal fade" id="visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
@@ -173,7 +178,8 @@
             </div>
         </div>
 
-        <form action="../Calendario/" method="post">
+                <!--MUESTRA INFORMACION DE UN REGISTRO VINCULADO A LA CANDELARIZACION-->
+        <form action="../Editar_registro" method="post">
             <div class="offcanvas offcanvas-bottom" tabindex="-1" id="reprogramacion" aria-labelledby="offcanvasScrollingLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Recalendarizar infraestructura</h5>
@@ -187,6 +193,7 @@
                 </div>
             </div>
 
+                        <!--VENTANA EMERGENTE QUE MUESTRA UN MENSAJE DE CORRECCION DE DATOS-->
             <div class="modal" id="termino">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -205,7 +212,9 @@
             </div>
         </form>
 
-        <form action="../Calendario/" method="get">
+
+                        <!--MENSAJE EMERGENTE QUE PREGUNTA SI QUIERES ELIMINAR UN REGISTRO-->
+        <form action="../Editar_registro/" method="get">
             <div class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" id="eliminar">
                 <div class="modal-dialog modal-dialog-centered modal-xl">
                     <div class="modal-content">
@@ -238,7 +247,6 @@
             </div>
         </div>
     </body>
-
     <script src="../../scripts_mantenimiento/scripts_consultas.js"></script>
     <script src="../../scripts_mantenimiento/scripts_rutinarios.js"></script>
     <script src="../../js/bootstrap.bundle.min.js"></script>
