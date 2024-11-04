@@ -145,7 +145,15 @@ th{
 
 /*--------------------------------------------*/
 
+/*ESTILOS QUE MUESTRAN LOS REGISTROS INACTIVOS*/
+.inactivo{
+    background-color: rgb(170, 169, 168);
+}
 
+.activo{
+    background-color: #f8f9fa;
+}
+/*--------------------------------------------*/
 
 /*Evadiendo estilos de Bootstrap sobrepuestos*/
 
