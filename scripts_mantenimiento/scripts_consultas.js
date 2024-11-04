@@ -132,25 +132,28 @@ function cambiarEstatus(qId, qstr)
 function mostrarregistro(qstr)
 {
     var xhttp;
+
+    console.log("variable qstr"+qstr);
+
     if (qstr == "") {
         document.getElementById("consultaeliminar").innerHTML = "";
         return;
     }
+
     xhttp = new XMLHttpRequest();
+
     xhttp.onreadystatechange = function() {
 
-    if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("consultaeliminar").innerHTML = this.responseText;
-        console.log("funciona");
-    }else{
-        console.log("no funciona");
-    }
+        if (this.readyState === 4 && this.status === 200) {
+            document.getElementById("consultaeliminar").innerHTML = this.responseText;
+            console.log("funciona");
+        }else{
+            console.log("no jala")
+        }
     
     };
 
-     xhttp.open("GET", "../../funciones_php/consulta_regcalendario.php?q="+qstr, true);
-
-    //xhttp.open("GET", "../include/Calendario/eliminar_reg_calendario.php?q="+qstr, true);
+    xhttp.open("GET", "../../include/Calendario/consulta_registro_calendario.php?q="+ encodeURIComponent(qstr), true);
     xhttp.send();
 }
 
