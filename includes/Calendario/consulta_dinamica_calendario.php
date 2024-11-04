@@ -1,21 +1,23 @@
 <?php
-//include_once 'conexion.php'; descomentar si es necesario
-include_once '../Admin_sql.php';
-abstract class consulta_dinamica_calendario extends Admin_sql{
-    public final function consulta_dinamica_calendario()
+include_once '../../includes/conexion.php';
+
+class Consulta_Dinamica_Calendario{
+    public function ConsultaDinamicaCalendario()
     {
+        $conexion = new Crear_Conexion;
+
         $Meses = array("Año", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
         $fila = array();
-        $this->crear_conexion();
+        $conexion->crear_conection();
         $sql = "SELECT * FROM `calendarios` WHERE IdCalendario = ? ";
-        $stmt = $this->conexionBD->prepare($sql);
+        $stmt = $conexion->conexionBD->prepare($sql);
         $stmt->bind_param("s", $_GET["q"]);
         $stmt->execute();
         $stmt->store_result();
-        $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
+        $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12],$fila[13]);
         $stmt->fetch();
         $stmt->Close();
-        $this->cerrar_conxion();
+        $conexion->cerrar_conxion();
         echo "<div class='table-responsive'>
                 <table class='table table-bordered'>
                     <thead>
