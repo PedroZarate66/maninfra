@@ -1,5 +1,3 @@
-
-
 .txt-title{
     text-align    : center;
     padding       : 1.75em 0;
@@ -94,7 +92,7 @@ body {
     grid-template-rows   : 50% 50%;
 }
 
-.tablauno{
+ .tablauno{
     width           : 100%;
     height          : 70%;
     display         : table;
@@ -107,7 +105,8 @@ body {
     display         : table;
     text-align      : center;
     font-size       : 13px;
-}
+} 
+
 
            /*PERTENECIENTE A ESTILOS DEL FORMULARIO*/
 .contenedorform{
@@ -187,6 +186,17 @@ th{
     font            : 14px Karla, Sans-Serif;
 }
 
+
+/*ESTILOS QUE MUESTRAN LOS REGISTROS INACTIVOS*/
+.inactivo{
+    background-color: antiquewhite;
+}
+
+.activo{
+    background-color: #f8f9fa;
+}
+/*--------------------------------------------*/
+
 /*Evadiendo estilos de Bootstrap sobrepuestos*/
 @media (max-width: 1709px) {
 
@@ -201,7 +211,7 @@ th{
 
 
     html, body {
-        height: 100% !important;
+        height: 100%;
     }
 
     /*MODIFICACIONES DE LAS TABLAS PARA QUE SE AJUSTEN A CAMBIOS DE TAMAÑO
@@ -305,7 +315,7 @@ th{
         margin-left          : 5px;
         margin-right         : 5px;
         grid-template-columns: 98%;
-        grid-template-rows   : 100%;
+        grid-template-rows   : 0%;
     }
 
     .tablauno{
@@ -317,12 +327,9 @@ th{
 
     }
 
-    .tablados{
-        font-size       : 12.45px;
-        width           : 98%;
-        height          : 20%;
+    #tablados{
+        height: 70%;
         display         : none;
-        text-align      : center;
       
     }
 
@@ -395,7 +402,7 @@ th{
 
 
     html, body {
-        height: 110% !important;
+        height: 110%;
     }
     
 }
@@ -406,9 +413,22 @@ th{
     }
 
     html, body {
-        height: 120% !important;
+        height: 120%;
     }
     
+    #banner{
+        height: 12%;
+    }
+
+    #tablados{
+        width: 98%;
+        font-size: 12px;
+    }
+
+    .cambiar_vista{
+        height: 9%;
+    }
+
 }
 
 @media (max-width: 170px) {
@@ -417,7 +437,7 @@ th{
     }
 
     html, body {
-        height: 130% !important;
+        height: 130%;
     }
     
 }
@@ -435,8 +455,9 @@ th{
 
 
     html, body {
-        height: 100% !important;
+        height: 100%;
     }
     
      
 }
+    
