@@ -11,7 +11,8 @@ class Eliminar_Mej_Infraestructura{
         {   
             $conexion = new Crear_Conexion;
             $conexion->crear_conection();
-            $sql = "DELETE FROM actualizacionmejoramantenimietos WHERE IdMejora = ".$idconsulta.";";
+            //ESTA CONSULTA SOLO CAMBIA A INACTIVO PARA QUE SE MUESTRE INHABILITADO EL REGISTRO
+            $sql = "UPDATE actualizacionmejoramantenimietos SET activo = 0 WHERE IdMejora = ".$idconsulta.";";
             if ($conexion->conexionBD->query($sql) === TRUE) {
                 echo "<h5 class='text-center'>Registro eliminado exitosamente</h5>";
             } else {
