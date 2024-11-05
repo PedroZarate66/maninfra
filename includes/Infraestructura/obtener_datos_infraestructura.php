@@ -85,7 +85,7 @@ class Obtener_Dat_Infraestructura{
 
             echo 
             "
-            <table class='tablauno table-light table-bordered table-warning table-hover'>
+            <table class='tablauno table-light table-bordered table-warning table-hover' id='tablauno'>
                     <thead>
                         <tr>
                             <th scope='col'>Aspecto</th>
@@ -182,7 +182,7 @@ class Obtener_Dat_Infraestructura{
         {
 
             echo "
-            <table class='tablados table-light table-bordered table-hover'>
+            <table class='tablados table-light table-bordered table-hover' id='tablados'>
                     <thead>
                         <tr>
                             <th scope='col'>Fecha propuesta</th>
