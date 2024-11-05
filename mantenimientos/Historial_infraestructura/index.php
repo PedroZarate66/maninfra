@@ -135,19 +135,19 @@
             <h1>Historial de Actualizacion, Mejoras y Preservacion de Infraestructura</h1>
         </div>
 
-        <!--SE INTENTA IMPRIMIR LAS TABLAS PARA QUE SEAN RESPONSIVAS-->
+         <!--SE INTENTA IMPRIMIR LAS TABLAS PARA QUE SEAN RESPONSIVAS-->
                     <!--SEGUNDO ELEMENTO #2-->
         <button type="button" id="tabla" class="cambiar_vista">Cambiar vista</button>
-        
+         
                     <!--TERCER ELEMENTO #3-->
         <form action='../../funciones_php/Editar_infraestructura.php' method='get'>
             <div class="contenedortabla">
-                <div class="tablauno" id="tablauno">
+                <div class="tablauno">
                     <?php $obtDatInf->obtener_datos_infraestructuraT1(); ?>
                 
                 </div>
 
-                <div class="tablados" id="tablados">
+                <div class="tablados">
                     <?php $obtDatInf->obtener_datos_infraestructuraT2(); ?>
                 </div>
             </div>
