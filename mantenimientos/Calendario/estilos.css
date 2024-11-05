@@ -198,9 +198,7 @@ th{
 @media (min-width: 966px) {
     /*MODIFICACIONES DE LAS TABLAS PARA QUE SE AJUSTEN A CAMBIOS DE TAMAÑO
     CUANDO LA PANTALLA CREZCA*/
-    #CalendarioAnual{
-        font-size: 13px;
-    }
+   
 
     #tablauno{
         width           : 100%;
@@ -295,7 +293,7 @@ th{
     }
 
     #tablados{
-        font-size       : 12.45px;
+        font-size       : 12.5px;
         width           : 98%;
         height          : 20%;
         display         : none;
@@ -350,7 +348,6 @@ th{
 
     #tablados{
         width    : 70%;
-        font-size: 9.5px;
     }
 
 
@@ -418,3 +415,4 @@ th{
     }
     
 }
+    
