@@ -7,7 +7,7 @@ class Obtener_Dat_Infraestructura{
     {   
         $conexion = new Crear_Conexion;
         $conexion->crear_conection();
-        $sql = "SELECT `IdMejora`, `Aspecto`, `Descripcion`, `Beneficios`, `TipoMantenimiento`, `Frecuencia`, `MesPropuesto`, `AnnoPropuesto`, `Prioridad`, `Costo`, DATE_FORMAT(`UltimaActualizacion`, '%d-%m-%Y') AS UltimaActualizacion, `HaSidoPlaneado` FROM `actualizacionmejoramantenimietos` ORDER BY `UltimaActualizacion` ASC;";
+        $sql = "SELECT `IdMejora`, `Aspecto`, `Descripcion`, `Beneficios`, `TipoMantenimiento`, `Frecuencia`, `MesPropuesto`, `AnnoPropuesto`, `Prioridad`, `Costo`,`activo`, DATE_FORMAT(`UltimaActualizacion`, '%d-%m-%Y') AS UltimaActualizacion, `HaSidoPlaneado` FROM `actualizacionmejoramantenimietos` ORDER BY `UltimaActualizacion` ASC;";
         $resultado = $conexion->conexionBD->query($sql);
         if($resultado->num_rows > 0)
         {
@@ -78,14 +78,14 @@ class Obtener_Dat_Infraestructura{
     {   
         $conexion = new Crear_Conexion;
         $conexion->crear_conection();
-        $sql = "SELECT `IdMejora`, `Aspecto`, `Descripcion`, `Beneficios`, `TipoMantenimiento`, `Frecuencia`, `MesPropuesto`, `AnnoPropuesto`, `Prioridad`, `Costo`, DATE_FORMAT(`UltimaActualizacion`, '%d-%m-%Y') AS UltimaActualizacion, `HaSidoPlaneado` FROM `actualizacionmejoramantenimietos` ORDER BY `UltimaActualizacion` ASC;";
+        $sql = "SELECT `IdMejora`, `Aspecto`, `Descripcion`, `Beneficios`, `TipoMantenimiento`, `Frecuencia`, `MesPropuesto`, `AnnoPropuesto`, `Prioridad`, `Costo`, `activo`, DATE_FORMAT(`UltimaActualizacion`, '%d-%m-%Y') AS UltimaActualizacion, `HaSidoPlaneado` FROM `actualizacionmejoramantenimietos` ORDER BY `UltimaActualizacion` ASC;";
         $resultado = $conexion->conexionBD->query($sql);
         if($resultado->num_rows > 0)
         {
 
             echo 
             "
-            <table class='table table-light table-bordered table-warning table-hover'>
+            <table class='tablauno table-light table-bordered table-warning table-hover'>
                     <thead>
                         <tr>
                             <th scope='col'>Aspecto</th>
@@ -102,29 +102,56 @@ class Obtener_Dat_Infraestructura{
             while($fila = $resultado->fetch_assoc())
             {
                 if ($fila["HaSidoPlaneado"] == 'Si')
-                {
-                    echo " 
-                        <tr class='align-middle table-warning'>
-                            <th scope='row'>" .$fila["Aspecto"]. "</th>
-                            <td>" .$fila["Descripcion"]. "</td>
-                            <td>" .$fila["Beneficios"]. "</td>
-                            <td>" .$fila["TipoMantenimiento"]. "</td>
-                            <td>" .$fila["Frecuencia"]. "</td>
-                        </tr>   
-                        <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila["IdMejora"]."' aria-describedby='id de mantenimiento' readonly>";
+                {   
+                    if($fila["activo"] == 1){
+
+                        echo "   
+                            <tr class='align-middle table-warning'>
+                                <th scope='row'>" .$fila["Aspecto"]."</th>
+                                <td>" .$fila["Descripcion"]. "</td>
+                                <td>" .$fila["Beneficios"]. "</td>
+                                <td>" .$fila["TipoMantenimiento"]. "</td>
+                                <td>" .$fila["Frecuencia"]. "</td>
+                            </tr>   
+                            <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila["IdMejora"]."' aria-describedby='id de mantenimiento' readonly>";
+                    }else{
+                        echo " 
+                            <tr class='align-middle inactivo'>
+                                <th scope='row'>" .$fila["Aspecto"]. "</th>
+                                <td>" .$fila["Descripcion"]. "</td>
+                                <td>" .$fila["Beneficios"]. "</td>
+                                <td>" .$fila["TipoMantenimiento"]. "</td>
+                                <td>" .$fila["Frecuencia"]. "</td>
+                            </tr>   
+                           ";
+                    }
                 }
                 else
                 {
-                    echo "
-                            
-                        <tr class='align-middle'>
-                            <th scope='row'>" .$fila["Aspecto"]. "</th>
-                            <td>" .$fila["Descripcion"]. "</td>
-                            <td>" .$fila["Beneficios"]. "</td>
-                            <td>" .$fila["TipoMantenimiento"]. "</td>
-                            <td id='tabla'>" .$fila["Frecuencia"]."</td>
-                        </tr>
-                        <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila["IdMejora"]."' aria-describedby='id de mantenimiento' readonly>";
+
+                    if($fila["activo"] == 1){
+
+                        echo "
+                                
+                            <tr class='align-middle activo'>
+                                <th scope='row'>" .$fila["Aspecto"]. "</th>
+                                <td>" .$fila["Descripcion"]. "</td>
+                                <td>" .$fila["Beneficios"]. "</td>
+                                <td>" .$fila["TipoMantenimiento"]. "</td>
+                                <td id='tabla'>" .$fila["Frecuencia"]."</td>
+                            </tr>
+                            <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila["IdMejora"]."' aria-describedby='id de mantenimiento' readonly>";
+                    }else{
+                        echo "
+                                
+                            <tr class='align-middle inactivo'>
+                                <th scope='row'>".$fila["Aspecto"]. "</th>
+                                <td>" .$fila["Descripcion"]. "</td>
+                                <td>" .$fila["Beneficios"]. "</td>
+                                <td>" .$fila["TipoMantenimiento"]. "</td>
+                                <td id='tabla'>" .$fila["Frecuencia"]."</td>
+                            </tr>";
+                    }
                 }
             }
 
@@ -148,15 +175,14 @@ class Obtener_Dat_Infraestructura{
     {   
         $conexion = new Crear_Conexion;
         $conexion->crear_conection();
-        $sql = "SELECT `IdMejora`, `Aspecto`, `Descripcion`, `Beneficios`, `TipoMantenimiento`, `Frecuencia`, `MesPropuesto`, `AnnoPropuesto`, `Prioridad`, `Costo`, DATE_FORMAT(`UltimaActualizacion`, '%d-%m-%Y') AS UltimaActualizacion, `HaSidoPlaneado` FROM `actualizacionmejoramantenimietos` ORDER BY `UltimaActualizacion` ASC;";
+        $sql = "SELECT `IdMejora`, `Aspecto`, `Descripcion`, `Beneficios`, `TipoMantenimiento`, `Frecuencia`, `MesPropuesto`, `AnnoPropuesto`, `Prioridad`, `Costo`,`activo`, DATE_FORMAT(`UltimaActualizacion`, '%d-%m-%Y') AS UltimaActualizacion, `HaSidoPlaneado` FROM `actualizacionmejoramantenimietos` ORDER BY `UltimaActualizacion` ASC;";
         $resultado = $conexion->conexionBD->query($sql);
+
         if($resultado->num_rows > 0)
         {
 
-            echo 
-            "
-            
-            <table class='table tabla2 table-light table-bordered table-hover'>
+            echo "
+            <table class='tablados table-light table-bordered table-hover'>
                     <thead>
                         <tr>
                             <th scope='col'>Fecha propuesta</th>
@@ -175,45 +201,72 @@ class Obtener_Dat_Infraestructura{
             {
                 if ($fila["HaSidoPlaneado"] == 'Si')
                 {
-                    echo " 
-                        <tr class='table-warning'>
-                            <td>" .$fila["MesPropuesto"]." ".$fila["AnnoPropuesto"]. "</td>
-                            <td>" .$fila["Prioridad"]. "</td>
-                            <td>$" .$fila["Costo"]. "</td>
-                            <td>" .$fila["UltimaActualizacion"]. "</td> 
-                            <td>
-                                <div class='btn-group'>
-                                    <button type='button' class='btn btn-primary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>Accion</button>
-                                    <ul class='dropdown-menu'>
-                                        <li><a class='dropdown-item' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasScrolling' onclick='mostrarmejora(\"".$fila["IdMejora"]."\")'>Calendarizar</a></li>
-                                        <li><button class='dropdown-item' type='submit'>Editar</button></li>
-                                        <li><a class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#eliminar' onclick='eliminarRegistro(\"".$fila["IdMejora"]."\")'>Eliminar</a></li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila["IdMejora"]."' aria-describedby='id de mantenimiento' readonly>";
+                    if($fila["activo"] == 1){
+                        echo " 
+                            <tr class='table-warning'>
+                                <td>" .$fila["MesPropuesto"]." ".$fila["AnnoPropuesto"]. "</td>
+                                <td>" .$fila["Prioridad"]. "</td>
+                                <td>$" .$fila["Costo"]. "</td>
+                                <td>" .$fila["UltimaActualizacion"]. "</td> 
+                                <td>
+                                    <div class='btn-group'>
+                                        <button type='button' class='btn btn-primary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>Accion</button>
+                                        <ul class='dropdown-menu'>
+                                            <li><a class='dropdown-item' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasScrolling' onclick='mostrarmejora(\"".$fila["IdMejora"]."\")'>Calendarizar</a></li>
+                                            <li><button class='dropdown-item' type='submit'>Editar</button></li>
+                                            <li><a class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#eliminar' onclick='eliminarRegistro(\"".$fila["IdMejora"]."\")'>Eliminar</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila["IdMejora"]."' aria-describedby='id de mantenimiento' readonly>";
+                    }else{
+                        echo " 
+                            <tr class='inactivo'>
+                                <td>" .$fila["MesPropuesto"]." ".$fila["AnnoPropuesto"]. "</td>
+                                <td>" .$fila["Prioridad"]. "</td>
+                                <td>$" .$fila["Costo"]. "</td>
+                                <td>" .$fila["UltimaActualizacion"]. "</td> 
+                                <td>Eliminado
+                                </td>
+                            </tr>";
+                    }
                 }
                 else
                 {
-                    echo "
-                        <tr>
+                    if($fila["activo"] == 1){
+
+                    
+                        echo "
+                            <tr class='activo'>
+                                <td>" .$fila["MesPropuesto"]." ".$fila["AnnoPropuesto"]. "</td>
+                                <td>" .$fila["Prioridad"]. "</td>
+                                <td>$" .$fila["Costo"]. "</td>
+                                <td>" .$fila["UltimaActualizacion"]. "</td> 
+                                <td id='tabla'>
+                                    <div class='btn-group'>
+                                        <button type='button' class='btn btn-primary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>Accion</button>
+                                        <ul class='dropdown-menu'>
+                                            <li><a class='dropdown-item' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasScrolling' onclick='mostrarmejora(\"".$fila["IdMejora"]."\")'>Calendarizar</a></li>
+                                            <li><button class='dropdown-item' type='submit'>Editar</button></li>
+                                            <li><a class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#eliminar' onclick='eliminarRegistro(\"".$fila["IdMejora"]."\")'>Eliminar</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila["IdMejora"]."' aria-describedby='id de mantenimiento' readonly>";
+                    }else{
+                        echo "
+                        <tr class='inactivo'>
                             <td>" .$fila["MesPropuesto"]." ".$fila["AnnoPropuesto"]. "</td>
                             <td>" .$fila["Prioridad"]. "</td>
                             <td>$" .$fila["Costo"]. "</td>
                             <td>" .$fila["UltimaActualizacion"]. "</td> 
                             <td id='tabla'>
-                                <div class='btn-group'>
-                                    <button type='button' class='btn btn-primary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>Accion</button>
-                                    <ul class='dropdown-menu'>
-                                        <li><a class='dropdown-item' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasScrolling' onclick='mostrarmejora(\"".$fila["IdMejora"]."\")'>Calendarizar</a></li>
-                                        <li><button class='dropdown-item' type='submit'>Editar</button></li>
-                                        <li><a class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#eliminar' onclick='eliminarRegistro(\"".$fila["IdMejora"]."\")'>Eliminar</a></li>
-                                    </ul>
-                                </div>
+                               Eliminado
                             </td>
-                        </tr>
-                        <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila["IdMejora"]."' aria-describedby='id de mantenimiento' readonly>";
+                        </tr>";
+                    }
                 }
             }
 
