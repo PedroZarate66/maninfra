@@ -145,6 +145,7 @@ th{
 
 /*--------------------------------------------*/
 
+
 /*ESTILOS QUE MUESTRAN LOS REGISTROS INACTIVOS*/
 .inactivo{
     background-color: rgb(170, 169, 168);
@@ -353,8 +354,16 @@ th{
     PARA QUE PUEDA MOSTRARSE EN MOVILES*/
 
     #tablados{
-        width    : 70%;
-        font-size: 9.5px;
+        width    : 100%;
+        font-size: 12px;
+    }
+
+    td{
+        width: 20px;
+    }
+
+    th{
+        width: 20px;
     }
 
     .btn{
