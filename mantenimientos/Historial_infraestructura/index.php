@@ -10,10 +10,10 @@
 <body>
 
         <?php
-            require_once    '../../include/guardar_registro_calendario.php';
-            include_once    '../../include/eliminar_reg_calendario.php';
-            include_once    '../../include/eliminar_mejora_infraestructura.php';
-            include_once    '../../include/obtener_datos_infraestructura.php';
+            include_once    '../../include/Calenario/guardar_registro_calendario.php';
+            include_once    '../../include/Calendario/eliminar_reg_calendario.php';
+            include_once    '../../include/Infraestructura/eliminar_mejora_infraestructura.php';
+            include_once    '../../include/Infraestructura/obtener_datos_infraestructura.php';
             require_once    '../../funciones_php/Configuracion_sesion.php';
 
             $guardarRegCal   = new Guardar_Reg_Calendario;

@@ -1,18 +1,18 @@
 <?php
-include_once '../../include/conexion.php';
-include_once '../Meses/tabla_meses.php';
-include_once '../Meses/enero.php';
-include_once '../Meses/febrero.php';
-include_once '../Meses/marzo.php';
-include_once '../Meses/abril.php';
-include_once '../Meses/mayo.php';
-include_once '../Meses/junio.php';
-include_once '../Meses/julio.php';
-include_once '../Meses/agosto.php';
-include_once '../Meses/septiembre.php';
-include_once '../Meses/octubre.php';
-include_once '../Meses/noviembre.php';
-include_once '../Meses/diciembre.php';
+include_once 'conexion.php';
+include_once 'tabla_meses.php';
+include_once 'enero.php';
+include_once 'febrero.php';
+include_once 'marzo.php';
+include_once 'abril.php';
+include_once 'mayo.php';
+include_once 'junio.php';
+include_once 'julio.php';
+include_once 'agosto.php';
+include_once 'septiembre.php';
+include_once 'octubre.php';
+include_once 'noviembre.php';
+include_once 'diciembre.php';
 class Eliminar_Registro_Calendarizacion{
     public function eliminar_reg_cal()
         {
@@ -25,7 +25,7 @@ class Eliminar_Registro_Calendarizacion{
             $stmt->bind_param("s", $_GET['q']);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12],$fila[13]);
+            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
             while ($stmt->fetch())
             {
                 $calendario = new tablameses($Meses[$fila[10]]);
@@ -105,11 +105,11 @@ class Eliminar_Registro_Calendarizacion{
             $stmt->bind_param("s", $_GET['q']);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12], $fila[13]);
+            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
             
             echo "
             
-                <table class='table table-light table-bordered table-hover' id='tablauno'>
+                <table class='table table-light table-bordered table-hover'>
                         <thead>
                             <tr>
                                 <th scope='col'>No. inventario</th>
@@ -170,11 +170,11 @@ class Eliminar_Registro_Calendarizacion{
             $stmt->bind_param("s", $_GET['q']);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12], $fila[13]);
+            $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
             
             echo "
             
-                <table class='table table-light table-bordered table-hover' id='tablados'>
+                <table class='table table-light table-bordered table-hover'>
                         <thead>
                             <tr>
                                 <th scope='col'>Proveedor</th>

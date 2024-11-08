@@ -1,21 +1,19 @@
 <?php
-include_once 'conexion.php';
-class Recadelario_Dinamica_Calendatio{
-    public final function RecadelarioDinamicaCalendatio()
+include_once 'Admin_sql.php';
+abstract class recadelario_dinamica_calendatio extends Admin_sql{
+    public final function recadelario_dinamica_calendatio()
     {
-        $conexion = new Crear_Conexion;
-
         $fila = array();
-        $conexion->crear_conection();
+        $this->crear_conexion();
         $sql = "SELECT * FROM `calendarios` WHERE IdCalendario = ? ";
-        $stmt = $conexion->conexionBD->prepare($sql);
+        $stmt = $this->conexionBD->prepare($sql);
         $stmt->bind_param("s", $_GET["q"]);
         $stmt->execute();
         $stmt->store_result();
         $stmt->bind_result($fila[0], $fila[1], $fila[2], $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8], $fila[9], $fila[10], $fila[11], $fila[12]);
         $stmt->fetch();
         $stmt->Close();
-        $conexion->cerrar_conxion();
+        $this->cerrar_conxion();
         $anno = date('Y');
         $annomasuno = $anno++;
         echo '<div

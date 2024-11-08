@@ -1,16 +1,14 @@
 <?php
 
 class Obtener_Variable_Configuracion{
-    public function ObtenerVariableConfiguracion()
+    protected function ObtenerVariableConfiguracion()
     {
         // Nombre del archivo de configuración
-        $configFile = '../../funciones_php/config.conf';
+        $configFile = '../funciones_php/config.conf';
 
         // Leer el contenido del archivo de configuración
         $configContent = file_get_contents($configFile);
 
-        $fileexist = file_exists($configFile);
-        
         // Verificar que el archivo fue leído correctamente
         if ($configContent === false)
         {

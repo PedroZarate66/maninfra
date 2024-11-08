@@ -153,7 +153,7 @@ function mostrarregistro(qstr)
     
     };
 
-    xhttp.open("GET", "../../include/Calendario/consulta_registro_calendario.php?q="+ encodeURIComponent(qstr), true);
+    xhttp.open("GET", "../../include/Calendario/consulta_registro_calendario.php?q="+ qstr, true);
     xhttp.send();
 }
 

@@ -1,12 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Calendario</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="estilos.css">
+    </head>
 <body>
     <?php
         //Se incluyen las funciones que se utilizaran, ya que se encuentran en archivos externos
-        include_once '../../include/obtener_anno_calendario.php';
-        include_once '../../include/guardar_registro_calendario.php';
-        include_once '../../include/actualizacion_dinamica_calendario.php';
-        include_once '../../include/eliminar_reg_calendario.php';
+        include_once '../../include/Calendario/obtener_anno_calendario.php';
+        include_once '../../include/Calendario/guardar_registro_calendario.php';
+        include_once '../../include/Calendario/actualizacion_dinamica_calendario.php';
+        include_once '../../include/Calendario/eliminar_reg_calendario.php';
         include_once '../../funciones_php/Configuracion_sesion.php';
-
+        include_once '../../telegram/MandarMensaje.php';
        
         //Se crean los objetos que utilizaremos para llamar a las funciones externas
         $obj_obt_an_cal  = new Obtener_An_Calendario;
@@ -136,6 +145,13 @@
 
                 $obj_eli_reg_cal->eliminar_registro_calendario($calendarioEliminar);
                 //$ayudante->manejador->eliminar_reg_calendario($calendarioEliminar);
+
+                //SE ENVIA MENSAJE DE REGISTRO ELIMINADO
+                $mandarmsj = new Mandar_Mensaje;    
+                $mensaje   = 'Se ha elimiado el registro: ' . $calendarioEliminar.' hoy.';
+
+                $mandarmsj->EnviarMensaje($mensaje);
+
                 header('Location: ../Calendario/');
             }
         ?>
