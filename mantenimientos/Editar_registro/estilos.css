@@ -1,0 +1,439 @@
+.txt-title{
+    text-align    : center;
+    padding       : 1.75em 0;
+    letter-spacing: 0.075rem;
+    line-height   : 1.25;
+    color         : rgb(0, 59, 92);
+    font-family   : "Roboto Condensed", sans-serif;
+    font-weight   : 600;
+    font-size     : clamp(1rem, -0.875rem + 8.333vw, 1.7rem);  
+}
+
+body {
+    min-width            : 100%;
+    min-height           : 100%;
+    display              : flex;
+    flex-direction       : column;
+    background-color     : #E6E6E6;
+}
+
+.content {
+    flex       : 1 0 auto;
+    z-index    : 3;
+    width      : 100%;
+    min-height : 69%;
+}
+
+footer{
+    width           : 100%;
+    height          : 5.5%;
+    color           : #F2F2F2 !important;
+    background-color: #242424 !important;
+    font            : 14px Karla, Sans-Serif;
+}
+
+/*ESTILOS DEL BANNER PRINCIPAL*/
+#banner {
+    background-color: rgb(0, 59, 92);
+    height          : 12%;
+    width           : 100%;
+    position        : static;
+    box-shadow      : 5px 5px 20px rgba(53, 71, 82, 0.381);
+    z-index         : 1;
+}
+
+/*ESTILOS DEL BANNER SECUNDARIO*/
+.banner2{
+    display         : flex;
+    position        : static;
+    max-width       : 100%;
+    height          : 8%;
+    z-index         : 2;
+    background-color: #616161 !important;
+    justify-content : right;
+    align-items     : center;
+    
+}
+
+/*ESTILOS DEL LOGO DE MINERVA*/
+.minerva{
+    width   : 80px;
+    height  : 80px;
+
+}
+
+
+/*ESTILOS DEL LOGO DEL LNS*/
+.lns-logo{
+    width   : 170px;
+    height  : 60px;
+}
+
+
+/*ESTILOS PARA QUE EL BOTON DE "REGRESAR" RESALTE*/
+#botones-lat{
+    border-radius: 5px;
+    margin       : 0.7em;
+    border       : 2px solid white;
+    font-size    : 16px; 
+}
+
+/*ESTO ES PARA QUE SE SEPARE EN DOS LA TABLA ALINEADA*/
+#CalendarioAnual{
+    display              : grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows   : 100%;
+    font-size            : 15px;
+}
+
+/*PARA QUE LAS CELDAS SEAN DEL MISMO TAMAÑO*/
+td{
+    position      : static;
+    height        : 60px;
+    vertical-align: middle;
+}
+
+th{
+    position      : static;
+    height        : 60px;
+    vertical-align: middle;
+}
+/*-----------------------------------------*/
+
+
+/*ESTILOS DEL BOTON DE CAMBIAR VISTA*/
+.cambiar_vista{
+
+    padding         : 5px                 ;
+    border-radius   : 10px                ;
+    width           : 150px               ;
+    height          : 40px                  ;
+    background-color: rgb(68, 160, 221) ;
+    color           : rgb(255, 255, 255);
+    line-height     : 20px                ; 
+    margin          : 20px                ;
+    margin-bottom   : 20px !important     ;
+    font-size       : clamp(1rem, -0.875rem + 8.333vw, 1.1rem);
+    display         : none;        
+}
+/*---------------------------------------------------------------*/
+
+/*PERTENECIENTE AL CONTENEDOR DE LA OPCION DE SELECCIONAR AÑO*/
+.menu-anio{
+    padding        : 3px;
+    width          : 100%;
+    height         : 130px;
+    display        : flex;
+    justify-content: center;
+    border-left    : 5px;
+}
+/*------------------------------------------------------------*/
+
+/*PERTENECIENTE A LA OPCION DE SELECCIONAR AÑO*/
+
+.seleccionar-anio{
+    background-color: rgb(204, 204, 204);
+    width           : 200px;
+    height          : 100%;
+    border-radius   : 10px;
+    margin-bottom   : 20px;
+    padding         : 10px;
+    text-align      : center;
+    position        : static;
+    display         : block;
+}
+
+/*--------------------------------------------*/
+
+
+/*ESTILOS QUE MUESTRAN LOS REGISTROS INACTIVOS*/
+.inactivo{
+    background-color: rgb(170, 169, 168);
+}
+
+.activo{
+    background-color: #f8f9fa;
+}
+/*--------------------------------------------*/
+
+/*Evadiendo estilos de Bootstrap sobrepuestos*/
+
+
+/*PRIMER CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 1650px) {
+
+    .lns-logo{
+        width :140px;
+        height: 60;
+    }
+
+    .container, .container-sm {
+        max-width: none !important; 
+    }
+
+
+    html, body {
+        height: 100%;
+    }
+
+
+    #CalendarioAnual{
+        font-size: 14px;
+    }
+
+    td{
+        position      : static;
+        height        : 90px;
+        vertical-align: middle;
+    }
+    
+    th{
+        position      : static;
+        height        : 90px;
+        vertical-align: middle;
+    }
+     
+}
+
+/*SEGUNDO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (min-width: 966px) {
+    /*MODIFICACIONES DE LAS TABLAS PARA QUE SE AJUSTEN A CAMBIOS DE TAMAÑO
+    CUANDO LA PANTALLA CREZCA*/
+    #CalendarioAnual{
+        font-size: 13px;
+    }
+
+    #tablauno{
+        width           : 100%;
+        height          : 70%;
+        display         : table !important;
+        text-align      : center;
+    }
+    
+    #tablados{
+        width           : 100%;
+        height          : 70%;
+        display         : table !important;
+        text-align      : center;
+    }
+    
+    td{
+        position      : static;
+        height        : 65px;
+        vertical-align: middle;
+    }
+    
+    th{
+        position      : static;
+        height        : 65px;
+        vertical-align: middle;
+    }
+
+    html, body {
+        height: 100%;
+    }
+    
+
+    /******************************************************/
+}
+
+/*TERCER CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-height: 945px) {
+
+    .lns-logo{
+        width :140px;
+        height: 60;
+    }
+
+    .container, .container-sm {
+    max-width: none !important; 
+    }
+
+
+    html, body {
+        height: 100%;
+    }
+    
+     
+}
+
+/*CUARTO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 959px) {
+
+    .lns-logo{
+        width :140px;
+        height: 60;
+    }
+
+    .container, .container-sm {
+    max-width: none !important; 
+    }
+
+
+    html, body {
+        height: 100%;
+    }
+
+    td{
+        position      : static;
+        height        : 40px;
+        vertical-align: middle;
+    }
+    
+    th{
+        position      : static;
+        height        : 40px;
+        vertical-align: middle;
+    }
+
+    #tablauno{
+        font-size       : 11.45px;
+        width           : 99%;
+        height          : 70%;
+        display         : table;
+        text-align      : center;
+
+    }
+
+    #tablados{
+        font-size       : 12.45px;
+        width           : 98%;
+        height          : 20%;
+        display         : none;
+        text-align      : center;
+      
+    }
+
+    .cambiar_vista{
+        display: flex;
+    }
+
+    #CalendarioAnual{
+        display              : grid;
+        grid-template-columns: 100%;
+        grid-template-rows   : 100%;
+        font-size            : 11.50px;
+    }
+    
+     
+}
+
+
+/*QUINTO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 730px) {
+    .container, .container-sm {
+        max-width: none !important; 
+    }
+
+
+    html, body {
+        height: 100%;
+    }
+    
+    footer{
+        height: 15%;
+    }
+}
+
+/*SEXTO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 450px) {
+    .container, .container-sm {
+        max-width: none !important; 
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    #banner{
+        height: 12%;
+    }
+
+
+    /*SE AJUSTAN LOS TAMAÑOS DE CELDAS Y CONTENIDO DE LA TABLA 
+    PARA QUE PUEDA MOSTRARSE EN MOVILES*/
+
+    #tablados{
+        width    : 100%;
+        font-size: 12px;
+    }
+
+    td{
+        width: 20px;
+    }
+
+    th{
+        width: 20px;
+    }
+
+    .btn{
+        --bs-btn-font-size: 10px !important;
+    }
+
+    tr{
+        font-size: 9px;
+    }
+
+    footer{
+        height: 6.5%;
+    }
+}
+
+/*SEPTIMO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 413px){
+    
+    .lns-logo{
+        width   : 90px;
+        height  : 10px;
+        position: absolute;
+        left    : 1%;
+        top     : 3.5%;
+    }
+
+    #banner{
+        height: 10%;
+    }
+
+    .minerva{
+        width : 60px !important;
+        height: 60px !important;
+    }
+
+    .lns-logo{
+        width   : 150px;
+        height  : 40px;
+    }
+
+    footer{
+        height: 8%;
+    }
+}
+
+/*OCTAVO CAMBIO CUANDO LA PANTALLA SE HACE PEQUEÑA*/
+@media (max-width: 220px) {
+    .container, .container-sm {
+    max-width: none !important; 
+    }
+
+    .minerva{
+        display: none !important;
+    }
+
+    #banner{
+        height: 7%;
+    }
+
+    .lns-logo{
+        width   : 150px;
+        height  : 40px;
+    }
+
+    html, body {
+        height: 130%;
+    }
+
+    footer{
+        height: 11%;
+    }
+    
+}
