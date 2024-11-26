@@ -5,9 +5,9 @@ class Crear_Conexion{
     public function crear_conection()
         {
             $this->nombreservidor = "localhost";
-            $this->nombreusuario = "oskar";
-            $this->contrasenna = "lDmA.2003";
-            $this->baseDatos = "infraharX";
+            $this->nombreusuario = "root";
+            $this->contrasenna = "";
+            $this->baseDatos = "infraharx";
             $this->conexionBD = new mysqli($this->nombreservidor, $this->nombreusuario, $this->contrasenna, $this->baseDatos);
         }
 
