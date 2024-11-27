@@ -1,5 +1,5 @@
 <?php
-include_once '../../include/conexion.php';
+include_once 'conexion.php';
 
 class Actualizacion_Dina_Calendario{
   public function actualizacion_dinamica_calendario($idconsulta, $estatus)

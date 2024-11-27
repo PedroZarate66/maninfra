@@ -80,6 +80,7 @@ class Obtener_Dat_Infraestructura{
         $conexion->crear_conection();
         $sql = "SELECT `IdMejora`, `Aspecto`, `Descripcion`, `Beneficios`, `TipoMantenimiento`, `Frecuencia`, `MesPropuesto`, `AnnoPropuesto`, `Prioridad`, `Costo`, `activo`, DATE_FORMAT(`UltimaActualizacion`, '%d-%m-%Y') AS UltimaActualizacion, `HaSidoPlaneado` FROM `actualizacionmejoramantenimietos` ORDER BY `UltimaActualizacion` ASC;";
         $resultado = $conexion->conexionBD->query($sql);
+        
         if($resultado->num_rows > 0)
         {
 
@@ -103,7 +104,7 @@ class Obtener_Dat_Infraestructura{
             {
                 if ($fila["HaSidoPlaneado"] == 'Si')
                 {   
-                    if($fila["activo"] == 1){
+                    if($fila["activo"] == 0){
 
                         echo "   
                             <tr class='align-middle table-warning'>
@@ -129,7 +130,7 @@ class Obtener_Dat_Infraestructura{
                 else
                 {
 
-                    if($fila["activo"] == 1){
+                    if($fila["activo"] == 0){
 
                         echo "
                                 
@@ -201,7 +202,7 @@ class Obtener_Dat_Infraestructura{
             {
                 if ($fila["HaSidoPlaneado"] == 'Si')
                 {
-                    if($fila["activo"] == 1){
+                    if($fila["activo"] == 0){
                         echo " 
                             <tr class='table-warning'>
                                 <td>" .$fila["MesPropuesto"]." ".$fila["AnnoPropuesto"]. "</td>
@@ -234,7 +235,7 @@ class Obtener_Dat_Infraestructura{
                 }
                 else
                 {
-                    if($fila["activo"] == 1){
+                    if($fila["activo"] == 0){
 
                     
                         echo "
