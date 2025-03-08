@@ -79,6 +79,7 @@ function mostrarcalendario(qstr)
 }
 //----------------------------------------------------------
 
+
 function cerrartabla(){
         window.location.href = "../Historial_infraestructura";
         return;   

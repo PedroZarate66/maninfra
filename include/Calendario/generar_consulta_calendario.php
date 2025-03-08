@@ -1,9 +1,12 @@
 <?php
 include_once '../../include/conexion.php';
+include_once '../Telegram/EnviarMensaje.php';
 class Generar_Consulta_Cal{
     public final function generar_consulta_calendario()
     {
         $conexion = new Crear_Conexion;
+        $obj_env_mens = new Enviar_Mensaje;
+
         $fila = array();
         $conexion->crear_conection();
         $sql = "SELECT IdMejora, Aspecto, Descripcion, Beneficios,TipoMantenimiento,Frecuencia,MesPropuesto,AnnoPropuesto,Prioridad,Costo,DATE_FORMAT(`UltimaActualizacion`, '%d-%m-%Y') AS UltimaActualizacion FROM `actualizacionmejoramantenimietos` WHERE IdMejora = ? ";
@@ -15,6 +18,13 @@ class Generar_Consulta_Cal{
         $stmt->fetch();
         $stmt->Close();
         $conexion->cerrar_conxion();
+
+        $random = rand(1000,9000);
+
+        
+        $message = 'El codigo de eliminacion es: ' . $random . ' ingrese el codigo'; //crea el mensaje   
+        $obj_env_mens->EnviarMensaje($message);//se envia el mensaje
+
         if (is_null($fila[0]))
         {
             echo "La entrada de infraestructura no existe o ha sido eliminado.";
@@ -52,7 +62,9 @@ class Generar_Consulta_Cal{
                     </tbody>
                 </table>
             </div>
-            <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila[0]."' aria-describedby='id de mantenimiento' readonly>";}
+            <input type='hidden' class='form-control' id='origen' name='origen' value='".$fila[0]."' aria-describedby='id de mantenimiento' readonly>
+            <input type='hidden' class='form-control' id='codigoCreado' name='codigoCreado' value='".$random."' aria-describedby='id de mantenimiento' readonly>";
+        }
     }
 }
 ?>

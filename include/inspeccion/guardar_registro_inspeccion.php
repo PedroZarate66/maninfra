@@ -28,13 +28,22 @@
 
         <?php
             include_once '../../include/Registro/guardar_registro.php';
-            include_once '../../funciones_php/Configuracion_sesion.php';
+            include_once '../Telegram/EnviarMensaje.php';
+            require_once '../../funciones_php/Configuracion_sesion.php';
             $obj_gua_reg = new Guardar_Reg;
+            $obj_enviar_mens = new Enviar_Mensaje;
             
 
             
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $consulta = $obj_gua_reg->guardar_registro();
+                    
+                //SE OBTIENE EL NOMBRE DE USUARIO
+                $usuario = $_SESSION['usuario'];
+                //SE CREA EL MENSAJE Y DESPUES SE ENVIA
+                $mensaje = 'Se ha ingresado una nueva inspeccion el dia de hoy por el usuario '.$usuario;
+                $obj_enviar_mens->EnviarMensaje($mensaje);
+
                 header('Location: ../../inspecciones/Historial_Inspecciones');
             }
         ?>

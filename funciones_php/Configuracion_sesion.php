@@ -5,7 +5,7 @@ session_start();
 $tiempoExpiracion = 3600;
 
 if (!isset($_SESSION['usuario'])) {
-    header("Location: /maninfrax/?mensaje=sesion_no_iniciada");
+    header("Location: /maninfra/?mensaje=sesion_no_iniciada");
     exit();
 }
 
@@ -18,7 +18,7 @@ if (isset($_SESSION['ultima_actividad'])) {
     if ($tiempoInactividad > $tiempoExpiracion) {
         session_unset();
         session_destroy();
-        header("Location: /maninfrax/funciones_php/Login.php?mensaje=sesion_expirada");
+        header("Location: /maninfra/funciones_php/Login.php?mensaje=sesion_expirada");
         exit();
     }
 }

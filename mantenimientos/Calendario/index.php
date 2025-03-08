@@ -147,7 +147,7 @@
      
 
             <!--SE INTENTA IMPRIMIR LAS TABLAS PARA QUE SEAN RESPONSIVAS-->
-        <button type="button" id="tabla" class="cambiar_vista">Cambiar vista</button>
+        <button type="button" id="tabla" class="cambiar_vista">Ver mas</button>
         
 
         <div class="container-fluid text-center">

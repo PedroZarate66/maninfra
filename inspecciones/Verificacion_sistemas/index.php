@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    
         <link rel="stylesheet" href="estilos.css">
+        <script>
+                alert('Recuerde seleccionar Entrada o salida');
+        </script>
     </head> 
 
             <!--BANNER PRINCPIAL-->
@@ -22,7 +25,7 @@
     </div>
             <!--BANNER SECUNDARIO-->
     <nav class="banner2 navbar-expand">
-        <div class="nav navbar-nav">
+        <div class="navbar-nav">
             <a class="btn btn-lg" id="botones-lat" data-bs-toggle="modal" data-bs-target="#regreso" aria-current="step" onclick="saveForm()">
                 Regresar 
             </a>
@@ -48,6 +51,7 @@
 
 
 <body>
+           
     <main class="content" id="contenedorbody">
         <!--LLAMAMOS ARCHIVO QUE SE UTILIZARAN MAS ADELANTE-->
         <?php
@@ -66,7 +70,10 @@
         </div>
     
                 <!--INICIO DEL FORMULARIO PRINCIPAL-->
-        <form class="needs-validation" action="../../include/inspeccion/guardar_registro_inspeccion.php" method="post" novalidate>
+    <form class="needs-validation" action="../../include/inspeccion/guardar_registro_inspeccion.php" onsubmit="return validar()" method="post" novalidate>
+        <div class="container-fluid finalizar d-flex justify-content-center">
+                            <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>  
+                        </div>
             <div class="contenedor-principal">
                         
 
@@ -98,11 +105,12 @@
                                     <div class="entrada-salida">
                                         <input class="btn-check" type="radio" name="entrada_salida" id="Entrada" value="Entrada" required>
                                         <label class="btn btn-outline-primary" for="Entrada"><div class="boton">Entrada</div></label>
-                                            <!--INDICA UNA SALIDA-->
-                                        <input class="btn-check" type="radio" name="entrada_salida" id="salida" Value="Salida" placeholder="Salida" required>
-                                        <label class="btn btn-outline-primary" for="Entrada"><div class="boton">Salida</div></label>
+
+                                        <input class="btn-check" type="radio" name="entrada_salida" id="salida" Value="Salida" required>
+                                        <label class="btn btn-outline-primary" for="salida"><div class="boton">Salida</div></label>
 
                                     </div>
+
 
                                     <div class="col d-flex justify-content-end"><input type="date" id="fecha" name="fecha" disabled></div>
 
@@ -244,7 +252,7 @@
                                 
                                     <h5>¿La lectura de huella digital es correcta?</h5>
                                         <!--PRIMER INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                         Acceso Principal:
                                         </div>
@@ -274,7 +282,7 @@
                                 
                                     <br>
                                         <!--SEGUNDO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                         Oficinas:
                                         </div>
@@ -304,7 +312,7 @@
                                 
                                     <br>
                                             <!--TERCER INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                         Vigilancia:
                                         </div>
@@ -334,7 +342,7 @@
                                 
                                     <br>
                                             <!--CUARTO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                         Pasillo de triage:
                                         </div>
@@ -367,7 +375,7 @@
 
                                     <br>
                                             <!--QUINTO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                         Cuarto Electrico:
                                         </div>
@@ -397,7 +405,7 @@
 
                                     <br>
                                             <!--SEXTO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                         Puerta esclusa 1:
                                         </div>
@@ -427,7 +435,7 @@
 
                                     <br>
                                             <!--SEPTIMO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                         Puerta esclusa 2:
                                         </div>
@@ -474,7 +482,7 @@
 
                                         <h5>¿El LED está encendido sin parpadear?</h5>
                                                 <!--PRIMER INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Recepcion:
                                             </div>
@@ -504,7 +512,7 @@
 
                                         <br>
                                                 <!--SEGUNDO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Pasillos triage:
                                             </div>
@@ -534,7 +542,7 @@
 
                                         <br>
                                                 <!--TERCER INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Cuarto Electico 1:
                                             </div>
@@ -564,7 +572,7 @@
                                     
                                         <br>
                                                 <!--CUARTO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Cuarto Electico 2:
                                             </div>
@@ -596,7 +604,7 @@
                                     <div class="contenedor2" id="form22">
                                         <br>
                                             <!--QUINTO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Esclusa 1:
                                             </div>
@@ -626,7 +634,7 @@
 
                                         <br>
                                             <!--SEXTO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Esclusa 2:
                                             </div>
@@ -670,7 +678,7 @@
 
                                         <h5>¿Las Cámaras presentan imagen?</h5>
                                                 <!--PRIMER INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Pasillos:
                                             </div>
@@ -701,7 +709,7 @@
                                         <br>
 
                                             <!--SEGUNDO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 CPD 1:
                                             </div>
@@ -731,7 +739,7 @@
 
                                         <br>
                                             <!--TERCER INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 CPD 2:
                                             </div>
@@ -761,7 +769,7 @@
 
                                         <br>
                                             <!--CUARTO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Recepción:
                                             </div>
@@ -791,7 +799,7 @@
 
                                         <br>
                                                 <!--QUINTO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 CE:
                                             </div>
@@ -824,7 +832,7 @@
 
                                 <div class="contenedor2" id="form33">
                                                 <!--SEXTO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             Entrada 360:
                                         </div>
@@ -854,7 +862,7 @@
 
                                     <br>
                                                 <!--SEPTIMO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                         Salida de emergencia:
                                         </div>
@@ -884,7 +892,7 @@
 
                                     <br>
                                             <!--OCTAVO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             Cuarto de máquinas:
                                         </div>
@@ -914,7 +922,7 @@
 
                                     <br>
                                                 <!--NOVENO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             Entrada Principal:
                                         </div>
@@ -944,7 +952,7 @@
 
                                     <br>
                                             <!--DECIMO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             Esclusa:
                                         </div>
@@ -989,7 +997,7 @@
 
                                     <h5>¿El tablero de eventos presenta mensaje de alerta?</h5>
                                             <!--PRIMER INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             AA-P-1 CPD:
                                         </div>
@@ -1019,7 +1027,7 @@
 
                                     <br>
                                         <!--SEGUNDO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             AA-P-2 CPD:
                                         </div>
@@ -1049,7 +1057,7 @@
 
                                     <br>
                                         <!--TERCER INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             AA-P-1 CE:
                                         </div>
@@ -1079,7 +1087,7 @@
 
                                     <br>
                                         <!--CUARTO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             AA-P-2 CE:
                                         </div>
@@ -1113,7 +1121,7 @@
                                 <div class="contenedor2" id="form44">
                                     <h5>¿Inyecta y enfría el aire?</h5>
                                             <!--QUINTO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             AA-P-1 CPD:
                                         </div>
@@ -1143,7 +1151,7 @@
 
                                     <br>
                                         <!--SEXTO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             AA-P-2 CPD:
                                         </div>
@@ -1173,7 +1181,7 @@
 
                                     <br>
                                         <!--SEPTIMO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             AA-P-1 CE:
                                         </div>
@@ -1203,7 +1211,7 @@
                                     
                                     <br>
                                             <!--OCTAVO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             AA-P-2 CE:
                                         </div>
@@ -1248,7 +1256,7 @@
                                     <br>
                                             <!--PIMER INPUT-->
                                     <h5>¿El manómetro tiene una presión diferente a "0"?</h5>
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             Manómetro 1 CPD:
                                         </div>
@@ -1279,7 +1287,7 @@
                                     <br>
 
                                         <!--SEGUNDO INPUT-->
-                                    <div class="row">
+                                    <div class="row input">
                                         <div class="col-2">
                                             Manómetro 2 CPD:
                                         </div>
@@ -1325,7 +1333,7 @@
                                         <br>
                                                 <!--PRIMER INPUT-->                                
                                         <h5>¿La aguja del manómetro marca el color verde?</h5>
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Cilindro CPD:
                                             </div>
@@ -1355,7 +1363,7 @@
 
                                         <br>
                                             <!--SEGUNDO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Cilindro CE:
                                             </div>
@@ -1402,7 +1410,7 @@
                                         <br>
                                                 <!--PRIMER INPUT-->
                                         <h5>¿El tablero de eventos presenta mensaje de alerta?</h5>
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 UPS 1:
                                             </div>
@@ -1432,7 +1440,7 @@
 
                                         <br>
                                             <!--SEGUNDO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 UPS 2:
                                             </div>
@@ -1463,14 +1471,17 @@
             
                                         <br>
                                                 <!--TERCER INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-3 d-flex justify-content-start">
                                                 Consumo red electrica (TT):
                                             </div>
                                             <div class="col-4 d-flex justify-content-start position-relative">
                                                 <div class="input-group has-validation">
                                                     <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwred_consumo" id="kwred_consumo" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia" required>
-                                                    <span class="input-group-text">KVA</span>
+                                                    
+                                                    <label class="KVA"for="kwred_consumo">
+                                                        KVA
+                                                    </label>
                                                     <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
                                                 </div>
                                             </div>
@@ -1478,14 +1489,16 @@
 
                                         <br>
                                             <!--CUARTO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-3 d-flex justify-content-start">
                                                 Salida UPS DCyTIC:
                                             </div>
                                             <div class="col-4 d-flex justify-content-start position-relative">
                                                 <div class="input-group has-validation">
                                                     <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwsalida_dctyc" id="kwsalida_dctyc" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia">
-                                                    <span class="input-group-text">KVA</span>
+                                                    <label class="KVA"for="kwsalida_dctyc">
+                                                        KVA
+                                                    </label>
                                                     <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
                                                 </div>
                                             </div>
@@ -1497,14 +1510,16 @@
 
                                     <div class="contenedor2" id="form77">
                                             <!--QUINTO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-3 d-flex justify-content-start">
                                                 Salida UPS LNS 1:
                                             </div>
                                             <div class="col-4 d-flex justify-content-start position-relative">
                                                 <div class="input-group has-validation">
                                                     <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwsalida_lns1" id="kwsalida_lns1" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia" required>
-                                                    <span class="input-group-text">KVA</span>
+                                                    <label class="KVA"for="kwsalida_lns1">
+                                                        KVA
+                                                    </label>
                                                     <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
                                                 </div>
                                             </div>
@@ -1512,14 +1527,16 @@
 
                                         <br>
                                                 <!--SEXTO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-3 d-flex justify-content-start">
                                                 Salida UPS LNS 2:
                                             </div>
                                             <div class="col-4 d-flex justify-content-start position-relative">
                                                 <div class="input-group has-validation">
                                                     <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kwsalida_lns2" id="kwsalida_lns2" class="form-control" oninput="sumaWatts()" aria-label="cantidad total de potencia" required>
-                                                    <span class="input-group-text">KVA</span>
+                                                    <label class="KVA"for="kwsalida_lns2">
+                                                        KVA
+                                                    </label>
                                                     <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
                                                 </div>
                                             </div>
@@ -1527,14 +1544,16 @@
 
                                         <br>
                                                 <!--SEPTIMO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-3 d-flex justify-content-start">
                                                 Potencia total UPS:
                                             </div>
                                             <div class="col-4 d-flex justify-content-start position-relative">
                                                 <div class="input-group has-validation">
-                                                    <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kvatotal" id="kvatotal" class="form-control" aria-label="cantidad total de potencia" required>
-                                                    <span class="input-group-text">KVA</span>
+                                                    <input type="number" min="0" max="1000" step="0.01" inputmode="decimal" name="kvatotal" id="kvatotal" class="form-control" aria-label="cantidad total de potencia" disabled>
+                                                    <label class="KVA"for="kvatotal">
+                                                        KVA
+                                                    </label>
                                                     <div class="invalid-tooltip">Por favor, escriba la informacíon requerida.</div>
                                                 </div>
                                             </div>
@@ -1556,7 +1575,7 @@
                                         <br>
                                                 <!--PRIMER INPUT-->
                                         <h5>¿El generador presenta algún tipo de fuga?</h5>
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                                 Generador A:
                                             </div>
@@ -1585,7 +1604,7 @@
                                         </div>
                                         <br>
                                                 <!--SEGUNDO INPUT-->
-                                        <div class="row">
+                                        <div class="row input">
                                             <div class="col-2">
                                             Generador B:
                                             </div>
@@ -1618,13 +1637,18 @@
                                     <div class="contenedor2" id="form88">
                                             <!--TERCER INPUT-->
                                             <h5>¿El pre-calentador emite calor, produce ruido y vibra?</h5>
-                                            <div class="row">
+                                            <div class="row input">
                                                 <div class="col-2">
                                                     Generador A:
                                                 </div>
                                                 <div class="col-2">
                                                     <div class="form-check">
-                                                        <input class="btn-check" type="radio" name="electrogeno_ruidogenerador_a" id="electrogeno_ruidogenerador_a_pos" value="Si" required/>
+                                                        <input class="btn-check" 
+                                                        type="radio" 
+                                                        name="electrogeno_ruidogenerador_a" 
+                                                        id="electrogeno_ruidogenerador_a_pos" 
+                                                        value="Si" 
+                                                        required/>
                                                         <label class="btn btn-outline-success" for="electrogeno_ruidogenerador_a_pos"> Si </label>
                                                     </div>
                                                 </div>
@@ -1648,7 +1672,7 @@
                                             <br>
 
                                                         <!--CUARTO INPUT-->
-                                            <div class="row">
+                                            <div class="row input">
                                                 <div class="col-2">
                                                     Generador B:
                                                 </div>
@@ -1688,9 +1712,7 @@
                             <!-- a partir de aqui van los nuevos espacios de las pestañas -->
                         </div>
                                         <!--BOTON DE FINALIZAR-->
-                        <div class="container-fluid finalizar d-flex justify-content-center">
-                            <button type="button" class="btn btn-lg" id="botones_desp" data-bs-toggle="modal" data-bs-target="#termino">Finalizar</button>  
-                        </div>
+                        
                     </div>
 
                     <div class="modal" id="termino">
@@ -1724,9 +1746,7 @@
         <div class="text-center p-3">
             Benemerita Universidad Autonoma de Puebla: Laboratorio Nacional de Supercomputo del Sureste de Mexico
         </div>
-    </footer>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    </footer>        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="../../scripts_mantenimiento/scripts_rutinarios.js"></script>
 </body>

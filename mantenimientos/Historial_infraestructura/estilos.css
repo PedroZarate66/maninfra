@@ -164,8 +164,8 @@ th{
 
     padding         : 5px                 ;
     border-radius   : 10px                ;
-    width           : 150px               ;
-    height          : 4%                  ;
+    width           : 90px               ;
+    height          : 40px                   ;
     background-color: rgb(68, 160, 221) ;
     color           : rgb(255, 255, 255);
     line-height     : 20px                ; 
@@ -173,6 +173,9 @@ th{
     margin-bottom   : 20px !important     ;
     font-size       : clamp(1rem, -0.875rem + 8.333vw, 1.1rem);
     display         : none;
+    text-align      : center;
+    align-items     : center;
+    align-content   : center;
 
 }
 /*---------------------------------------------------------------*/
@@ -189,7 +192,7 @@ th{
 
 /*ESTILOS QUE MUESTRAN LOS REGISTROS INACTIVOS*/
 .inactivo{
-    background-color: antiquewhite;
+    background-color: rgb(247, 213, 23);
 }
 
 .activo{
@@ -212,6 +215,7 @@ th{
 
     html, body {
         height: 100%;
+        display: block;
     }
 
     /*MODIFICACIONES DE LAS TABLAS PARA QUE SE AJUSTEN A CAMBIOS DE TAMAÑO
@@ -403,6 +407,7 @@ th{
 
     html, body {
         height: 110%;
+        display: block;
     }
     
 }
@@ -414,6 +419,7 @@ th{
 
     html, body {
         height: 120%;
+        display: block;
     }
     
     #banner{
@@ -453,9 +459,28 @@ th{
         max-width: none !important; 
     }
 
+    .content{
+        height: 90%;
+    }
+
+    .formulario{
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .seleccionanio{
+        width: 75px;
+        margin: 20px;
+    }
+
+    .seleccionmes{
+        width: 75px;
+        margin: 10px;
+    }
 
     html, body {
-        height: 100%;
+        height: 107%;
+        display: block;
     }
     
      

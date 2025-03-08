@@ -161,6 +161,15 @@
                   >Historial AMPI</a>
                 </div>
 
+                <div class="row d-flex justify-content-center align-self-start"><a
+                      name="Reporte"
+                      id="botones_desp"
+                      class="btn btn-lg"
+                      href="../Reporte"
+                      role="button"
+                  >Reporte</a>
+                </div>
+
                 <hr class="hr2">
             </div>
         </div>

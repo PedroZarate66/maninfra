@@ -1,9 +1,9 @@
 <?php
-include_once '../../include/conexion.php';
+include_once 'conexion.php';
 class Obtener_An_Calendario{
     public function obtener_anno_calendario()
     {
-        $conexion = new Crear_Conexion;
+        $conexion = new Crear_Conexiones;
         $conexion->crear_conection();
         $sql = "SELECT DISTINCT FechaAnno FROM calendarios ORDER BY FechaAnno ASC;";
         $resultado = $conexion->conexionBD->query($sql);

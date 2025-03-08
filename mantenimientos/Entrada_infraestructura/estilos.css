@@ -368,12 +368,16 @@ body {
         height: 120% !important;
     }
 
+    .formprincipal{
+        height: 100%;
+    }
+
     .contenedorform{
-        margin-bottom: 10px;
+        height: 110% !important;
     }
     
     .content{
-        height: 85%;
+        height: 95%;
     }
 
     #botones_desp{

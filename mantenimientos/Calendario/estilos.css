@@ -106,7 +106,7 @@ th{
 
     padding         : 5px                 ;
     border-radius   : 10px                ;
-    width           : 150px               ;
+    width           : 90px               ;
     height          : 40px                  ;
     background-color: rgb(68, 160, 221) ;
     color           : rgb(255, 255, 255);
@@ -115,6 +115,9 @@ th{
     margin-bottom   : 20px !important     ;
     font-size       : clamp(1rem, -0.875rem + 8.333vw, 1.1rem);
     display         : none;        
+    text-align      : center;
+    align-items     : center;
+    align-content   : center;
 }
 /*---------------------------------------------------------------*/
 
@@ -148,7 +151,7 @@ th{
 
 /*ESTILOS QUE MUESTRAN LOS REGISTROS INACTIVOS*/
 .inactivo{
-    background-color: antiquewhite;
+    background-color: rgb(247, 213, 23);
 }
 
 .activo{

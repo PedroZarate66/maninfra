@@ -1,7 +1,7 @@
 body {
     min-width       : 100%;
     min-height      : 100%;
-    display         : flex;
+    display         : block;
     flex-direction  : column;
     background-color: #E6E6E6;
 }
@@ -10,7 +10,7 @@ body {
     flex: 1 0 auto;
     z-index: 3;
     width  : 100%;
-    height : 76.7% ;
+    height : 95% ;
 }
 
 footer{
@@ -44,7 +44,7 @@ footer{
 
 /*ESTO ES PARA QUE SE DIVIDA EN DOS EL FORMULARIO*/
 .contenedorPrincipal{
-    background-color: rgb(0, 59, 92);
+    
     display: grid !important;
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
@@ -162,15 +162,46 @@ CON UNA FUNCION DE JS*/
 
 
 /*ESTILOS PERTENECIENTES A LA PRIMERA PARTE DEL FORMULARIO*/
+
+.identificadores{
+    width: 100%;
+    display: grid;
+    border-radius: 20px;
+    grid-template-columns: 3% 10% 60% 13.55% 0%;
+    grid-template-rows: 100%;
+    background-color: rgb(171, 172, 172) !important;
+}
+
+.nav{
+    background-color: rgb(170, 206, 247) !important;
+}
+
 .contenedor1{
-    
-    background-color: rgb(199, 199, 199);
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+    background-color: rgb(164, 212, 206);
 }
 
 .contenedor2{
-    
-    background-color: rgb(199, 199, 199);
+    width: 100%;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: rgb(164, 212, 206);
 }
+
+.input{
+    width:95%;
+    height: 10.8%;
+    border-radius: 10px;
+    margin: 10px;
+    align-items: center;
+    font-size: 10px;
+    background-color: aliceblue;
+}
+
 
 .contenedor-observaciones{
     width: 100% ;
@@ -184,6 +215,7 @@ CON UNA FUNCION DE JS*/
     height: 81px !important;
     padding: 5px;
     margin: 8px;
+    
 }
 
 #datos_inspeccion{
@@ -259,6 +291,7 @@ CON UNA FUNCION DE JS*/
     color           : rgb(255, 255, 255);
     line-height     : 20px;
     width           : 200px;   
+    margin: 10px;
     margin-bottom   : 20px;
     font-size       : clamp(1rem, -0.875rem + 8.333vw, 1.1rem);
 }
@@ -268,17 +301,12 @@ CON UNA FUNCION DE JS*/
     margin       : 0.7em;
     border       : 2px solid white;
     font-size    : 16px; 
+ 
 }
 
 /*CLASE PERTENECIENTE A LOS BOTONES DE ENTRADA Y SALIDA, TAMBIEN DE ID*/
 
-.identificadores{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3% 10% 60% 13.55% 0%;
-    grid-template-rows: 100%;
-    background-color: rgb(199, 199, 199);
-}
+
 
 /*id del textarea que contiene el ID del registro*/
 #identidad{
@@ -295,9 +323,25 @@ CON UNA FUNCION DE JS*/
     grid-template-rows: 100%;
 }
 
+.Entrada{
+    width: 10%;
+    margin: 6px;
+}
+
+.salida{
+    margin: 10px;
+}
+
 #fecha{
     font-size: 13px;
     width: 55%;
+}
+
+
+.KVA{
+    width: 1%;
+    font-size: 20px;
+    align-content: center;
 }
 /*Evadiendo estilos de Bootstrap sobrepuestos*/
 
@@ -320,6 +364,7 @@ CON UNA FUNCION DE JS*/
 
     html, body {
         height: 100% ;
+        display: block;
     }
 
     #banner{
@@ -339,11 +384,12 @@ CON UNA FUNCION DE JS*/
 
     html, body {
         height: 100%;
+        display: block;
     }
 
 
     .content{
-        height: 85%;
+        height: 98%;
     }
 
     #botones_desp{
@@ -383,11 +429,12 @@ CON UNA FUNCION DE JS*/
     }
 
     html, body {
-        height: 100%;
+        height: 110%;
+        display: block;
     }
 
     .content{
-        height: 90%;
+        height: 100%;
     }
 
     .cerrar-sesion {
@@ -404,8 +451,13 @@ CON UNA FUNCION DE JS*/
 
 @media (max-width: 1022px){
   
+    html, body {
+        height: 110%;
+        display: block;
+    }
+
     .content{
-        height: 95%;
+        height: 87%;
     }
 
     .identificadores {
@@ -433,6 +485,7 @@ CON UNA FUNCION DE JS*/
 
     html, body {
         height: 115%;
+        display: block;
     }
 
     #fecha{
@@ -444,7 +497,7 @@ CON UNA FUNCION DE JS*/
     }
 
     .content{
-        height: 110%;
+        height: 122%;
     }
 
     .contenedorPrincipal{
@@ -468,10 +521,11 @@ CON UNA FUNCION DE JS*/
 
     html, body {
         height: 115%;
+        display: block;
     }
 
     .content{
-        height: 111%;
+        height: 129%;
     }
 
     .entrada-salida{
@@ -523,11 +577,12 @@ CON UNA FUNCION DE JS*/
     }
 
     html, body {
-        height: 120%;
+        height: 130%;
+        display: block;
     }
 
     .content{
-        height: 110%;
+        height: 124%;
     }
 
 
@@ -574,7 +629,7 @@ CON UNA FUNCION DE JS*/
     }
 
     .content{
-        height: 115%;
+        height: 125%;
     }
 
     .minerva{
@@ -597,7 +652,7 @@ CON UNA FUNCION DE JS*/
     }
 
     .content{
-        height: 115%;
+        height: 122%;
     }
 
     html, body {
@@ -611,7 +666,7 @@ CON UNA FUNCION DE JS*/
     }
 
     .content{
-        height: 118%;
+        height: 159%;
     }
 
     html, body {
@@ -640,7 +695,7 @@ CON UNA FUNCION DE JS*/
     }
     
     .content{
-        height: 130%;
+        height: 140%;
     }
     
     html, body {

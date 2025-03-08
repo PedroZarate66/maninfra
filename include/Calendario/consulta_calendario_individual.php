@@ -6,7 +6,7 @@ require_once 'conexion.php';
 class Consulta_Calend_Individual{
     public function consulta_calendario_individual($idconsulta)
         {
-
+            $conexion = new Crear_Conexiones;
             $conexion->crear_conection();
             $sql = "SELECT * FROM `calendarios` WHERE IdCalendario =".$idconsulta.";";
             $resultado = $conexion->conexionBD->query($sql);

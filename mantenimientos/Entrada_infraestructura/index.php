@@ -10,8 +10,9 @@
     </head>
 
 
+
             <!--PERTENECE AL BANNER PRINCIPAL-->
-    <div class="p-3 text-center text-white" id="banner">
+            <div class="p-3 text-center text-white" id="banner">
         <div class="row">
             <div class="col lns-logo d-flex justify-content-start">
                 <img src="../../LNS.png">
@@ -61,17 +62,20 @@
                 include_once '../../include/Infraestructura/guardar_infraestructura.php';
                 include_once '../../include/Infraestructura/eliminar_mejora_infraestructura.php';
                 include_once '../../include/Telegram/EnviarMensaje.php';
+                include_once '../../include/Infraestructura/consulta_infraestructura_individual.php';
                 include_once '../../funciones_php/Configuracion_sesion.php';
 
                 //Se instancian los objetos que se utilizaran para llamar a las funciones
                 $obj_gua_inf     = new Guardar_Infra;
                 $obj_enviar_mens = new Enviar_Mensaje;
                 $obj_eli_mej_inf = new Eliminar_Mej_Infraestructura;
+                $obj_con_inf_ind = new Consulta_Infraestructura_Ind;  
 
                             //EN CASO DE QUE SE INSERTE SE IMPRIMEN LOS REGISTROS RECIEN INGRESADOS
                 if ($_SERVER["REQUEST_METHOD"] == "POST")
                 {
                     $consulta = $obj_gua_inf->guardar_infraestructura();
+                    $idconsulta = $consulta["IdMejora"];
                     echo "<div class='container-fluid'><h5 class='text-center'>Registro de infraestructura guardado con exito</h5>";
                     // echo "<div class='table-responsive'><table class='table table-bordered'><thead><tr><th scope='col'>Id</th><th scope='col'>Aspecto</th><th scope='col'>Descripción</th><th scope='col'>Beneficios</th>
                     // <th scope='col'>Tipo de mantenimiento</th><th scope='col'>Frecuencia</th><th scope='col'>Fecha Propuesta para realización</th><th scope='col'>Prioridad</th>
@@ -100,11 +104,11 @@
                     // </div>
                     // </form>';
                     //CODIGO DONDE SE INVOCA AL METODO PARA ENVIAR EL MENSAJE DE ELMINACION
-                    $registro = $obj_consul_cal->consulta_registro_individual($idconsulta);
+                    $registro = $obj_con_inf_ind->consulta_infraestructura_individual($idconsulta);
                     //SE OBTIENE EL NOMBRE DE USUARIO
                     $usuario = $_SESSION['usuario'];
                     //SE CREA EL MENSAJE Y DESPUES SE ENVIA
-                    $mensaje = 'Se ha registrado el registro: '.$registro["DescBien"]. ' en infraestructura el dia de hoy por el usuario '.$usuario;
+                    $mensaje = 'Se ha registrado el registro: '.$registro["Descripcion"]. ' en infraestructura el dia de hoy por el usuario '.$usuario;
                     $obj_enviar_mens->EnviarMensaje($mensaje);
                 }
                         //EN CASO DE QUE SE QUIERA ELIMINAR EL REGISTRO RECIEN INGRESADO

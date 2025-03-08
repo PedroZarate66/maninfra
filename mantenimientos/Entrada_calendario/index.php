@@ -7,7 +7,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    
         <link rel="stylesheet" href="estilos.css">
     </head>
-
     <body>
 
         <?php
@@ -83,7 +82,6 @@
                 {
                     //Se ha declarado un objeto para que se pueda acceder al metodo que contiene la clase
                     $consulta = $guardarRegCal->guardar_registro_calendario();
-
                                 //AQUI SE REIMPRIME HASTA ARRIBA DE LA PAGINA EL REGISTRO RECIEN INGRESADO
                                 //CON LA OPCION DE QUE SE PUEDA ELIMINAR O REVISAR SU CONTENIDO
                     echo "<div class='container-fluid'><h5 class='text-center'>Registro de calendario guardado con exito</h5>";
@@ -120,13 +118,14 @@
                 //     </div>
                 // </form>';
 
-                //CODIGO DONDE SE INVOCA AL METODO PARA ENVIAR EL MENSAJE DE ELMINACION
-                $registro = $obj_consul_cal->consulta_registro_individual($idconsulta);
-                //SE OBTIENE EL NOMBRE DE USUARIO
-                $usuario = $_SESSION['usuario'];
-                //SE CREA EL MENSAJE Y DESPUES SE ENVIA
-                $mensaje = 'Se ha registrado: '.$registro["DescBien"]. ' el dia de hoy en la BD por el usuario '.$usuario;
-                $obj_enviar_mens->EnviarMensaje($mensaje);
+                    //CODIGO DONDE SE INVOCA AL METODO PARA ENVIAR EL MENSAJE DE ELMINACION
+                    $registro = $consulta["DescBien"];
+                    
+                    //SE OBTIENE EL NOMBRE DE USUARIO
+                    $usuario = $_SESSION['usuario'];
+                    //SE CREA EL MENSAJE Y DESPUES SE ENVIA
+                    $mensaje = 'Se ha registrado: '.$registro. ' el dia de hoy en la BD por el usuario '.$usuario;
+                    $obj_enviar_mens->EnviarMensaje($mensaje);
                 }
                         //ESTE METODO ES POR SI ES PARA ELIMINAR EL REGISTRO UNA VES INGRESADO
                 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['reg_eliminar']))
