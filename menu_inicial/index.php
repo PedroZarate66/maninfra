@@ -37,7 +37,7 @@
       
       <!--Aqui va en titulo de la pagina-->
           <div class="txt-title">
-            <h1>Menu inicial</h1>
+            <h1>Menu inicial nuevo desde tablet</h1>
           </div>
       <!--******************************-->
       <!--Esto corresponde a los botones que se muestran en en menu de inicio-->
