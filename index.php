@@ -73,7 +73,7 @@
 
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-                Benemerita Universidad Autonoma de Puebla:
+                Benemerita Universidad Autonoma de Puebla: no
                 <a class="text-body">Laboratorio Nacional de Supercomputo del Sureste de Mexico</a>
             </div>
         <!-- Copyright -->
