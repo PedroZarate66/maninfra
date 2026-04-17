@@ -35,7 +35,7 @@
 							    <h4 class="card-title">Login</h4>
 							    <form action="funciones_php/Login.php" method="post" class="needs-validation" novalidate>
 								    <div class="form-group">
-									    <label for="email">Nombre de usuario</label>
+									    <label for="email">Nombre de usuario nuevo</label>
 									    <input id="email" type="text" class="form-control" name="usuario" value="" required autofocus>
 									    <div class="invalid-feedback">
 										    Nombre de usuario es invalido
